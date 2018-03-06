@@ -1,0 +1,13 @@
+
+.TilesContainer {
+    position: absolute;
+    z-index: 2; }
+    @media screen and (max-width: 520px) {
+        .TilesContainer {
+            position: absolute;
+            z-index: 2; }}
+
+    @media screen and (max-height: 768px) and (min-width: 481px) {
+        .TilesContainer {
+            position: absolute;
+            z-index: 2; }}

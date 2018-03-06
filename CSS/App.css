@@ -1,0 +1,26 @@
+
+
+.App{
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
+    /*background: url('../src/Assets/reactLogo.png');*/
+    background-position: -200% bottom;
+    background-size: 1500px 1000px;
+    background-repeat: no-repeat; 
+    background-color: rgb(41, 47, 48);
+        height: 100%;
+}
+.BigWrapper{
+    background-color: rgb(27, 27, 27);
+    width: 500px;
+    margin: 0 auto; 
+  }
+  @media screen and (max-width: 521px) {
+    .BigWrapper {
+      width: 450px; }
+    }
+  @media screen and (max-width: 481px) {
+    .BigWrapper {
+      width: 280px;
+      margin: 0 auto; }
+
+    }
