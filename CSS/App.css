@@ -20,7 +20,25 @@
     }
   @media screen and (max-width: 481px) {
     .BigWrapper {
-      width: 280px;
+      width: 300px;
       margin: 0 auto; }
 
     }
+.InstructionWrapper{
+  height: 100px; 
+  padding: 10px;
+}
+.Instruction{
+  color: #ccc;
+  width: 320px;
+  float: right;
+}
+.Instruction p b{
+  color: #fff;
+}
+.Instruction p {
+  margin: 7px 7px 0 0 ;
+  line-height: 27px;
+  font-size: 16px;
+  font-stretch: ultra-expanded;
+}
