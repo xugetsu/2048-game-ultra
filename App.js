@@ -77,7 +77,7 @@ class App extends Component{
         lastMove:'Start',
         idStore: Array.from({length: 5}, (x,i) => i + 16),
         gameOver:false
-     }   
+     }
     render() {
         $.print('render',0); 
         $.print("*** *** *** ***",0);
@@ -107,11 +107,12 @@ class App extends Component{
                 </div>
                 <footer>
                     This project is made by 
-                    <a href = "www.linkedin.com/in/ali-othmani-11873707" 
-                       target="_blank"> Ali Othmani</a>
+                    <a href="https://www.linkedin.com/in/ali-othmani-11873707" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                    > Ali Othmani</a>
                 </footer>
             </div>);
-
      }
     }
 export default App;
