@@ -20,22 +20,22 @@ const checkForUpdate = (matrix, direction) => {
      }
     let update = false;
     const arrangmentCodeMatrix = matrix.map( matRow => parseInt(matRow.reduce( (str,tile)=>str += tile.normal.val? '1': '0' ,''),2) );
-    //console.log('arrangmentCode',arrangmentCodeMatrix);
+    // arrangmentCodeMatrix is a data in matrix form that discribes how tiles are placed in the matrix. 
+    // If a tile exist, then place '1' in its position in the matrix. If not, place '0' in its potition.
     const OTIRACL = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096]; // OTIRACL = One Tile In Row Arrangment Code List  example: '0100' '0001' '1000' ...
-    let movable = false;
-    let notMovable = !movable;
-    for( let r = 0; r < N; r++ ){ 
-        if(!OTIRACL.includes(arrangmentCodeMatrix[r] + 1)){  // if (movable)example : 0111 + 1 = 1000 OTIRACL
-            movable = true; break;
+    let movable = false, notMovable = !movable;
+    for( let r = 0; r < N; r++ ){ // checking if there is, at least, one tile that can move in the arrangmentCodeMatrix data
+        if(!OTIRACL.includes(arrangmentCodeMatrix[r] + 1)){  // if (movable) example : 0111 + 1 = 1000 OTIRACL => movable = true;
+            movable = true; break; // need to be fixed
         } 
     }
-    if (notMovable) { // not movable
+    if (notMovable) { // check if not movable
         for( let r = 0; r < N; r++ ){ 
             const fullNumsInMatrix = matrix.map( matRow => matRow.filter( el => el.normal.val !== 0 ) );
             for(let i = 0; i < fullNumsInRow.length - 1; i++) { if(fullNumsInRow[i]===fullNumsInRow[i+1]){return false} }
             return true;};  
-        } 
-    }
+        } // need to be fixed
+    
     switch (direction) {
         case 'right': case 'left' :
             for( let r = 0; r < N; r++ ){
