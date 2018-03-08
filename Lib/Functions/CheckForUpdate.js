@@ -24,12 +24,12 @@ const checkForUpdate = (matrix, direction) => {
      // If a tile exist, then place '1' in its position in the matrix. If not, place '0' instead. 
      // Consequently, each array in the matrix will have a binary code (ex '1010'), 
      // The parseInt function will then convert each code to base 10. example '1010' becomes '10'
-    console.log('arrangmentCodeMatrix',M.map(matRow =>matRow.reduce( (str,tileVal)=>str += tileVal? '1': '0' ,'')));
+    //console.log('arrangmentCodeMatrix',M.map(matRow =>matRow.reduce( (str,tileVal)=>str += tileVal? '1': '0' ,'')));
 
     // 1) Checking if there is at least one tile that can move in the arrangmentCodeMatrix data :
         for( let r = 0; r < N; r++ ){
             if(!FTACL.includes(arrangmentCodeMatrix[r])){
-                console.log('==> move case');
+                //console.log('==> move case');
                 return true}
                 // if arrangment Code in the array is not one of the FTACL list codes
                 // then there is at least one tile that can move
@@ -42,7 +42,7 @@ const checkForUpdate = (matrix, direction) => {
             const fullNumsInRow = fullNumsInMatrix[r];
             for(let c = 0; c < fullNumsInRow.length - 1; c++) {
                 if(fullNumsInRow[c] === fullNumsInRow[c+1]){
-                    console.log('===> merge case in fullNumsInRow',fullNumsInRow); 
+                    //console.log('===> merge case in fullNumsInRow',fullNumsInRow); 
                     return true} // A merging case
                 // 'checkForUpdate' returns true, the rest of the code/loop will not be executed. 
                 }
