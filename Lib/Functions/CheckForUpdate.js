@@ -3,51 +3,52 @@ const N = 4;
 
 const checkForUpdate = (matrix, direction) => {
     print('checkForUpdate',3); 
-    const tilesAreMovable = (matrixRow, direction) => {
-        const notMergeable = () => {
-            const fullNumsInRow = valsInRow.filter( el => el !== 0 );
-            for(let i = 0; i < fullNumsInRow.length - 1; i++) { if(fullNumsInRow[i]===fullNumsInRow[i+1]){return false} }
-            return true;};  
-        const inv = (direction === 'right' ||  direction === 'down')? 1 : 0;
-        let valsInRow = matrixRow.map( el => el.merged? el.normal.val*2: el.normal.val);
-        valsInRow = inv? valsInRow : valsInRow.reverse();
-        const arrangmentCode = parseInt(valsInRow.reduce( (str,el) => str += el? '1': '0' ,''),2); // example : '0101' '1111' '0000' 0010'
-        const OTIRACL = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096]; // OTIRACL = One Tile In Row Arrangment Code List  example: '0100' '0001' '1000' ...
-        const notMovable = OTIRACL.includes(arrangmentCode + 1);  // example : 0111 + 1 = 1000 OTIRACL
-        if (arrangmentCode <= 1){ return false};   // the row is empty Or has one tile  i.e. immovable + not mergeable
-        if (arrangmentCode > 1 && notMovable && notMergeable()){return false}
-        else return true
-     }
-    let update = false;
-    const arrangmentCodeMatrix = matrix.map( matRow => parseInt(matRow.reduce( (str,tile)=>str += tile.normal.val? '1': '0' ,''),2) );
-    // arrangmentCodeMatrix is a data in matrix form that discribes how tiles are placed in the matrix. 
-    // If a tile exist, then place '1' in its position in the matrix. If not, place '0' in its potition.
-    const OTIRACL = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096]; // OTIRACL = One Tile In Row Arrangment Code List  example: '0100' '0001' '1000' ...
-    let movable = false, notMovable = !movable;
-    for( let r = 0; r < N; r++ ){ // checking if there is, at least, one tile that can move in the arrangmentCodeMatrix data
-        if(!OTIRACL.includes(arrangmentCodeMatrix[r] + 1)){  // if (movable) example : 0111 + 1 = 1000 OTIRACL => movable = true;
-            movable = true; break; // need to be fixed
-        } 
-    }
-    if (notMovable) { // check if not movable
-        for( let r = 0; r < N; r++ ){ 
-            const fullNumsInMatrix = matrix.map( matRow => matRow.filter( el => el.normal.val !== 0 ) );
-            for(let i = 0; i < fullNumsInRow.length - 1; i++) { if(fullNumsInRow[i]===fullNumsInRow[i+1]){return false} }
-            return true;};  
-        } // need to be fixed
-    
+    let M = matrix.map( matRow => matRow.map( (tile,c) => tile.merged? tile.normal.val*2 : tile.normal.val ));  
+    const FTACL = [0,1,3,7,15,31,63,127,255,511,1023,2047,4095]; // FTACL : cases of Fixed (inmovable) Tiles Arrangment Code List '0000' '0001' '0011' '0111'
     switch (direction) {
-        case 'right': case 'left' :
-            for( let r = 0; r < N; r++ ){
-                if(tilesAreMovable(matrix[r], direction)) {update = true;}
-                if (update) {break;}    }break;
-        case 'up': case 'down':
-            for( let c = 0; c < N; c++ ){
-                if( tilesAreMovable(Array(N).fill().map( (_,i) => matrix[i][c] ) , direction)) {update = true;}
-                if (update) {break;}    }break;
-        default : break;
+        case 'right': 
+            break;
+        case 'left': 
+            M = M.map( M_row => M_row.map( (_,c) => M_row[(N-1) - c] ));  
+            break;
+        case 'down': 
+            M = Array(N).fill().map( (_,c) => Array(N).fill().map( (_,r) => M[r][c] ));
+            break;
+        case 'up': 
+            M = Array(N).fill().map( (_,c) => Array(N).fill().map( (_,r) => M[N-1-r][c] ));
+            break;
+        default: break;
     }
-    return update;
+    const arrangmentCodeMatrix = M.map( matRow => parseInt(matRow.reduce( (str,tileVal)=>str += tileVal? '1': '0' ,''),2) );
+    // 'arrangmentCodeMatrix' is a data in a matrix form that discribes how tiles are placed in the tiles matrix. 
+     // If a tile exist, then place '1' in its position in the matrix. If not, place '0' instead. 
+     // Consequently, each array in the matrix will have a binary code (ex '1010'), 
+     // The parseInt function will then convert each code to base 10. example '1010' becomes '10'
+    console.log('arrangmentCodeMatrix',M.map(matRow =>matRow.reduce( (str,tileVal)=>str += tileVal? '1': '0' ,'')));
+
+    // 1) Checking if there is at least one tile that can move in the arrangmentCodeMatrix data :
+        for( let r = 0; r < N; r++ ){
+            if(!FTACL.includes(arrangmentCodeMatrix[r])){
+                console.log('==> move case');
+                return true}
+                // if arrangment Code in the array is not one of the FTACL list codes
+                // then there is at least one tile that can move
+                // 'checkForUpdate' returns true, the rest of the code/loop will not be executed. 
+        };
+    // 2) Checking if there is at least one merging case for the fixed tiles :
+        const fullNumsInMatrix = M.map( matRow => matRow.filter( tileVal => tileVal!== 0 ) );
+            // fullNumsInMatrix : [0,2,4,4] becomes [2,4,4] etc..(filter val = 0)
+        for( let r = 0; r < N; r++ ){
+            const fullNumsInRow = fullNumsInMatrix[r];
+            for(let c = 0; c < fullNumsInRow.length - 1; c++) {
+                if(fullNumsInRow[c] === fullNumsInRow[c+1]){
+                    console.log('===> merge case in fullNumsInRow',fullNumsInRow); 
+                    return true} // A merging case
+                // 'checkForUpdate' returns true, the rest of the code/loop will not be executed. 
+                }
+        };    
+    // 3) 'checkForUpdate' returns false if there is no movable or mergeable tiles :
+       return false; 
  };
 
 export default checkForUpdate;
