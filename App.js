@@ -105,6 +105,11 @@ class App extends Component{
                         </p>
                    </div>
                 </div>
+                <footer>
+                    This project is made by 
+                    <a href = "www.linkedin.com/in/ali-othmani-11873707" 
+                       target="_blank"> Ali Othmani</a>
+                </footer>
             </div>);
 
      }
