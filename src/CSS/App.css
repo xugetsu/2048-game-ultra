@@ -10,8 +10,7 @@
         height: 100%;
 }
 .BigWrapper{
-    background-color: rgb(27, 27, 27);
-    width: 500px;
+    background-color: rgba(27, 27, 27, 0.897);
     margin: 0 auto; 
   }
   @media screen and (max-width: 521px) {
@@ -45,12 +44,14 @@
 footer{
   padding: 10px;
   color: white;
+  background: black;
 }
 footer a {
  text-decoration: none;
  color: rgb(78, 174, 253);
  font-weight: bold;
  font-size: 20px;
+ 
 }
 footer a:hover {
   color: rgb(205, 229, 248);

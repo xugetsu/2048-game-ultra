@@ -1,8 +1,9 @@
  
 .GameInfo {
     text-align: center;
-    width: auto;
+    width: 500px;
     margin: 0 auto;
+    padding-top: 20px;
   }
   .AppHeader {
     height: 100px;

@@ -85,7 +85,9 @@ class App extends Component{
         const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
         return (
             <div className = {style.BigWrapper}>
-
+                <header>
+                  <Logo />
+                </header>
                 <GameInfo 
                       score = {this.state.score} 
                       newGame = {() => this.newGame(true)} />
