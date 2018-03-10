@@ -4,6 +4,7 @@ import ControlKeys from './Components/ControlKeys/ControlKeys';
 import GameInfo from './Components/GameInfo/GameInfo';
 import GameContainer from './Containers/GameContainer/GameContainer';
 import * as $ from './Lib/Functions/functions';
+import Logo from './Components/LOGO SVG/logo';
 
 class App extends Component{
     newGame = (clicked) => { 
@@ -106,12 +107,14 @@ class App extends Component{
                    </div>
                 </div>
                 <footer>
+                    <Logo />
                     This project is made by 
                     <a href="https://www.linkedin.com/in/ali-othmani-11873707" 
                        target="_blank" 
                        rel="noopener noreferrer"
                     > Ali Othmani</a>
                 </footer>
+
             </div>);
      }
     }
