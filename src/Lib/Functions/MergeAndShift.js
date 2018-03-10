@@ -4,6 +4,7 @@ import moveTiles from './MoveTiles';
 
 const mergeAndShift = (matrix, d, idstore) => { 
     print('mergeAndShift',3);
+    const N = matrix.length;
     let idStore = [...idstore];
     let addToScore = 0;
     const M = cloneMatrix(matrix);
@@ -20,8 +21,8 @@ const mergeAndShift = (matrix, d, idstore) => {
      }
     switch (d) {
         case 'left':
-            for (let r = 0; r < 4; r++ ){ // left
-                for (let c = 0; c < 3; c++ ){
+            for (let r = 0; r < N; r++ ){ // left
+                for (let c = 0; c < N-1; c++ ){
                     const tile = M[r][c], nextTile = M[r][c + 1];
                     if( tile.normal.val && nextTile.normal.val === tile.normal.val ){
                         mergeTiles(tile, nextTile);
@@ -31,8 +32,8 @@ const mergeAndShift = (matrix, d, idstore) => {
             }                    
             break;
         case 'right':
-            for (let r = 0; r < 4; r++ ){ // right
-                for (let c = 3; c > 0; c-- ){
+            for (let r = 0; r < N; r++ ){ // right
+                for (let c = N-1; c > 0; c-- ){
                     const tile = M[r][c], nextTile = M[r][c - 1];
                     if( tile.normal.val && nextTile.normal.val === tile.normal.val ){
                         mergeTiles(tile, nextTile);
@@ -42,8 +43,8 @@ const mergeAndShift = (matrix, d, idstore) => {
             }                   
             break;   
         case 'down':
-            for(let c = 0; c < 4; c++ ){ 
-                for(let r = 3; r > 0; r-- ){
+            for(let c = 0; c < N; c++ ){ 
+                for(let r = N-1; r > 0; r-- ){
                     const  tile = M[r][c], nextTile = M[r - 1][c]
                     if( tile.normal.val && nextTile.normal.val === tile.normal.val ){
                         mergeTiles(tile, nextTile);
@@ -53,8 +54,8 @@ const mergeAndShift = (matrix, d, idstore) => {
             }  
             break;      
         case 'up':
-            for(let c = 0; c < 4; c++ ){ 
-                for(let r = 0; r < 3; r++ ){
+            for(let c = 0; c < N; c++ ){ 
+                for(let r = 0; r < N-1; r++ ){
                     const  tile = M[r][c], nextTile = M[r + 1][c];
                     if( tile.normal.val && nextTile.normal.val === tile.normal.val ){
                         mergeTiles(tile, nextTile);
