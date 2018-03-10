@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "2048": "my-2048-game-with-react",
+    "default": "my-2048-game-with-react"
+  }
+}
