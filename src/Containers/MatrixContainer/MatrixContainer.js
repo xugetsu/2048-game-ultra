@@ -1,16 +1,16 @@
 import React from 'react';
-import style from './GameContainer.css';
+import style from './MatrixContainer.css';
 import Grids from '../../Components/Grids/Grids';
 import Tiles from '../../Components/Tiles/Tiles';
 import MergedTiles from '../../Components/Tiles/MergedTiles';
 import Backdrop from '../../Components/UI/Backdrop/Backdrop';
 
-const gameContainer = (props) => {
+const matrixContainer = (props) => {
         const backdrop = props.gameOver ? <Backdrop  newGame = {props.newGame} 
                                                      score   = {props.score}  /> 
                                         :  null;
         return (
-                <div className={style.GameContainer}>
+                <div className={style.MatrixContainer}>
                     {backdrop}
                     <Grids />
                     <Tiles matrix = {props.matrix} virtualTiles = {props.virtualTiles} />
@@ -18,4 +18,4 @@ const gameContainer = (props) => {
                 </div>
                );
 }
-export default gameContainer;
+export default matrixContainer;

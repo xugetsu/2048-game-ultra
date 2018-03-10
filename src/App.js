@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import style from './CSS/App.css';
 import ControlKeys from './Components/ControlKeys/ControlKeys';
 import GameInfo from './Components/GameInfo/GameInfo';
-import GameContainer from './Containers/GameContainer/GameContainer';
+import MatrixContainer from './Containers/MatrixContainer/MatrixContainer';
 import * as $ from './Lib/Functions/functions';
 import Logo from './Components/LOGO SVG/logo';
 
@@ -85,11 +85,13 @@ class App extends Component{
         const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
         return (
             <div className = {style.BigWrapper}>
+
                 <GameInfo 
                       score = {this.state.score} 
                       newGame = {() => this.newGame(true)} />
-                <GameContainer 
-                      matrix = {matrix} virtualTiles = {virtualTiles} 
+                <MatrixContainer 
+                      matrix = {matrix} 
+                      virtualTiles = {virtualTiles} 
                       gameOver = {this.state.gameOver} 
                       score    = {this.state.score}
                       newGame =  {() => this.newGame(true)}/>
