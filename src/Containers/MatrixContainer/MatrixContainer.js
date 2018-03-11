@@ -9,8 +9,11 @@ const matrixContainer = (props) => {
         const backdrop = props.gameOver ? <Backdrop  newGame = {props.newGame} 
                                                      score   = {props.score}  /> 
                                         :  null;
+        const N = props.matrix.length;                              
+        const size = props.gridSize*N + props.gridMargin*(N + 1) + 'px';
+        const matrixSize = {width:size, height:size};
         return (
-                <div className={style.MatrixContainer}>
+                <div className={style.MatrixContainer} style={matrixSize}>
                     {backdrop}
                     <Grids />
                     <Tiles matrix = {props.matrix} virtualTiles = {props.virtualTiles} />
