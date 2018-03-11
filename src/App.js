@@ -86,7 +86,7 @@ class App extends Component{
         return (
             <div className = {style.BigWrapper}>
                 <header>
-                  <Logo />
+                  <Logo logoHeight = {250}/>
                 </header>
                 <GameInfo 
                       score = {this.state.score} 
@@ -111,7 +111,9 @@ class App extends Component{
                    </div>
                 </div>
                 <footer>
-                    <Logo />
+                    <div className = {style.LogoFooter}>
+                        <Logo logoHeight = {500}/>
+                    </div>
                     This project is made by 
                     <a href="https://www.linkedin.com/in/ali-othmani-11873707" 
                        target="_blank" 

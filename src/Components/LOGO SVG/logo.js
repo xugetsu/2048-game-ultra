@@ -1,12 +1,12 @@
 import React from 'react';
 
-const logo = () => {
+const logo = (props) => {
     const style1 = {fill:'#333',stroke:'#333',strokeWidth:.5};
     const style2 = {fill:'rgba(41,137,216,1)',stroke:'rgba(41,137,216,1)',strokeWidth:1};
     const style3 = {fill:'white',stroke:'white',strokeWidth:1};
     
 
-    const h = 250;
+    const h = props.logoHeight;
     
     const height = h/2.825; 
     const thikness = height/5;
@@ -47,7 +47,7 @@ const logo = () => {
                     [x3 + width, y3 - height]]; // < / ">"                    
 
     return (
-    <svg height={h} width={width+h/25}>
+    <svg height={220} width={width+h/25}>
         <polygon points={poly2} style={style2}/>
         <polygon points={poly11} style={style3}/>
         <polygon points={poly21} style={style2}/>
