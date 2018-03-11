@@ -2,6 +2,7 @@
 .TilesContainer {
     position: absolute;
     z-index: 2; }
+    /*
     @media screen and (max-width: 520px) {
         .TilesContainer {
             position: absolute;
@@ -11,3 +12,4 @@
         .TilesContainer {
             position: absolute;
             z-index: 2; }}
+            */

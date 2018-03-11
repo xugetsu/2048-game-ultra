@@ -1,6 +1,3 @@
-:root{
-    --tile-translate:93px;
-}
 .Tile {
     position: absolute;
     -webkit-transition: 100ms ease-in-out;
@@ -23,6 +20,7 @@
     z-index: 10;
     font-size: 55px; 
     color: rgba(0, 0, 0, 0.888); }
+    /*
     @media screen and (max-width: 521px) {
         .Tile, .TileInner {
             width: 98px;
@@ -34,7 +32,7 @@
             width: 58px;
             height: 58px;
             line-height: 67.5px;
-            font-size: 35px;}   }
+            font-size: 35px;}   }*/
 
 
 .TileNew .TileInner{
@@ -45,6 +43,7 @@
     -webkit-transition-property: none;
     -o-transition-property: none;
     transition-property: none; }
+    
     @-webkit-keyframes appear {
             0% {
               opacity: 0;
@@ -104,6 +103,7 @@
             font-size: 40px;}
 
 .Tile_super .TileInner{ background-color: #3c3a32; }
+/*
 @media screen and (max-width: 481px) {
     .Tile_2048 .TileInner, .Tile_1024 .TileInner{
         font-size: 20px;
@@ -115,7 +115,7 @@
         font-size: 28px;
         line-height: 65px; 
     }
-}
+}*/
 .TilePosition_1_1 { 
     -webkit-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
@@ -199,6 +199,7 @@
     -ms-transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*3));
         transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*3));
   }
+/*
 @media screen and (max-width: 521px)  {
 
     .Tile.TilePosition_1_1 {
@@ -330,7 +331,7 @@
           -webkit-transform: translate(202px, 202px);
         -ms-transform: translate(202px, 202px);
             transform: translate(202px, 202px); }  }
-
+*/
 
 .TileMerged .TileInner {
     z-index: 20;
@@ -338,6 +339,7 @@
     animation: pop 200ms ease 100ms;
     -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards; }
+    
     @-webkit-keyframes pop {
         50% { -webkit-transform: scale(1.2);
             transform: scale(1.2); }}

@@ -87,7 +87,7 @@
   .NewGame:hover {
     background: #ccc;
   }
-
+/*
 @media screen and (max-width: 481px) {
     .Backdrop h1{
       font-size: 30px;
@@ -101,4 +101,4 @@
       font-size: 20px;
       height: 30px;
     }
-}
+}*/
