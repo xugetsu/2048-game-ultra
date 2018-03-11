@@ -11,7 +11,7 @@ const grids = (props) => {
                      </div>;
     const gridRow = (
             <div className={style.GridRow} 
-                style = {{marginBottom: props.gridMargin }}>
+                 style = {{marginBottom: props.gridMargin }}>
             {Array(props.gridNumbers).fill().map( _ => gridCell)}
             </div>
     );

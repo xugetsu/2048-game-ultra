@@ -9,14 +9,16 @@ const matrixContainer = (props) => {
         const backdrop = props.gameOver ? <Backdrop  newGame = {props.newGame} 
                                                      score   = {props.score}  /> 
                                         :  null;
-        const N = props.matrix.length;                              
-        const size = props.gridSize*N + props.gridMargin*(N + 1) + 'px';
-        const matrixSize = {width:size, height:size};
+        const N = props.matrix.length;
+        const gridSize = [80,80]; 
+        const gridMargins = [13,13];                         
+        const matrixSize = gridSize[N-4]*N + gridMargins[N-4]*(N + 1) + 2 + 'px';
+
         return (
-                <div className={style.MatrixContainer} style={matrixSize}>
+                <div className={style.MatrixContainer} style={{width:matrixSize, height:matrixSize}}>
                     {backdrop}
-                    <Grids  gridSize    = {props.gridSize} 
-                            gridMargin  = {props.gridMargin} 
+                    <Grids  gridSize    = {gridSize[N-4]+'px'} 
+                            gridMargin  = {gridMargins[N-4]+'px'} 
                             gridNumbers = {N} />
 
                     <Tiles  matrix = {props.matrix} 

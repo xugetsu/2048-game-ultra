@@ -96,9 +96,7 @@ class App extends Component{
                       virtualTiles = {virtualTiles} 
                       gameOver = {this.state.gameOver} 
                       score    = {this.state.score}
-                      newGame =  {() => this.newGame(true)}
-                      gridSize = {106.25}
-                      gridMargin = {15} />
+                      newGame =  {() => this.newGame(true)} />
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
                       right = {() => this.clickHandler('right')}

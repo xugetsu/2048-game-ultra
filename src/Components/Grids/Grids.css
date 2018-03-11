@@ -4,7 +4,6 @@
     z-index: 1; 
   }
 
-.GridRow { margin-bottom: 15px; }
     .GridRow:last-child { margin-bottom: 0; }
     .GridRow:after {
     content: "";
