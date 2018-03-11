@@ -2,7 +2,14 @@ import print from './Print';
 
 const matrixIsFull = (matrix) => {
     print('matrixIsFull',0); 
-    return [...matrix[0],...matrix[1],...matrix[2],...matrix[3]].reduce( (sum,el) => el.normal.val? sum += 1: sum, 0) === 16                 
+    for ( let r = 0; r < matrix.length; r++){
+        for( let c = 0; c < matrix.length; c++){
+            if( matrix[r][c].normal.val === 0){
+                return false;
+            }
+        }
+    }
+    return true;               
  };
 
  export default matrixIsFull;
