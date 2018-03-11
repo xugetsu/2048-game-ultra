@@ -1,3 +1,6 @@
+:root{
+    --tile-translate:93px;
+}
 .Tile {
     position: absolute;
     -webkit-transition: 100ms ease-in-out;
@@ -8,9 +11,10 @@
     -o-transition-property: transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform; }
+
 .Tile, .TileInner {
-    width: 107px;
-    height: 107px;
+    width:  80px;
+    height: 80px;
     line-height: 116.25px;
     border-radius: 3px;
     background: rgb(90,90,90);
@@ -118,82 +122,82 @@
         transform: translate(0px, 0px); 
  }
 .TilePosition_1_2 { 
-    -webkit-transform: translate(0px, 121px);
-    -ms-transform: translate(0px, 121px);
-        transform: translate(0px, 121px); 
+    -webkit-transform: translate(0px, var(--tile-translate));
+    -ms-transform: translate(0px, var(--tile-translate));
+        transform: translate(0px, var(--tile-translate)); 
  }
 .TilePosition_1_3 { 
-    -webkit-transform: translate(0px, 242px);
-    -ms-transform: translate(0px, 242px);
-        transform: translate(0px, 242px); 
+    -webkit-transform: translate(0px, calc(var(--tile-translate)*2));
+    -ms-transform: translate(0px, calc(var(--tile-translate)*2));
+        transform: translate(0px, calc(var(--tile-translate)*2)); 
  }
 .TilePosition_1_4 { 
-    -webkit-transform: translate(0px, 363px);
-    -ms-transform: translate(0px, 363px);
-        transform: translate(0px, 363px); 
+    -webkit-transform: translate(0px, calc(var(--tile-translate)*3));
+    -ms-transform: translate(0px, calc(var(--tile-translate)*3));
+        transform: translate(0px, calc(var(--tile-translate)*3)); 
   }
 
 .TilePosition_2_1 { 
-    -webkit-transform: translate(121px, 0px);
-    -ms-transform: translate(121px, 0px);
-        transform: translate(121px, 0px);
+    -webkit-transform: translate(var(--tile-translate), 0px);
+    -ms-transform: translate(var(--tile-translate), 0px);
+        transform: translate(var(--tile-translate), 0px);
    }
 .TilePosition_2_2 { 
-    -webkit-transform: translate(121px, 121px);
-    -ms-transform: translate(121px, 121px);
-        transform: translate(121px, 121px);
+    -webkit-transform: translate(var(--tile-translate), var(--tile-translate));
+    -ms-transform: translate(var(--tile-translate), var(--tile-translate));
+        transform: translate(var(--tile-translate), var(--tile-translate));
  }
 .TilePosition_2_3 { 
-    -webkit-transform: translate(121px, 242px);
-    -ms-transform: translate(121px, 242px);
-        transform: translate(121px, 242px);
+    -webkit-transform: translate(var(--tile-translate), calc(var(--tile-translate)*2));
+    -ms-transform: translate(var(--tile-translate), calc(var(--tile-translate)*2));
+        transform: translate(var(--tile-translate), calc(var(--tile-translate)*2));
  }
 .TilePosition_2_4 {
-    -webkit-transform: translate(121px, 363px); 
-     -ms-transform: translate(121px, 363px); 
-        transform: translate(121px, 363px); 
+    -webkit-transform: translate(var(--tile-translate), calc(var(--tile-translate)*3)); 
+     -ms-transform: translate(var(--tile-translate), calc(var(--tile-translate)*3)); 
+        transform: translate(var(--tile-translate), calc(var(--tile-translate)*3)); 
     }
 
 .TilePosition_3_1 { 
-    -webkit-transform: translate(242px, 0px);  
-     -ms-transform: translate(242px, 0px);  
-        transform: translate(242px, 0px);  
+    -webkit-transform: translate(calc(var(--tile-translate)*2), 0px);  
+     -ms-transform: translate(calc(var(--tile-translate)*2), 0px);  
+        transform: translate(calc(var(--tile-translate)*2), 0px);  
  }
 .TilePosition_3_2 { 
-    -webkit-transform: translate(242px, 121px); 
-    -ms-transform: translate(242px, 121px); 
-        transform: translate(242px, 121px); 
+    -webkit-transform: translate(calc(var(--tile-translate)*2), var(--tile-translate)); 
+    -ms-transform: translate(calc(var(--tile-translate)*2), var(--tile-translate)); 
+        transform: translate(calc(var(--tile-translate)*2), var(--tile-translate)); 
  }
 .TilePosition_3_3 { 
-    -webkit-transform: translate(242px, 242px);
-    -ms-transform: translate(242px, 242px);
-        transform: translate(242px, 242px);
+    -webkit-transform: translate( calc(var(--tile-translate)*2), calc(var(--tile-translate)*2));
+    -ms-transform: translate( calc(var(--tile-translate)*2),  calc(var(--tile-translate)*2));
+        transform: translate( calc(var(--tile-translate)*2),  calc(var(--tile-translate)*2));
  }
 .TilePosition_3_4 { 
-    -webkit-transform: translate(242px, 363px); 
-    -ms-transform:  translate(242px, 363px); 
-        transform:  translate(242px, 363px); 
+    -webkit-transform: translate( calc(var(--tile-translate)*2),  calc(var(--tile-translate)*3)); 
+    -ms-transform:  translate( calc(var(--tile-translate)*2), calc(var(--tile-translate)*3)); 
+        transform:  translate( calc(var(--tile-translate)*2), calc(var(--tile-translate)*3)); 
  }
 
 .TilePosition_4_1 { 
-    -webkit-transform: translate(363px, 0px);  
-    -ms-transform:translate(363px, 0px);  
-        transform:translate(363px, 0px);  
+    -webkit-transform: translate(calc(var(--tile-translate)*3), 0px);  
+    -ms-transform:translate(calc(var(--tile-translate)*3), 0px);  
+        transform:translate(calc(var(--tile-translate)*3), 0px);  
  }
 .TilePosition_4_2 {
-    -webkit-transform: translate(363px, 121px);
-    -ms-transform: translate(363px, 121px);
-        transform: translate(363px, 121px);
+    -webkit-transform: translate(calc(var(--tile-translate)*3), var(--tile-translate));
+    -ms-transform: translate(calc(var(--tile-translate)*3), var(--tile-translate));
+        transform: translate(calc(var(--tile-translate)*3), var(--tile-translate));
   }
 .TilePosition_4_3 {
-    -webkit-transform: translate(363px, 242px);
-     -ms-transform: translate(363px, 242px);
-        transform: translate(363px, 242px);
+    -webkit-transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*2));
+     -ms-transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*2));
+        transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*2));
   }
 .TilePosition_4_4 { 
-    -webkit-transform: translate(363px, 363px);
-    -ms-transform: translate(363px, 363px);
-        transform: translate(363px, 363px);
+    -webkit-transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*3));
+    -ms-transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*3));
+        transform: translate(calc(var(--tile-translate)*3), calc(var(--tile-translate)*3));
   }
 @media screen and (max-width: 521px)  {
 

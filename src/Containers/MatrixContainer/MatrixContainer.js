@@ -9,20 +9,24 @@ const matrixContainer = (props) => {
         const backdrop = props.gameOver ? <Backdrop  newGame = {props.newGame} 
                                                      score   = {props.score}  /> 
                                         :  null;
-        const N = props.matrix.length;
+        const N =props.matrix.length;
         const gridSize = [80,80]; 
         const gridMargins = [13,13];                         
         const matrixSize = gridSize[N-4]*N + gridMargins[N-4]*(N + 1) + 2 + 'px';
 
         return (
                 <div className={style.MatrixContainer} style={{width:matrixSize, height:matrixSize}}>
+                    
                     {backdrop}
+
                     <Grids  gridSize    = {gridSize[N-4]+'px'} 
                             gridMargin  = {gridMargins[N-4]+'px'} 
                             gridNumbers = {N} />
 
-                    <Tiles  matrix = {props.matrix} 
-                            virtualTiles = {props.virtualTiles} />
+                    <Tiles  matrix       = {props.matrix} 
+                            virtualTiles = {props.virtualTiles} 
+                            tileSize     = {gridSize[N-4]} 
+                            gridMargin   = {gridMargins[N-4]}/>
 
                     <MergedTiles matrix = {props.matrix}/>
                 </div>
