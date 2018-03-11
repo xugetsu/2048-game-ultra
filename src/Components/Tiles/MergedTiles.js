@@ -11,7 +11,7 @@ const mergedTiles = (props) => {
                                         :null
                             ));
                                          
-    const arrayTiles = [...tiles[0],...tiles[1],...tiles[2],...tiles[3]];
+    const arrayTiles = tiles.reduce( (list,tilesRow) => list.concat(tilesRow) , []); 
      return ( 
     <div className={style.TilesContainer}>       
        {arrayTiles}
