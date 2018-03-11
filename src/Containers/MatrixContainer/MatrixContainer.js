@@ -28,7 +28,9 @@ const matrixContainer = (props) => {
                             tileSize     = {gridSize[N-4]} 
                             gridMargin   = {gridMargins[N-4]}/>
 
-                    <MergedTiles matrix = {props.matrix}/>
+                    <MergedTiles matrix = {props.matrix} 
+                                 tileSize     = {gridSize[N-4]} 
+                                 gridMargin   = {gridMargins[N-4]}/>
                 </div>
                );
 }
