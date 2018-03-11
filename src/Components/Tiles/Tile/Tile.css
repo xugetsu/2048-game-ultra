@@ -10,16 +10,11 @@
     transition-property: transform, -webkit-transform; }
 
 .Tile, .TileInner {
-    width:  80px;
-    height: 80px;
-    line-height: 116.25px;
     border-radius: 3px;
-    background: rgb(90,90,90);
     text-align: center;
     font-weight: bold;
     z-index: 10;
-    font-size: 55px; 
-    color: rgba(0, 0, 0, 0.888); }
+    color: rgb(0, 0, 0); }
     /*
     @media screen and (max-width: 521px) {
         .Tile, .TileInner {
