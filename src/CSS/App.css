@@ -48,9 +48,10 @@ header{
   font-stretch: ultra-expanded;
 }
 footer{
-  padding: 10px;
+  padding: 20px 20px 0 10px;
   color: white;
   background: black;
+  height: 220px;
 }
 footer a {
  text-decoration: none;
@@ -61,3 +62,7 @@ footer a {
 footer a:hover {
   color: rgb(205, 229, 248);
  }
+
+.LogoFooter{
+  float: right;
+}
