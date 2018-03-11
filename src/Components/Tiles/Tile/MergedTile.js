@@ -10,7 +10,7 @@ const mergedTile = (props) => {
     const innerTile_styling = {
                     width: props.tileSize +'px',
                     height: props.tileSize +'px',
-                    fontSize: 45+'px',
+                    fontSize: props.fontSize +'px',
                     lineHeight:props.tileSize +10+'px'
                   }; 
     const distance = props.tileSize + props.gridMargin;                
@@ -19,7 +19,7 @@ const mergedTile = (props) => {
     const tile_styling = {
                     width: props.tileSize +'px',
                     height: props.tileSize +'px',
-                    fontSize:45+'px',
+                    fontSize: props.fontSize +'px',
                     lineHeight:props.tileSize +10+'px',
                     transform:'translate('+[x,y]+')'
                   }; 

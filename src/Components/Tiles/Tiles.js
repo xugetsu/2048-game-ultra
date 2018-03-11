@@ -17,7 +17,8 @@ const tiles = (props) => {
                 col={tile.normal.col} 
                 new={tile.normal.newTile} 
                 tileSize   = {props.tileSize}
-                gridMargin = {props.gridMargin}/>
+                gridMargin = {props.gridMargin}
+                fontSize = {props.fontSize}/>
     );
 
 

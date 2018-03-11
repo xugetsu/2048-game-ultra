@@ -1,7 +1,6 @@
 .MatrixContainer {
   display: block;
   margin: auto;
-  padding: 15px;
   cursor: default;
   touch-action: none;
   background: #222;
