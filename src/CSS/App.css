@@ -1,13 +1,7 @@
-
-
 .App{
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
-    /*background: url('../src/Assets/reactLogo.png');*/
-    background-position: -200% bottom;
-    background-size: 1500px 1000px;
-    background-repeat: no-repeat; 
     background-color: rgb(41, 47, 48);
-        height: 100%;
+    height: 100%;
 }
 .BigWrapper{
     background-color: rgba(27, 27, 27, 0.897);
