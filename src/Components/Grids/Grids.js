@@ -6,18 +6,20 @@ const grids = (props) => {
                     height: props.gridSize, 
                     marginRight: props.gridMargin
                  };
-    const gridCell = <div className={style.GridCell} 
-                          style = {size} >
-                     </div>;
-    const gridRow = (
-            <div className={style.GridRow} 
-                 style = {{marginBottom: props.gridMargin }}>
-            {Array(props.gridNumbers).fill().map( _ => gridCell)}
-            </div>
-    );
+    const  gridCells = Array(props.gridNumbers).fill()
+                            .map( (_,i) => <div key = {i}
+                                                className={style.GridCell} 
+                                                style = {size} >;
+                                            </div>)
+ 
     return (
         <div className={style.GridContainer}>
-            {Array(props.gridNumbers).fill().map( _ => gridRow)}
+            {Array(props.gridNumbers).fill()
+                    .map( (_,i) => <div  key = {i}
+                                     className={style.GridRow} 
+                                     style = {{marginBottom: props.gridMargin }}>
+                                 {gridCells}
+                               </div>)}
         </div>
     );
 };
