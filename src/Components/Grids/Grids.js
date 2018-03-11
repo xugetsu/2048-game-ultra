@@ -17,7 +17,7 @@ class Grids extends Component {
         const  gridCells = Array(this.props.gridNumbers).fill()
                     .map( (_,i) => <div key = {i}
                                         className={style.GridCell} 
-                                        style = {size} >;
+                                        style = {size} >
                                     </div>);
     return (
          <div className={style.GridContainer}>
