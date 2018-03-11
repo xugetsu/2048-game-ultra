@@ -15,8 +15,13 @@ const matrixContainer = (props) => {
         return (
                 <div className={style.MatrixContainer} style={matrixSize}>
                     {backdrop}
-                    <Grids />
-                    <Tiles matrix = {props.matrix} virtualTiles = {props.virtualTiles} />
+                    <Grids  gridSize    = {props.gridSize} 
+                            gridMargin  = {props.gridMargin} 
+                            gridNumbers = {N} />
+
+                    <Tiles  matrix = {props.matrix} 
+                            virtualTiles = {props.virtualTiles} />
+
                     <MergedTiles matrix = {props.matrix}/>
                 </div>
                );

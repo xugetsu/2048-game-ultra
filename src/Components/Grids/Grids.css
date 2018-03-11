@@ -26,9 +26,6 @@
         clear: both; }
 
 .GridCell {
-    width: 106.25px;
-    height: 106.25px;
-    margin-right: 15px;
     float: left;
     border-radius: 3px;
     background: rgb(90, 90, 90); }
