@@ -76,7 +76,7 @@ class App extends Component{
         history:[],
         step:0,
         lastMove:'Start',
-        idStore: Array.from({length: 5}, (x,i) => i + 16),
+        idStore: Array.from({length: 5+1}, (x,i) => i + 5*5),
         gameOver:false
      }
     render() {
