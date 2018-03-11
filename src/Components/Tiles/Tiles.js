@@ -9,8 +9,7 @@ const tiles = (props) => {
     arrayOfTiles = virtualTiles? arrayOfTiles.concat(virtualTiles) : arrayOfTiles;
     const rearrangedTiles = Array(M.length*M.length*2).fill() // creating an array of tiles arranged by their ids in ascending order   
                                      .map( (_,index) => arrayOfTiles.find( el => el.normal.id === index ) )
-                                     .filter( tile => tile !== undefined); // removing places with no matching id   
-                          
+                                     .filter( tile => tile !== undefined && tile.normal.val !== 0); // removing places with no matching id                      
     const componentList = rearrangedTiles.map( tile => 
          <Tile  key={tile.normal.id.toString()} 
                 val={tile.normal.val} 
