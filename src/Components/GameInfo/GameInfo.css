@@ -100,7 +100,7 @@
     .Info_Best:after {
       content: "Best"; 
     }
-
+/*
       @media screen and (max-width: 480px) {
         .AppTitle h1{
           font-size: 35px;
@@ -137,4 +137,4 @@
             grid-template-columns: auto auto auto auto;
             grid-gap: 5px;
          }
-      }
+      }*/

@@ -18,7 +18,7 @@ class App extends Component{
             history: [matrix],
             step: 0,
             lastMove: ' start ',
-            idStore: Array.from({length: 5}, (x,i) => i + 16),
+            idStore: Array.from({length: matrix.length+1}, (x,i) => i + matrix.length*matrix.length),
             gameOver: false
         });
      }
@@ -96,7 +96,7 @@ class App extends Component{
                       virtualTiles = {virtualTiles} 
                       gameOver = {this.state.gameOver} 
                       score    = {this.state.score}
-                      newGame =  {() => this.newGame(true)}/>
+                      newGame =  {() => this.newGame(true)} />
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
                       right = {() => this.clickHandler('right')}

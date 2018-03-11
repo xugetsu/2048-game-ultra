@@ -1,23 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import style from './Grids.css';
 
-const grids = () => {
-    const gridCell = <div className={style.GridCell}></div>;
-    const gridRow = (
-        <div className={style.GridRow}>
-            {gridCell}{gridCell}{gridCell}{gridCell}
-        </div>
-        
-    );
+class Grids extends Component {
+    shouldComponentUpdate(nextProps,nextState){
+        if ( nextProps.gridNumbers === this.props.gridNumbers ) {
+            return false;
+        }
+        return true;
+    }
+    render(){
+        console.log('[inside Grids]');
+        const size = {  width: this.props.gridSize, 
+            height: this.props.gridSize, 
+            marginRight: this.props.gridMargin
+         };
+        const  gridCells = Array(this.props.gridNumbers).fill()
+                    .map( (_,i) => <div key = {i}
+                                        className={style.GridCell} 
+                                        style = {size} >;
+                                    </div>);
     return (
-        <div className={style.GridContainer}>
-            {gridRow}
-            {gridRow}
-            {gridRow}
-            {gridRow}
-        </div>
-        
-    );
-};
+         <div className={style.GridContainer}>
+            {Array(this.props.gridNumbers).fill()
+                    .map( (_,i) => <div  key = {i}
+                                         className={style.GridRow} 
+                                         style = {{marginBottom: this.props.gridMargin }}>
+                                    {gridCells}
+                                   </div>)}
+         </div>
+           );
+    }
+   
+}
 
-export default grids;
+export default Grids;

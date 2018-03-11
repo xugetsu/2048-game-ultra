@@ -8,17 +8,14 @@
     -o-transition-property: transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform; }
+
 .Tile, .TileInner {
-    width: 107px;
-    height: 107px;
-    line-height: 116.25px;
     border-radius: 3px;
-    background: rgb(90,90,90);
     text-align: center;
     font-weight: bold;
     z-index: 10;
-    font-size: 55px; 
-    color: rgba(0, 0, 0, 0.888); }
+    color: rgb(0, 0, 0); }
+    /*
     @media screen and (max-width: 521px) {
         .Tile, .TileInner {
             width: 98px;
@@ -30,7 +27,7 @@
             width: 58px;
             height: 58px;
             line-height: 67.5px;
-            font-size: 35px;}   }
+            font-size: 35px;}   }*/
 
 
 .TileNew .TileInner{
@@ -41,6 +38,7 @@
     -webkit-transition-property: none;
     -o-transition-property: none;
     transition-property: none; }
+    
     @-webkit-keyframes appear {
             0% {
               opacity: 0;
@@ -100,6 +98,7 @@
             font-size: 40px;}
 
 .Tile_super .TileInner{ background-color: #3c3a32; }
+/*
 @media screen and (max-width: 481px) {
     .Tile_2048 .TileInner, .Tile_1024 .TileInner{
         font-size: 20px;
@@ -111,222 +110,12 @@
         font-size: 28px;
         line-height: 65px; 
     }
-}
-.TilePosition_1_1 { 
-    -webkit-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-        transform: translate(0px, 0px); 
- }
-.TilePosition_1_2 { 
-    -webkit-transform: translate(0px, 121px);
-    -ms-transform: translate(0px, 121px);
-        transform: translate(0px, 121px); 
- }
-.TilePosition_1_3 { 
-    -webkit-transform: translate(0px, 242px);
-    -ms-transform: translate(0px, 242px);
-        transform: translate(0px, 242px); 
- }
-.TilePosition_1_4 { 
-    -webkit-transform: translate(0px, 363px);
-    -ms-transform: translate(0px, 363px);
-        transform: translate(0px, 363px); 
-  }
+}*/
 
-.TilePosition_2_1 { 
-    -webkit-transform: translate(121px, 0px);
-    -ms-transform: translate(121px, 0px);
-        transform: translate(121px, 0px);
-   }
-.TilePosition_2_2 { 
-    -webkit-transform: translate(121px, 121px);
-    -ms-transform: translate(121px, 121px);
-        transform: translate(121px, 121px);
- }
-.TilePosition_2_3 { 
-    -webkit-transform: translate(121px, 242px);
-    -ms-transform: translate(121px, 242px);
-        transform: translate(121px, 242px);
- }
-.TilePosition_2_4 {
-    -webkit-transform: translate(121px, 363px); 
-     -ms-transform: translate(121px, 363px); 
-        transform: translate(121px, 363px); 
-    }
 
-.TilePosition_3_1 { 
-    -webkit-transform: translate(242px, 0px);  
-     -ms-transform: translate(242px, 0px);  
-        transform: translate(242px, 0px);  
- }
-.TilePosition_3_2 { 
-    -webkit-transform: translate(242px, 121px); 
-    -ms-transform: translate(242px, 121px); 
-        transform: translate(242px, 121px); 
- }
-.TilePosition_3_3 { 
-    -webkit-transform: translate(242px, 242px);
-    -ms-transform: translate(242px, 242px);
-        transform: translate(242px, 242px);
- }
-.TilePosition_3_4 { 
-    -webkit-transform: translate(242px, 363px); 
-    -ms-transform:  translate(242px, 363px); 
-        transform:  translate(242px, 363px); 
- }
-
-.TilePosition_4_1 { 
-    -webkit-transform: translate(363px, 0px);  
-    -ms-transform:translate(363px, 0px);  
-        transform:translate(363px, 0px);  
- }
-.TilePosition_4_2 {
-    -webkit-transform: translate(363px, 121px);
-    -ms-transform: translate(363px, 121px);
-        transform: translate(363px, 121px);
-  }
-.TilePosition_4_3 {
-    -webkit-transform: translate(363px, 242px);
-     -ms-transform: translate(363px, 242px);
-        transform: translate(363px, 242px);
-  }
-.TilePosition_4_4 { 
-    -webkit-transform: translate(363px, 363px);
-    -ms-transform: translate(363px, 363px);
-        transform: translate(363px, 363px);
-  }
-@media screen and (max-width: 521px)  {
-
-    .Tile.TilePosition_1_1 {
-        -webkit-transform: translate(0px, 0px);
-        -ms-transform: translate(0px, 0px);
-            transform: translate(0px, 0px); }
-    .Tile.TilePosition_1_2 {
-        -webkit-transform: translate(0px, 109px);
-        -ms-transform: translate(0px, 109px);
-            transform: translate(0px, 109px); }
-    .Tile.TilePosition_1_3 {
-        -webkit-transform: translate(0px, 219px);
-        -ms-transform: translate(0px, 219px);
-            transform: translate(0px, 219px); }
-    .Tile.TilePosition_1_4 {
-        -webkit-transform: translate(0px, 328px);
-        -ms-transform: translate(0px, 328px);
-            transform: translate(0px, 328px); }
-    .Tile.TilePosition_2_1 {
-        -webkit-transform: translate(109px, 0px);
-        -ms-transform: translate(109px, 0px);
-            transform: translate(109px, 0px); }
-    .Tile.TilePosition_2_2 {
-        -webkit-transform: translate(109px, 109px);
-        -ms-transform: translate(109px, 109px);
-            transform: translate(109px, 109px); }
-    .Tile.TilePosition_2_3 {
-        -webkit-transform: translate(109px, 219px);
-        -ms-transform: translate(109px, 219px);
-            transform: translate(109px, 219px); }
-    .Tile.TilePosition_2_4 {
-        -webkit-transform: translate(109px, 328px);
-        -ms-transform: translate(109px, 328px);
-            transform: translate(109px, 328px); }
-    .Tile.TilePosition_3_1 {
-        -webkit-transform: translate(219px, 0px);
-        -ms-transform: translate(219px, 0px);
-            transform: translate(219px, 0px); }
-    .Tile.TilePosition_3_2 {
-        -webkit-transform: translate(219px, 109px);
-        -ms-transform: translate(219px, 109px);
-            transform: translate(219px, 109px); }
-    .Tile.TilePosition_3_3 {
-        -webkit-transform: translate(219px, 219px);
-        -ms-transform: translate(219px, 219px);
-            transform: translate(219px, 219px); }
-    .Tile.TilePosition_3_4 {
-        -webkit-transform: translate(219px, 328px);
-        -ms-transform: translate(219px, 328px);
-            transform: translate(219px, 328px); }
-    .Tile.TilePosition_4_1 {
-        -webkit-transform: translate(328px, 0px);
-        -ms-transform: translate(328px, 0px);
-            transform: translate(328px, 0px); }
-    .Tile.TilePosition_4_2 {
-        -webkit-transform: translate(328px, 109px);
-        -ms-transform: translate(328px, 109px);
-            transform: translate(328px, 109px); }
-    .Tile.TilePosition_4_3 {
-        -webkit-transform: translate(328px, 219px);
-        -ms-transform: translate(328px, 219px);
-            transform: translate(328px, 219px); }
-    .Tile.TilePosition_4_4 {
-        -webkit-transform: translate(328px, 328px);
-        -ms-transform: translate(328px, 328px);
-            transform: translate(328px, 328px); } }
-@media screen and (max-width: 481px) {
-      .Tile.TilePosition_1_1 {
-        -webkit-transform: translate(0px, 0px);
-        -ms-transform: translate(0px, 0px);
-            transform: translate(0px, 0px); }
-      .Tile.TilePosition_1_2 {
-        -webkit-transform: translate(0px, 67px);
-        -ms-transform: translate(0px, 67px);
-            transform: translate(0px, 67px); }
-      .Tile.TilePosition_1_3 {
-        -webkit-transform: translate(0px, 135px);
-        -ms-transform: translate(0px, 135px);
-            transform: translate(0px, 135px); }
-      .Tile.TilePosition_1_4 {
-        -webkit-transform: translate(0px, 202px);
-        -ms-transform: translate(0px, 202px);
-            transform: translate(0px, 202px); }
-      .Tile.TilePosition_2_1 {
-        -webkit-transform: translate(67px, 0px);
-        -ms-transform: translate(67px, 0px);
-            transform: translate(67px, 0px); }
-      .Tile.TilePosition_2_2 {
-        -webkit-transform: translate(67px, 67px);
-        -ms-transform: translate(67px, 67px);
-            transform: translate(67px, 67px); }
-      .Tile.TilePosition_2_3 {
-        -webkit-transform: translate(67px, 135px);
-        -ms-transform: translate(67px, 135px);
-            transform: translate(67px, 135px); }
-      .Tile.TilePosition_2_4 {
-        -webkit-transform: translate(67px, 202px);
-        -ms-transform: translate(67px, 202px);
-            transform: translate(67px, 202px); }
-      .Tile.TilePosition_3_1 {
-        -webkit-transform: translate(135px, 0px);
-        -ms-transform: translate(135px, 0px);
-            transform: translate(135px, 0px); }
-      .Tile.TilePosition_3_2 {
-        -webkit-transform: translate(135px, 67px);
-        -ms-transform: translate(135px, 67px);
-            transform: translate(135px, 67px); }
-      .Tile.TilePosition_3_3 {
-        -webkit-transform: translate(135px, 135px);
-        -ms-transform: translate(135px, 135px);
-            transform: translate(135px, 135px); }
-      .Tile.TilePosition_3_4 {
-        -webkit-transform: translate(135px, 202px);
-        -ms-transform: translate(135px, 202px);
-            transform: translate(135px, 202px); }
-      .Tile.TilePosition_4_1 {
-        -webkit-transform: translate(202px, 0px);
-        -ms-transform: translate(202px, 0px);
-            transform: translate(202px, 0px); }
-      .Tile.TilePosition_4_2 {
-        -webkit-transform: translate(202px, 67px);
-        -ms-transform: translate(202px, 67px);
-            transform: translate(202px, 67px); }
-      .Tile.TilePosition_4_3 {
-        -webkit-transform: translate(202px, 135px);
-        -ms-transform: translate(202px, 135px);
-            transform: translate(202px, 135px); }
-      .Tile.TilePosition_4_4 {    
-          -webkit-transform: translate(202px, 202px);
-        -ms-transform: translate(202px, 202px);
-            transform: translate(202px, 202px); }  }
-
+@media screen and (max-width: 521px)  {}
+@media screen and (max-width: 481px) {}
+     
 
 .TileMerged .TileInner {
     z-index: 20;
@@ -334,6 +123,7 @@
     animation: pop 200ms ease 100ms;
     -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards; }
+    
     @-webkit-keyframes pop {
         50% { -webkit-transform: scale(1.2);
             transform: scale(1.2); }}

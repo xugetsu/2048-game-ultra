@@ -13,6 +13,7 @@
     background-color: rgba(27, 27, 27, 0.897);
     margin: 0 auto; 
   }
+  /*
   @media screen and (max-width: 521px) {
     .BigWrapper {
       width: 450px; }
@@ -22,7 +23,7 @@
       width: 300px;
       margin: 0 auto; }
 
-    }
+    }*/
 
 header{
   background-color: black;
