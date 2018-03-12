@@ -86,11 +86,11 @@ class App extends Component{
         return (
             <div className = {style.BigWrapper}>
                 <header>
-                  <Logo logoHeight = {250}/>
-                </header>
-                <GameInfo 
+                  <GameInfo 
                       score = {this.state.score} 
                       newGame = {() => this.newGame(true)} />
+                </header>
+
                 <MatrixContainer 
                       matrix = {matrix} 
                       virtualTiles = {virtualTiles} 

@@ -1,40 +1,28 @@
  
 .GameInfo {
     text-align: center;
-    width: 500px;
     margin: 0 auto;
-    padding-top: 20px;
   }
   .AppHeader {
-    height: 100px;
-    padding: 20px 10px;
     color:#ccc;
-    display: flex;
-    align-items: stretch;
   }
   .AppTitle{
-    margin-top: 0;
+    float: left;
     margin-top: -40px;
     max-width: 500px;
-    height: 50px;
     text-align: left;
-   /* border : 1px solid red;*/
-    flex-grow: 16;
   }
   .AppTitle h1{
-    font-size: 60px ;
+    font-size: 55px ;
     font-weight: bold;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
-    margin-top: 50px;
-    margin-bottom: 1px; 
-    margin-left: 10px; 
-    line-height: 0.7;
+    margin-top: 60px;
+    line-height: 0.1;
   }
   .AppTitle p{
     font-size: 15px ;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
     line-height: 1.5;
-    margin-left: 5px; 
   }
   .AppTitle p b{
   color:white;
@@ -44,7 +32,7 @@
   } 
 
 .NewGame {
-    grid-column: 3 / 5;
+    grid-column: 4 / 5;
     background-color: #ccc;
     cursor: pointer;
     border-radius: 5px;
@@ -62,8 +50,8 @@
   }
 
   .Info_wrapper {
-     flex-grow: 1;
      display: grid;
+     float: right;
      grid-template-columns: auto auto auto auto;
      grid-gap: 10px;
 
