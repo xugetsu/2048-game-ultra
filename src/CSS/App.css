@@ -20,7 +20,7 @@
     }*/
 
 header{
-  background-color:rgba(27, 27, 27, 0.897);
+  background-color:#1b1b1be5;
   height: 100px;
   padding: 20px;
 }
@@ -45,7 +45,8 @@ header{
 footer{
   padding: 20px 20px 0 10px;
   color: white;
-  background: black;
+  background-color:#1b1b1be5;
+ 
   height: 220px;
 }
 footer a {

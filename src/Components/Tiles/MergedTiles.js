@@ -10,7 +10,8 @@ const mergedTiles = (props) => {
                                                 col = {tile.normal.col}
                                                 tileSize   = {props.tileSize}
                                                 gridMargin = {props.gridMargin}
-                                                fontSize = {props.fontSize}/>
+                                                fontSize = {props.fontSize}                           
+                                                lineHeight   = {props.lineHeight}/>
                                   :null
                             ));
                                          

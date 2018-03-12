@@ -47,7 +47,7 @@ const logo = (props) => {
                     [x3 + width, y3 - height]]; // < / ">"                    
 
     return (
-    <svg height={220} width={width+h/25}>
+    <svg height={210} width={width+h/25} >
         <polygon points={poly2} style={style2}/>
         <polygon points={poly11} style={style3}/>
         <polygon points={poly21} style={style2}/>

@@ -5,7 +5,7 @@ const gameInfo = (props) => {
         <div className={style.GameInfo}>
             <div className={style.AppHeader}>
                 <div className={style.AppTitle}>
-                    <h1>2048</h1>
+                    <h1>2048 <span>Ultra!</span></h1>
                     <p>
                         <b>Play 2048 Game Online</b>
                         <br />

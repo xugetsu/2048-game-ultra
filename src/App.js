@@ -117,14 +117,7 @@ class App extends Component{
                       right = {() => this.clickHandler('right')}
                       up    = {() => this.clickHandler('up')}   
                       down  = {() => this.clickHandler('down')} />
-                <div className = {style.InstructionWrapper}>
-                    <div className = {style.Instruction}>
-                        <p>
-                            <b>HOW TO PLAY:</b> Use your <b>arrow keys</b> to move the tiles. 
-                            When two tiles with the same number touch, they <b>merge into one!</b>
-                        </p>
-                   </div>
-                </div>
+
                 <footer>
                     <div className = {style.LogoFooter}>
                         <Logo logoHeight = {500}/>
@@ -140,3 +133,12 @@ class App extends Component{
      }
     }
 export default App;
+
+/* <div className = {style.InstructionWrapper}>
+<div className = {style.Instruction}>
+    <p>
+        <b>HOW TO PLAY:</b> Use your <b>arrow keys</b> to move the tiles. 
+        When two tiles with the same number touch, they <b>merge into one!</b>
+    </p>
+</div>
+</div> */

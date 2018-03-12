@@ -8,7 +8,7 @@ const tile = (props) => {
                     width: props.tileSize +'px',
                     height: props.tileSize +'px',
                     fontSize: props.fontSize +'px',
-                    lineHeight:props.tileSize +10+'px'
+                    lineHeight:props.lineHeight +'px'
                   }; 
     const distance = props.tileSize + props.gridMargin;                
     const x = distance * props.col+'px';
@@ -17,8 +17,8 @@ const tile = (props) => {
                     width: props.tileSize +'px',
                     height: props.tileSize +'px',
                     fontSize: props.fontSize +'px',
-                    lineHeight:props.tileSize +10+'px',
-                    transform:'translate('+[x,y]+')'
+                    lineHeight: props.lineHeight +'px',
+                    transform: 'translate('+[x,y]+')'
                   };  
     const styles = [   style.Tile,
                        style['Tile_' + props.val],
