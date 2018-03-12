@@ -5,22 +5,35 @@ import GameInfo from './Components/GameInfo/GameInfo';
 import MatrixContainer from './Containers/MatrixContainer/MatrixContainer';
 import * as $ from './Lib/Functions/functions';
 import Logo from './Components/LOGO SVG/logo';
+import GameMenu from './Components/GameMenu/GameMenu';
 
 class App extends Component{
-    newGame = (clicked) => { 
+    newGame = (clicked,resizeMatrix) => { 
         $.print('newGame',0);
-        const matrix = $.initMatrix();
-        if(!clicked){return matrix;} // if the callBack is invoked by the state 
-        this.setState({ // if the callBack is invoked by clicking on the newGame button 
-            matrix: matrix,
-            virtualTiles: [],
-            score: 0,
-            history: [matrix],
-            step: 0,
-            lastMove: ' start ',
-            idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
-            gameOver: false
-        });
+        let matrix;
+        let matrixSize;
+        if(!clicked){
+            matrix = $.initMatrix(4);
+            return matrix;
+        }else if(clicked && resizeMatrix) {
+            matrixSize = this.state.matrixSize + 1;
+            matrixSize = (matrixSize === 7) ? 4 : matrixSize;
+            matrix = $.initMatrix(matrixSize);
+        }else{
+            matrixSize = this.state.matrixSize;
+            matrix = $.initMatrix(matrixSize);
+        }
+            this.setState({
+                matrix: matrix,
+                matrixSize: matrixSize,
+                virtualTiles: [],
+                score: 0,
+                history: [matrix],
+                step: 0,
+                lastMove: ' start ',
+                idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
+                gameOver: false
+            });
      }
     move = (oldMatrix, direction) => { // move and merge tiles 
         $.print('move',0);
@@ -70,7 +83,8 @@ class App extends Component{
      }
 
     state = {
-        matrix:  (this.newGame(false)),
+        matrix:  (this.newGame(false,false)),
+        matrixSize: 4,
         virtualTiles: [],
         score: 0,
         history:[],
@@ -88,15 +102,16 @@ class App extends Component{
                 <header>
                   <GameInfo 
                       score = {this.state.score} 
-                      newGame = {() => this.newGame(true)} />
+                      newGame = {() => this.newGame(true,false)} />
                 </header>
-
+               
                 <MatrixContainer 
                       matrix = {matrix} 
                       virtualTiles = {virtualTiles} 
                       gameOver = {this.state.gameOver} 
                       score    = {this.state.score}
                       newGame =  {() => this.newGame(true)} />
+                <GameMenu resizeMatrix = { () => this.newGame(true, true) } />
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
                       right = {() => this.clickHandler('right')}

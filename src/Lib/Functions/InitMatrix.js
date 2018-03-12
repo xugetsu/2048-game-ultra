@@ -3,13 +3,13 @@ import print from './Print';
 
 const NEW = 1;
 const OLD = 0;
-const N = 4; // the size of the matrix :D
+ 
 const matrixPositionsList = (size) => Array(size*size).fill().map((_,i)=>[Math.floor(i/size),i%size]);
-const initMatrix = () => {
+const initMatrix = (matrixSize) => {
     print('initMatrix',3);
-    const matrix = Array(N).fill(0).map( (_,row) => Array(N).fill(0).map( (_,col) => {
-                   return  normaltileObject(N * row + col, 0, col, row, OLD); }));
-    const posList = matrixPositionsList(N); // All Possible Tile Position, List of [row,col]
+    const matrix = Array(matrixSize).fill(0).map( (_,row) => Array(matrixSize).fill(0).map( (_,col) => {
+                   return  normaltileObject(matrixSize * row + col, 0, col, row, OLD); }));
+    const posList = matrixPositionsList(matrixSize); // All Possible Tile Position, List of [row,col]
     let randIndx = Math.floor(posList.length*Math.random()); // choose random index from 0 to 15
     let randPos = [posList.splice(randIndx,1)[0] , 0]; // Pick the correspondant element of the chosen index i.e. choose a tile position randomly
     randIndx = Math.floor(posList.length*Math.random()); // choose random index from 0 to 14
