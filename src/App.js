@@ -18,7 +18,7 @@ class App extends Component{
             history: [matrix],
             step: 0,
             lastMove: ' start ',
-            idStore: Array.from({length: matrix.length+1}, (x,i) => i + matrix.length*matrix.length),
+            idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
             gameOver: false
         });
      }
@@ -76,7 +76,7 @@ class App extends Component{
         history:[],
         step:0,
         lastMove:'Start',
-        idStore: Array.from({length: 5+1}, (x,i) => i + 5*5),
+        idStore: Array.from({length: 15}, (x,i) => i + 4*4),
         gameOver:false
      }
     render() {

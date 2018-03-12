@@ -7,7 +7,7 @@ const tiles = (props) => {
     const M = props.matrix;
     let arrayOfTiles = M.reduce( (list,MRow) => list.concat(MRow) , []); 
     arrayOfTiles = virtualTiles? arrayOfTiles.concat(virtualTiles) : arrayOfTiles;
-    const rearrangedTiles = Array(M.length*M.length*2).fill() // creating an array of tiles arranged by their ids in ascending order   
+    const rearrangedTiles = Array(100).fill() // creating an array of tiles arranged by their ids in ascending order   
                                      .map( (_,index) => arrayOfTiles.find( el => el.normal.id === index ) )
                                      .filter( tile => tile !== undefined && tile.normal.val !== 0); // removing places with no matching id                      
     const componentList = rearrangedTiles.map( tile => 
