@@ -2,7 +2,7 @@ footer{
     padding: 20px 20px 0 10px;
     color: white;
     background-color:#1b1b1be5;
-    height: 170px;
+    height: 90px;
   }
   footer a {
    text-decoration: none;
@@ -14,6 +14,24 @@ footer{
     color: rgb(205, 229, 248);
    }
   
-  .LogoFooter{
+  .Logos{
     float: right;
+    width:50px;
+    margin: 0 20px;
+  }
+  .MyLogo{
+    float: right;
+    width:50px;
+    margin: 0 20px;
+  }
+  .FollowMe{
+    float: right;
+    width:140px;
+   /*border: 1px solid aqua;*/
+  }
+  .FollowMe h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+   margin-top: 15px;
+   color: aliceblue;
   }
