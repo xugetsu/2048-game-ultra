@@ -1,31 +1,28 @@
 import React from 'react';
 import style from './GameMenu.css'
+import Option from './Icons/Option';
+import Resize from './Icons/Resize';
+import Block from './Icons/Block';
+import Repeat from './Icons/Repeat';
+import NewGame from './Icons/NewGame';
+import Help from './Icons/Help';
 
 const gameMenu = (props) => {
     return (
-        <div className={style.GameMenuWrapper}> 
- 
- <div className={style.GameMenu}>
+   
+ <div className={style.GameMenu}  style = {{height: props.menuHeight + 'px'}}>
         <ul>
+                <li onClick = {props.newGame}> 
+                    <NewGame /> </li>
                 <li onClick = {props.resizeMatrix}>
-                    <svg viewBox="0 0 500 500">
-                      <path d="M0   32v128h128V32H0zm120 
-                                    120H8V40h112v112zm40-120v128h128V32H160zm120 
-                                    120H168V40h112v112zm40-120v128h128V32H320zm120 
-                                    120H328V40h112v112zM0 192v128h128V192H0zm120 
-                                    120H8V200h112v112zm40-120v128h128V192H160zm120 
-                                    120H168V200h112v112zm40-120v128h128V192H320zm120 
-                                    120H328V200h112v112zM0 352v128h128V352H0zm120 
-                                    120H8V360h112v112zm40-120v128h128V352H160zm120 
-                                    120H168V360h112v112zm40-120v128h128V352H320z"
-                      /> 
-                    </svg>
+                    <Resize />
                 </li>
-                <li> </li>
-            </ul>
+                <li>  <Repeat /> </li>
+                <li>  <Block /> </li>
+                <li>  <Help /> </li>
+                            </ul>
         </div>
- 
-        </div>
+
     );
 }
 export default gameMenu;

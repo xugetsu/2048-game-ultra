@@ -11,8 +11,8 @@ class Grids extends Component {
     render(){
         console.log('[inside Grids]');
         const size = {  width: this.props.gridSize, 
-            height: this.props.gridSize, 
-            marginRight: this.props.gridMargin
+              height: this.props.gridSize, 
+              marginRight: this.props.gridMargin
          };
         const  gridCells = Array(this.props.gridNumbers).fill()
                     .map( (_,i) => <div key = {i}

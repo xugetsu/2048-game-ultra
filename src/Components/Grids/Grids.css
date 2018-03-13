@@ -4,7 +4,8 @@
     z-index: 1; 
   }
 
-    .GridRow:last-child { margin-bottom: 0; }
+    .GridRow:last-child { margin-bottom: 0; margin-right:10px;
+     }
     .GridRow:after {
     content: "";
     display: block;

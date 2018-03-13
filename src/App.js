@@ -101,17 +101,19 @@ class App extends Component{
             <div className = {style.BigWrapper}>
                 <header>
                   <GameInfo 
-                      score = {this.state.score} 
-                      newGame = {() => this.newGame(true,false)} />
+                      score = {this.state.score}/>
                 </header>
-               
-                <MatrixContainer 
-                      matrix = {matrix} 
-                      virtualTiles = {virtualTiles} 
-                      gameOver = {this.state.gameOver} 
-                      score    = {this.state.score}
-                      newGame =  {() => this.newGame(true)} />
-                <GameMenu resizeMatrix = { () => this.newGame(true, true) } />
+                <div className = { style.GameWrapper } > 
+                    <MatrixContainer 
+                        matrix = {matrix} 
+                        virtualTiles = {virtualTiles} 
+                        gameOver = {this.state.gameOver} 
+                        score    = {this.state.score}
+                        newGame =  {() => this.newGame(true, false)} 
+                        resizeMatrix = { () => this.newGame(true, true) } />
+                     
+                </div>
+                
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
                       right = {() => this.clickHandler('right')}
@@ -120,7 +122,7 @@ class App extends Component{
 
                 <footer>
                     <div className = {style.LogoFooter}>
-                        <Logo logoHeight = {500}/>
+                        <Logo logoHeight = {150}/>
                     </div>
                     This project is made by 
                     <a href="https://www.linkedin.com/in/ali-othmani-11873707" 

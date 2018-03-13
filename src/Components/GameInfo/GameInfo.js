@@ -20,9 +20,7 @@ const gameInfo = (props) => {
                     <div className = {style.Info_Best}> 
                         {props.score}
                     </div>
-                        <div className = {style.NewGame} onClick = {props.newGame}> 
-                        <p>New Game</p>
-                    </div>
+                        
                 </div>
             </div>
          </div> 
