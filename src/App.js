@@ -5,7 +5,7 @@ import GameInfo from './Components/GameInfo/GameInfo';
 import MatrixContainer from './Containers/MatrixContainer/MatrixContainer';
 import * as $ from './Lib/Functions/functions';
 import Logo from './Components/LOGO SVG/logo';
-import GameMenu from './Components/GameMenu/GameMenu';
+import Header from './Components/Header/Header';
 
 class App extends Component{
     newGame = (clicked,resizeMatrix) => { 
@@ -99,10 +99,7 @@ class App extends Component{
         const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
         return (
             <div className = {style.BigWrapper}>
-                <header>
-                  <GameInfo 
-                      score = {this.state.score}/>
-                </header>
+                <Header />
                 <div className = { style.GameWrapper } > 
                     <MatrixContainer 
                         matrix = {matrix} 
