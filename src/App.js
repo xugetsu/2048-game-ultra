@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import style from './CSS/App.css';
 import ControlKeys from './Components/ControlKeys/ControlKeys';
-import GameInfo from './Components/GameInfo/GameInfo';
 import MatrixContainer from './Containers/MatrixContainer/MatrixContainer';
 import * as $ from './Lib/Functions/functions';
-import Logo from './Components/LOGO SVG/logo';
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component{
     newGame = (clicked,resizeMatrix) => { 
@@ -100,6 +99,7 @@ class App extends Component{
         return (
             <div className = {style.BigWrapper}>
                 <Header />
+
                 <div className = { style.GameWrapper } > 
                     <MatrixContainer 
                         matrix = {matrix} 
@@ -108,27 +108,17 @@ class App extends Component{
                         score    = {this.state.score}
                         newGame =  {() => this.newGame(true, false)} 
                         resizeMatrix = { () => this.newGame(true, true) } />
-                     
                 </div>
-                
+    
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
                       right = {() => this.clickHandler('right')}
                       up    = {() => this.clickHandler('up')}   
                       down  = {() => this.clickHandler('down')} />
 
-                <footer>
-                    <div className = {style.LogoFooter}>
-                        <Logo logoHeight = {150}/>
-                    </div>
-                    This project is made by 
-                    <a href="https://www.linkedin.com/in/ali-othmani-11873707" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                    > Ali Othmani</a>
-                </footer>
-
-            </div>);
+                <Footer />
+            </div>
+            );
      }
     }
 export default App;

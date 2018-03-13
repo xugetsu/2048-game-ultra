@@ -1,0 +1,19 @@
+footer{
+    padding: 20px 20px 0 10px;
+    color: white;
+    background-color:#1b1b1be5;
+    height: 170px;
+  }
+  footer a {
+   text-decoration: none;
+   color:rgba(41,137,216,1);
+   font-weight: bold;
+   font-size: 20px;
+  }
+  footer a:hover {
+    color: rgb(205, 229, 248);
+   }
+  
+  .LogoFooter{
+    float: right;
+  }
