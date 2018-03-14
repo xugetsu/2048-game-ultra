@@ -2,59 +2,8 @@
 .GameInfo {
     text-align: center;
     margin: 0 auto;
-  }
-  .AppHeader {
-    color:#ccc;
-  }
-  .AppTitle{
     float: left;
-    margin-top: -40px;
-    max-width: 500px;
-    text-align: left;
   }
-  .AppTitle h1{
-    font-size: 55px ;
-    font-weight: bold;
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
-    margin-top: 60px;
-    line-height: 0.1;
-  }
-  .AppTitle h1 span{
-    font-size: 40px ;
-    color: white;
-
-    line-height: 0.1;
-  }
-  .AppTitle p{
-    font-size: 15px ;
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif; 
-    line-height: 1.5;
-  }
-  .AppTitle p b{
-  color:white;
-  }
-  .AppIntro {
-    font-size: large;
-  } 
-
-.NewGame {
-    background-color: #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    line-height: 0;
-    height: 30px;
-    color: #111;
-    font-weight: bold;
-    font-size: 17px;
-    width: 90px;
-    padding: 5px;
-    position: absolute;
-    right: 20px;
-  }
-  .NewGame:hover {
-    background:linear-gradient(135deg, #68cce8 0%,#2ea6c1 100%);
-  }
-
   .Info_wrapper {
      float: right;
      width: auto;

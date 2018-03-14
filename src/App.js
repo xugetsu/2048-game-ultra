@@ -90,7 +90,7 @@ class App extends Component{
         step:0,
         lastMove:'Start',
         idStore: Array.from({length: 15}, (x,i) => i + 4*4),
-        gameOver:false
+        gameOver:!false
      }
     render() {
         $.print('render',0); 
