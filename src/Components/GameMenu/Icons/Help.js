@@ -2,8 +2,8 @@ import React from 'react';
 
 const help = () => {
 	return(
-        <svg x="0px" y="0px" viewBox="0 0 512 512" 
-             style={{marginLeft: '5px',marginTop: '7px'}}>
+        <svg x="0px" y="0px" viewBox="-150 -170 800 800" 
+        style={{marginLeft: '5px',marginTop: '7px'}}>
                 <g>
                     <g>
                         <g>

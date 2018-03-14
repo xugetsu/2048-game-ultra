@@ -3,7 +3,7 @@ import React from 'react';
 
 const resize = () => {
 	return(
-        <svg viewBox="0 0 500 500">
+        <svg viewBox="-150 -170 800 800">
         <path d="M0   32v128h128V32H0zm120 
                         120H8V40h112v112zm40-120v128h128V32H160zm120 
                         120H168V40h112v112zm40-120v128h128V32H320zm120 

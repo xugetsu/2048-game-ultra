@@ -2,7 +2,7 @@ import React from 'react';
 
 const  block = () => {
 	return(
-		<svg viewBox="0 0 550 550"> 
+		<svg viewBox="-150 -170 800 800"> 
 				<g>
 					<path 
 					d="M436.76,247H274.541c-4.543,0-8.828,1.112-12.609,3.068c1.956-3.781,3.068-8.066,3.068-12.609V75.242   

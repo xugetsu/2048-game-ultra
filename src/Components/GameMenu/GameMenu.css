@@ -1,11 +1,13 @@
 .GameMenuWrapper{
-    width: 50px;
+    
+    background: #303030;
 }
 .GameMenu{
    /* background: linear-gradient(135deg, #1e5799 0%,#2989d8 41%,#207cca 63%,#1e5799 100%,#2290e5 100%);
        background: linear-gradient(135deg, #87e0fd 0%,#05abe0 9%,#05abe0 9%,#87e0fd 19%,#53cbf1 39%,#53cbf1 39%,#05abe0 100%)
    */
-    background: #222;
+  
+  background: #303030;
     float: right;
     border-radius: 5px;
 }
@@ -22,8 +24,8 @@
     clear: both;
     list-style: none;
     margin: 0;
-    padding: 7px 5px 5px 7px;
-    width: 40px;
+    padding: 0px;
+    width: 60px;
     color: beige; stroke:white;
     fill:white;
  }
