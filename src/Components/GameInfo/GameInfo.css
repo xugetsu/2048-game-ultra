@@ -1,46 +1,45 @@
- 
-.GameInfo {
-    text-align: center;
-    margin: 0 auto;
-    float: left;
-  }
-  .Info_wrapper {
-     float: right;
-     width: auto;
-  }
-  .Info_Score, .Info_Best{
-    background: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
-    border-radius: 5px;
-    color: #303030;
-    font-weight: bold;
-    text-align: center; 
-    position: relative;
-    font-size: 20px;
-    line-height: 47px;
-    padding: 15px 25px;
-    height: 25px;
-    display: inline-block;
-    margin: 0 0 10px 10px;
-    min-width: 50px;
-    }
 
-  .Info_Score:after, .Info_Best:after {
-    position: absolute;
-    width: 100%;
-    top: 10px;
-    left: 0;
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: 13px;
-    text-align: center;
-    color: #303030; }
+.Info_wrapper {
+  float: left;
+  width: 100%;
+}
 
-    .Info_Score:after {
-      content: "Score"; 
-    }
-    .Info_Best:after {
-      content: "Best"; 
-    }
+.Info_Score, .Info_Best{
+  background: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+  border-radius: 5px;
+  color: #303030;
+  font-weight: bold;
+  text-align: center; 
+  position: relative;
+  font-size: 20px;
+  line-height: 47px;
+  padding: 15px 25px;
+  height: 25px;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  min-width: 50px;
+}
+
+.Info_Score:after, .Info_Best:after {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: #303030;
+}
+
+.Info_Score:after {
+  content: "Score"; 
+}
+
+.Info_Best:after {
+  content: "Best"; 
+}
+
 /*
       @media screen and (max-width: 480px) {
         .AppTitle h1{
