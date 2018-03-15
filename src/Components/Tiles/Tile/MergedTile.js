@@ -14,8 +14,8 @@ const mergedTile = (props) => {
                     lineHeight: props.lineHeight +'px'
                   }; 
     const distance = props.tileSize + props.gridMargin;                
-    const x = distance * props.col+'px';
-    const y = distance * props.row+'px';
+    const x = (distance * props.col) + 0.5* props.gridMargin + 'px';
+    const y = (distance * props.row) + 0.5* props.gridMargin + 'px';
     const tile_styling = {
                     width: props.tileSize +'px',
                     height: props.tileSize +'px',

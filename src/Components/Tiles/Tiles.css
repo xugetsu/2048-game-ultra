@@ -1,7 +1,8 @@
 
 .TilesContainer {
+    z-index: 2; 
     position: absolute;
-    z-index: 2; }
+    }
     /*
     @media screen and (max-width: 520px) {
         .TilesContainer {

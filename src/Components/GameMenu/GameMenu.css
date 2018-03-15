@@ -1,22 +1,14 @@
-.GameMenuWrapper{
-    
-    background: #303030;
-}
-.GameMenu{
-   /* background: linear-gradient(135deg, #1e5799 0%,#2989d8 41%,#207cca 63%,#1e5799 100%,#2290e5 100%);
-       background: linear-gradient(135deg, #87e0fd 0%,#05abe0 9%,#05abe0 9%,#87e0fd 19%,#53cbf1 39%,#53cbf1 39%,#05abe0 100%)
-   */
-  
+.GameMenu{  
+  float: right;
+  width: 50px;
   background: #303030;
-    float: right;
-    border-radius: 5px;
+  border: 1px solid #222;
+  border-radius: 5px;
 }
 
 .GameMenu ul {
    margin: 0;
    padding: 0;
-   float: left;
-   /*border: 5px solid black;*/
 }
 
 .GameMenu ul li {
@@ -25,14 +17,13 @@
     list-style: none;
     margin: 0;
     padding: 0px;
-    width: 60px;
     color: beige; stroke:white;
-    fill:white;
+    fill:#ffffff;
  }
  .GameMenu ul li:hover {
     background-color: rgba(0, 0, 0, 0.363);
  }
  .GameMenu ul li:hover,  .GameMenu ul li :hover  {
-    stroke:#3b98bd;
-    fill:#3b98bd;
+    stroke:#fccd4d;
+    fill:#fccd4d;
 }

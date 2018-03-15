@@ -21,11 +21,11 @@ const tiles = (props) => {
                 fontSize = {props.fontSize}                           
                 lineHeight   = {props.lineHeight}/>
     );
-
+    const size = (props.tileSize + props.gridMargin)*(props.matrix.length);
 
                      
     return ( 
-    <div className={style.TilesContainer}>       
+    <div className={style.TilesContainer} style = {{height:size,width:size}}  >       
        {componentList}
      </div>
     );

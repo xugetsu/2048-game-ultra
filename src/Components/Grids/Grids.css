@@ -2,14 +2,17 @@
 .GridContainer {
     position: absolute;
     z-index: 1; 
-  }
+}
 
-    .GridRow:last-child { margin-bottom: 0; margin-right:10px;
-     }
-    .GridRow:after {
-    content: "";
+.GridRow:last-child { 
+    margin-bottom: 0; 
+    margin-right:0;
+}
+.GridRow:after {
+    content: " ";
     display: block;
-    clear: both; }
+    clear: both; 
+}
     /*
     @media screen and (max-width: 521px) {
         .GridRow { margin-bottom: 12px;  } }
@@ -29,10 +32,11 @@
 .GridCell {
     float: left;
     border-radius: 3px;
-    background: rgb(90, 90, 90); }
-    .GridCell:last-child {
-        margin-right: 0; 
-        }
+    background: rgb(90, 90, 90); 
+}
+.GridCell:last-child {
+    margin-right: 0;
+}
         /*
     @media screen and (max-width: 521px) {    
         .GridCell {

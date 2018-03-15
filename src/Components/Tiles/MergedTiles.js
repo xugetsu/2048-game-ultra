@@ -16,8 +16,9 @@ const mergedTiles = (props) => {
                             ));
                                          
     const arrayTiles = tiles.reduce( (list,tilesRow) => list.concat(tilesRow) , []); 
+    const size = (props.tileSize + props.gridMargin)*(props.matrix.length);
      return ( 
-    <div className={style.TilesContainer}>       
+    <div className={style.TilesContainer}  style = {{height:size,width:size}}  >       
        {arrayTiles}
      </div>
     );

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import style from './CSS/App.css';
 import ControlKeys from './Components/ControlKeys/ControlKeys';
-import MatrixContainer from './Containers/MatrixContainer/MatrixContainer';
+import GameContainer from './Containers/GameContainer/GameContainer';
 import * as $ from './Lib/Functions/functions';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -99,16 +99,14 @@ class App extends Component{
         return (
             <div className = {style.BigWrapper}>
                 <Header />
-
-                <div className = { style.GameWrapper } > 
-                    <MatrixContainer 
-                        matrix = {matrix} 
-                        virtualTiles = {virtualTiles} 
-                        gameOver = {this.state.gameOver} 
-                        score    = {this.state.score}
-                        newGame =  {() => this.newGame(true, false)} 
-                        resizeMatrix = { () => this.newGame(true, true) } />
-                </div>
+                
+                <GameContainer 
+                    matrix = {matrix} 
+                    virtualTiles = {virtualTiles} 
+                    gameOver = {this.state.gameOver} 
+                    score    = {this.state.score}
+                    newGame =  {() => this.newGame(true, false)} 
+                    resizeMatrix = { () => this.newGame(true, true) } />           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
@@ -117,6 +115,7 @@ class App extends Component{
                       down  = {() => this.clickHandler('down')} />
 
                 <Footer />
+                
             </div>
             );
      }

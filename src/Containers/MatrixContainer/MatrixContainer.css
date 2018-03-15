@@ -1,39 +1,7 @@
-.GameContainer {
-  display: block;
-  margin-right: 20px;
-  cursor: default;
-  touch-action: none;
-  background: #222;
-  border-radius: 6px;
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-  -ms-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; 
-  position: relative;
-  
-}
-
-/*
-@media screen and (max-width: 521px) {
-      .MatrixContainer {
-          margin-top: 40px;
-          padding: 12px;
-          width: 450px;
-          height: 450px;}
-    }
-    
-@media screen and (max-width: 481px) {
-  .MatrixContainer {
-    margin-top: 17px;
-    padding: 10px;
-    width: 280px;
-    height: 280px; }
-}
-*/
+.MatrixContainer{
+    margin-right: 50px;
+    height: 434px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

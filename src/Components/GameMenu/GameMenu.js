@@ -10,7 +10,7 @@ import Help from './Icons/Help';
 const gameMenu = (props) => {
     return (
    
- <div className={style.GameMenu}  style = {{height: props.menuHeight + 'px'}}>
+<div className={style.GameMenu}>
         <ul>
                 <li onClick = {props.newGame}> 
                     <NewGame /> </li>
@@ -20,8 +20,8 @@ const gameMenu = (props) => {
                 <li>  <Repeat /> </li>
                 <li>  <Block /> </li>
                 <li>  <Help /> </li>
-                            </ul>
-        </div>
+        </ul>
+</div>
 
     );
 }
