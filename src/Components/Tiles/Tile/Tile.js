@@ -27,7 +27,7 @@ const tile = (props) => {
 
 
     return (
-        <div className={styles.join(' ')} style={tile_styling} onClick = {() => props.removeTile(tile.normal.row, tile.normal.col)}>
+        <div className={styles.join(' ')} style={tile_styling} onClick = {() => props.removeTile(props.row, props.col)}>
             <div className={style.TileInner} style ={innerTile_styling} >{props.val? props.val : ''}</div>
         </div>
     );

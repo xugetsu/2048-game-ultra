@@ -38,7 +38,7 @@ const tiles = (props) => {
                             ));           
     const arrayTiles = tiles.reduce( (list,tilesRow) => list.concat(tilesRow) , []); 
 // -----------------------------------------------------------------------------------------
-                     
+
     return ( 
     <div className={style.TilesContainer} style = {{height:size,width:size}}  >       
        {componentList}

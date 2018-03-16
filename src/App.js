@@ -123,7 +123,7 @@ class App extends Component{
                     score    = {this.state.score}
                     newGame =  {() => this.newGame(4,true, false)} 
                     resizeMatrix = { (i) => this.newGame(i,true, true) } 
-                    removeTile = {this.state.removeMode? () => (i,j) => this.removeTileHandler(i,j) : null}
+                    removeTile = {this.state.removeMode? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
                     removeMode = {this.removeModeHandler} />           
     
                 <ControlKeys 
