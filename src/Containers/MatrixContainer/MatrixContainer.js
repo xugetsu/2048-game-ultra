@@ -32,17 +32,16 @@ const matrixContainer = (props) => {
                 fontSize     = {fontSizes[N-4]}                            
                 lineHeight   = {lineHeight[N-4]}
                 removeTile   = {(i,j) => props.removeTile(i,j)}/>
-
-        <MergedTiles matrix       = {props.matrix} 
-                    tileSize     = {gridSize[N-4]} 
-                    gridMargin   = {gridMargins[N-4]}
-                    fontSize     = {fontSizes[N-4]}                           
-                    lineHeight   = {lineHeight[N-4]}/>
         </div> 
     );
 } 
 export default matrixContainer;
 
 /*
+        <MergedTiles matrix       = {props.matrix} 
+                    tileSize     = {gridSize[N-4]} 
+                    gridMargin   = {gridMargins[N-4]}
+                    fontSize     = {fontSizes[N-4]}                           
+                    lineHeight   = {lineHeight[N-4]}/>
 */
                      
