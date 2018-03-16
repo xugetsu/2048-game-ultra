@@ -5,6 +5,7 @@ import Resize from './ListElements/Resize/Resize';
 import Block from './ListElements/Block';
 import Repeat from './ListElements/Repeat';
 import NewGame from './ListElements/NewGame/NewGame';
+import RemoveTile from './ListElements/RemoveTile/RemoveTile';
 import Help from './ListElements/Help';
 
 /*
@@ -23,6 +24,7 @@ const gameMenu = (props) => {
                 <NewGame newGame = {props.newGame} />
                 <li onClick = {props.resizeMatrix}>  <Repeat /> </li>
                 <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
+                <RemoveTile />
                 
 
         </ul>
