@@ -14,7 +14,7 @@ const gameContainer = (props) => {
 
                                 <GameInfo score   = {props.score}/>
                                 <GameMenu 
-                                        resizeMatrix = { props.resizeMatrix} 
+                                        resizeMatrix = {(i) => props.resizeMatrix(i)} 
                                         menuHeight = {433}
                                         newGame = {props.newGame} /> 
                                 <MatrixContainer matrix = {props.matrix} 

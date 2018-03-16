@@ -4,6 +4,7 @@
   background: #303030;
   border: 1px solid #222;
   border-radius: 5px;
+  margin-top: 15px;
 }
 
 .GameMenu ul {
@@ -16,7 +17,7 @@
     clear: both;
     list-style: none;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     color: beige; stroke:white;
     fill:#ffffff;
  }
@@ -27,3 +28,4 @@
     stroke:#fccd4d;
     fill:#fccd4d;
 }
+

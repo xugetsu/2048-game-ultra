@@ -8,10 +8,6 @@ const backdrop = (props) => (
                     height: props.matrixSize + 'px'}} >
         <h1> Game Over </h1>
         <h3> Your Score is : {props.score} </h3>
-        <div className = {style.NewGame} 
-             onClick = {props.newGame}> 
-             <p>New Game</p>
-        </div>
      </div> 
     );
 

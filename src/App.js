@@ -7,7 +7,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component{
-    newGame = (clicked,resizeMatrix) => { 
+    newGame = (i, clicked, resizeMatrix) => { 
         $.print('newGame',0);
         let matrix;
         let matrixSize;
@@ -15,8 +15,7 @@ class App extends Component{
             matrix = $.initMatrix(4);
             return matrix;
         }else if(clicked && resizeMatrix) {
-            matrixSize = this.state.matrixSize + 1;
-            matrixSize = (matrixSize === 7) ? 4 : matrixSize;
+            matrixSize = i;
             matrix = $.initMatrix(matrixSize);
         }else{
             matrixSize = this.state.matrixSize;
@@ -82,7 +81,7 @@ class App extends Component{
      }
 
     state = {
-        matrix:  (this.newGame(false,false)),
+        matrix:  (this.newGame(4,false,false)),
         matrixSize: 4,
         virtualTiles: [],
         score: 0,
@@ -90,7 +89,7 @@ class App extends Component{
         step:0,
         lastMove:'Start',
         idStore: Array.from({length: 15}, (x,i) => i + 4*4),
-        gameOver:!false
+        gameOver:false
      }
     render() {
         $.print('render',0); 
@@ -105,8 +104,8 @@ class App extends Component{
                     virtualTiles = {virtualTiles} 
                     gameOver = {this.state.gameOver} 
                     score    = {this.state.score}
-                    newGame =  {() => this.newGame(true, false)} 
-                    resizeMatrix = { () => this.newGame(true, true) } />           
+                    newGame =  {() => this.newGame(4,true, false)} 
+                    resizeMatrix = { (i) => this.newGame(i,true, true) } />           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
