@@ -30,7 +30,8 @@ class App extends Component{
                 step: 0,
                 lastMove: ' start ',
                 idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
-                gameOver: false
+                gameOver: false,
+                removeMode:false
             });
      }
     move = (oldMatrix, direction) => { // move and merge tiles 
@@ -62,6 +63,21 @@ class App extends Component{
             this.move(this.state.matrix,direction);
         }
      }
+     removeModeHandler = () => {
+        console.log('remove Mode Activated');
+        const data   = $.fetchingData(this.state.matrix,this.state.idStore); // fetching needed data from the oldMatrix
+        let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles       
+        const clearedMatrix = data.matrix; // oldMatrix cleared from old virtual Tiles & old merged tiles vals has been fixed
+        this.setState({
+                       removeMode: true,
+                       idStore: idStore,
+                       matrix: clearedMatrix,
+                       virtualTiles: []
+                    });
+    }
+    removeTileHandler = (i,j) => {
+        console.log('i = ',i,' || j = ',j);
+    }
     forward = () => {
        $.print('forward',0); 
        return this.setState({matrix:this.state.history[this.state.step+1],step:this.state.step+1});
@@ -89,7 +105,8 @@ class App extends Component{
         step:0,
         lastMove:'Start',
         idStore: Array.from({length: 15}, (x,i) => i + 4*4),
-        gameOver:false
+        gameOver:false,
+        removeMode:false
      }
     render() {
         $.print('render',0); 
@@ -105,7 +122,9 @@ class App extends Component{
                     gameOver = {this.state.gameOver} 
                     score    = {this.state.score}
                     newGame =  {() => this.newGame(4,true, false)} 
-                    resizeMatrix = { (i) => this.newGame(i,true, true) } />           
+                    resizeMatrix = { (i) => this.newGame(i,true, true) } 
+                    removeTile = {this.state.removeMode? () => (i,j) => this.removeTileHandler(i,j) : null}
+                    removeMode = {this.removeModeHandler} />           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 

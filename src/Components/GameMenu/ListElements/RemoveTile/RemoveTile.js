@@ -16,7 +16,7 @@ const  removeTile = (props) => {
 						+"c0,5.261-4.279,9.541-9.539,9.541H274.541c-5.261,0-9.541-4.28-9.541-9.541V274.541c0-5.261,4.28-9.541,9.541-9.541H436.76"   
 						+"c5.26,0,9.539,4.28,9.539,9.541V436.758z";
 	return  (
-        <li className={style.ToolTip} onClick = {props} >
+        <li className={style.ToolTip} onClick = {props.removeMode} >
             <svg viewBox="-150 -170 800 800"> 
                     <g>	<path d = {pathData}/> </g>
             </svg>

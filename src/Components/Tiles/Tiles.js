@@ -19,7 +19,8 @@ const tiles = (props) => {
                 tileSize   = {props.tileSize}
                 gridMargin = {props.gridMargin}
                 fontSize = {props.fontSize}                           
-                lineHeight   = {props.lineHeight}/>
+                lineHeight   = {props.lineHeight}
+                removeTile = {(i,j) => props.removeTile(i, j)}/>
     );
     const size = (props.tileSize + props.gridMargin)*(props.matrix.length);
 

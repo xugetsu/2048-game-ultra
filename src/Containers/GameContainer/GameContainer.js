@@ -16,13 +16,15 @@ const gameContainer = (props) => {
                                 <GameMenu 
                                         resizeMatrix = {(i) => props.resizeMatrix(i)} 
                                         menuHeight = {433}
-                                        newGame = {props.newGame} /> 
+                                        newGame = {props.newGame} 
+                                        removeMode = {props.removeMode} /> 
                                 <MatrixContainer matrix = {props.matrix} 
                                                 virtualTiles = {props.virtualTiles} 
                                                 gameOver = {props.gameOver} 
                                                 score    = {props.score}
                                                 newGame =  {props.newGame} 
-                                                resizeMatrix = { props.resizeMatrix}  />
+                                                resizeMatrix = { props.resizeMatrix}
+                                                removeTile = {(i,j) => props.removeTile(i,j)}  />
 
                 
                         </div>
