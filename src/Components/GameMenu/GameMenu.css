@@ -24,7 +24,7 @@
  .GameMenu ul li:hover {
     background-color: rgba(0, 0, 0, 0.363);
  }
- .GameMenu ul li:hover,  .GameMenu ul li :hover  {
+ .GameMenu ul li:hover {
     stroke:#fccd4d;
     fill:#fccd4d;
 }
