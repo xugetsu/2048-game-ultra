@@ -1,0 +1,46 @@
+
+.SizeDetails{
+    position: absolute;
+    visibility: hidden;
+    width: 140px;
+    height: 120px;
+    right: -159px;
+    padding: 10px;
+    border: 1px solid #161616;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    box-shadow: 5px 5px 25px 0 rgba(7, 7, 7, 0.2);
+    background: #202020;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .Size:hover .SizeDetails{
+    visibility: visible;
+    opacity: 1;  }
+  
+  .SizeDetails div{
+    width: 30px;
+    float: left;
+    height: 30px;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 2px;
+    line-height: 1px;
+    background: #2e2e2e;
+  }
+  
+  .SizeDetails div:hover{
+    background: #383838;
+    color:rgb(32, 196, 218);
+  }
+  .SizeDetails div p{  
+    color: ghostwhite;
+  
+  }
+  
+  .SizeDetails p{
+    line-height: 1px;
+    color: goldenrod;
+  }
