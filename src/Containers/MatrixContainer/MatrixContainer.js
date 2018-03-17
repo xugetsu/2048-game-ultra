@@ -31,7 +31,8 @@ const matrixContainer = (props) => {
                 gridMargin   = {gridMargins[N-4]}
                 fontSize     = {fontSizes[N-4]}                            
                 lineHeight   = {lineHeight[N-4]}
-                removeTile   = {(i,j) => props.removeTile(i,j)}/>
+                removeTile   = {(i,j) => props.removeTile(i,j)}
+                removeModeState = {props.removeModeState} />
         </div> 
     );
 } 

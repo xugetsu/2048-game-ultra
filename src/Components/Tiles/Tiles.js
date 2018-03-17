@@ -21,7 +21,8 @@ const tiles = (props) => {
                 gridMargin = {props.gridMargin}
                 fontSize = {props.fontSize}                           
                 lineHeight   = {props.lineHeight}
-                removeTile = {(i,j) => props.removeTile(i, j)}/>
+                removeTile = {(i,j) => props.removeTile(i, j)}
+                removeModeState = {props.removeModeState} />
     );
     const size = (props.tileSize + props.gridMargin)*(props.matrix.length);
 // -----------------------------------------------------------------------------------------

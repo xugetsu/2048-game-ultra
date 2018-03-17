@@ -124,7 +124,8 @@ class App extends Component{
                     newGame =  {() => this.newGame(4,true, false)} 
                     resizeMatrix = { (i) => this.newGame(i,true, true) } 
                     removeTile = {this.state.removeMode? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
-                    removeMode = {this.removeModeHandler} />           
+                    removeMode = {this.removeModeHandler} 
+                    removeModeState = {this.state.removeMode}/>           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 

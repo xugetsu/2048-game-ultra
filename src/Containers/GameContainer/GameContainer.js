@@ -24,7 +24,8 @@ const gameContainer = (props) => {
                                                 score    = {props.score}
                                                 newGame =  {props.newGame} 
                                                 resizeMatrix = { props.resizeMatrix}
-                                                removeTile = {(i,j) => props.removeTile(i,j)}  />
+                                                removeTile = {(i,j) => props.removeTile(i,j)}
+                                                removeModeState = {props.removeModeState}  />
 
                 
                         </div>

@@ -22,7 +22,8 @@ const tile = (props) => {
                   };  
     const styles = [   style.Tile,
                        style['Tile_' + props.val],
-                       props.new ? style.TileNew : ''
+                       props.new ? style.TileNew : '',
+                       props.removeModeState? style.RemoveTile : ''
                     ]; 
 
 
