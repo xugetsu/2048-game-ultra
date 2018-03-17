@@ -132,6 +132,103 @@
      50% { -webkit-transform: scale(1.2);
         transform: scale(1.2); }    }
 
+.RemoveTile:hover .TileInner{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
 
 
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
+
+@-webkit-keyframes hinge {
+    0% {
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+  
+    20%,
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, 80deg);
+      transform: rotate3d(0, 0, 1, 80deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+  
+    40%,
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, 60deg);
+      transform: rotate3d(0, 0, 1, 60deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      opacity: 1;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 700px, 0);
+      transform: translate3d(0, 700px, 0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes hinge {
+    0% {
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+  
+    20%,
+    60% {
+      -webkit-transform: rotate3d(0, 0, 1, 80deg);
+      transform: rotate3d(0, 0, 1, 80deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+  
+    40%,
+    80% {
+      -webkit-transform: rotate3d(0, 0, 1, 60deg);
+      transform: rotate3d(0, 0, 1, 60deg);
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      opacity: 1;
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 700px, 0);
+      transform: translate3d(0, 700px, 0);
+      opacity: 0;
+    }
+  }
+  
+  .hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: hinge;
+    animation-name: hinge;
+  }
+  
