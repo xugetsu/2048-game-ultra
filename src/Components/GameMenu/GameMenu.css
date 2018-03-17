@@ -30,7 +30,7 @@
  .GameMenu ul li:hover {
     stroke:#fccd4d;
     fill:#fccd4d;
-    transform: translateY(-4px);
+    transform: translate(-2px,-2px);
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
