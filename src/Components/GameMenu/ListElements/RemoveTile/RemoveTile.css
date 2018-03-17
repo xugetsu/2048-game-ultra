@@ -19,7 +19,7 @@
 }
 .Attempts_0::after, .Attempts_1::after, .Attempts_2::after, .Attempts_3::after{
     position: absolute;
-    left: 35px;
+    left: 40px;
     color: white;
     font-size: 13px;
     display: block;
