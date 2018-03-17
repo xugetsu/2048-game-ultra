@@ -19,7 +19,9 @@ const gameContainer = (props) => {
                                         newGame = {props.newGame} 
                                         removeMode = {props.removeMode}
                                         removeModeState = {props.removeModeState} 
-                                        removTilAttmpt = {props.removTilAttmpt}  /> 
+                                        removTilAttmpt = {props.removTilAttmpt} 
+                                        restore = {props.restore} 
+                                        restoreAttmpt = {props.restoreAttmpt}  /> 
                                 <MatrixContainer matrix = {props.matrix} 
                                                 virtualTiles = {props.virtualTiles} 
                                                 gameOver = {props.gameOver} 

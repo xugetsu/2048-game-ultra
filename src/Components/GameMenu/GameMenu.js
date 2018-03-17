@@ -3,7 +3,7 @@ import style from './GameMenu.css'
 import Option from './ListElements/Option';
 import Resize from './ListElements/Resize/Resize';
 import Block from './ListElements/Block';
-import Repeat from './ListElements/Repeat';
+import Restore from './ListElements/Restore/Restore';
 import NewGame from './ListElements/NewGame/NewGame';
 import RemoveTile from './ListElements/RemoveTile/RemoveTile';
 import Help from './ListElements/Help';
@@ -22,7 +22,8 @@ const gameMenu = (props) => {
         <ul>
 
                 <NewGame newGame = {props.newGame} />
-                <li onClick = {props.resizeMatrix}>  <Repeat /> </li>
+                <Restore restore = {props.restore} 
+                         restoreAttmpt = {props.restoreAttmpt} />
                 <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
                 <RemoveTile removeMode = {props.removeMode} 
                             removeModeState = {props.removeModeState}

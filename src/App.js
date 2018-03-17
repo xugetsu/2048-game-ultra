@@ -32,7 +32,10 @@ class App extends Component{
                 idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
                 gameOver: false,
                 removeMode:false,
-                removTilAttmpt:3
+                removTilAttmpt: 3,
+                restoreAttmpt: 3,
+                
+
             });
      }
     move = (oldMatrix, direction) => { // move and merge tiles 
@@ -89,14 +92,14 @@ class App extends Component{
             removTilAttmpt: this.state.removTilAttmpt - 1
          });
     }
-    forward = () => {
-       $.print('forward',0); 
-       return this.setState({matrix:this.state.history[this.state.step+1],step:this.state.step+1});
-     }
-    backward = () => {
-       $.print('backward',0); 
-       return this.setState({matrix:this.state.history[this.state.step-1],step:this.state.step-1});
-     }
+    restoreHandler = () => {
+        this.setState({
+            matrix: this.state.history[this.state.history.length - 2],
+            history: this.state.history.slice(0,this.state.history.length - 1),
+            restoreAttmpt: this.state.restoreAttmpt - 1
+        });
+    }
+
     componentDidUpdate (prevProps, prevState) {
         $.print('componentDidUpdate',0);     
         if($.matrixIsFull(this.state.matrix) && !this.state.gameOver) {
@@ -119,6 +122,7 @@ class App extends Component{
         gameOver:false,
         removeMode:false,
         removTilAttmpt: 3,
+        restoreAttmpt: 3,
      }
     render() {
         $.print('render',0); 
@@ -138,7 +142,9 @@ class App extends Component{
                     removeTile = {this.state.removeMode? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
                     removeMode = {this.removeModeHandler} 
                     removeModeState = {this.state.removeMode}
-                    removTilAttmpt = {this.state.removTilAttmpt} />           
+                    removTilAttmpt = {this.state.removTilAttmpt}
+                    restore = {this.restoreHandler} 
+                    restoreAttmpt = {this.state.restoreAttmpt} />           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 
