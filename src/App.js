@@ -76,7 +76,17 @@ class App extends Component{
                     });
     }
     removeTileHandler = (i,j) => {
-        console.log('i = ',i,' || j = ',j);
+        const matrix = $.cloneMatrix(this.state.matrix);
+        let val = matrix[i][j].normal.val;
+        matrix[i][j].normal.val = 0;
+        let discount = 2;
+        while (val >= 4) { discount += val; val /= 2; }
+        
+        this.setState({
+            removeMode: false,
+            matrix: matrix,
+            score: this.state.score - discount
+         });
     }
     forward = () => {
        $.print('forward',0); 
