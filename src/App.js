@@ -31,7 +31,8 @@ class App extends Component{
                 lastMove: ' start ',
                 idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
                 gameOver: false,
-                removeMode:false
+                removeMode:false,
+                removTilAttmpt:3
             });
      }
     move = (oldMatrix, direction) => { // move and merge tiles 
@@ -84,7 +85,8 @@ class App extends Component{
         this.setState({
             removeMode: false,
             matrix: matrix,
-            score: this.state.score - discount
+            score: this.state.score - discount,
+            removTilAttmpt: this.state.removTilAttmpt - 1
          });
     }
     forward = () => {
@@ -115,7 +117,8 @@ class App extends Component{
         lastMove:'Start',
         idStore: Array.from({length: 15}, (x,i) => i + 4*4),
         gameOver:false,
-        removeMode:false
+        removeMode:false,
+        removTilAttmpt: 3,
      }
     render() {
         $.print('render',0); 
@@ -134,7 +137,8 @@ class App extends Component{
                     resizeMatrix = { (i) => this.newGame(i,true, true) } 
                     removeTile = {this.state.removeMode? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
                     removeMode = {this.removeModeHandler} 
-                    removeModeState = {this.state.removeMode}/>           
+                    removeModeState = {this.state.removeMode}
+                    removTilAttmpt = {this.state.removTilAttmpt} />           
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 

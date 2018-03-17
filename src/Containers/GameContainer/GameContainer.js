@@ -7,7 +7,7 @@ import MatrixContainer from '../../Containers/MatrixContainer/MatrixContainer';
 
 const gameContainer = (props) => {
 
-
+        
         return (
                 <div className = { style.GameWrapper } > 
                         <div    className={style.GameContainer}>
@@ -18,7 +18,8 @@ const gameContainer = (props) => {
                                         menuHeight = {433}
                                         newGame = {props.newGame} 
                                         removeMode = {props.removeMode}
-                                        removeModeState = {props.removeModeState} /> 
+                                        removeModeState = {props.removeModeState} 
+                                        removTilAttmpt = {props.removTilAttmpt}  /> 
                                 <MatrixContainer matrix = {props.matrix} 
                                                 virtualTiles = {props.virtualTiles} 
                                                 gameOver = {props.gameOver} 
@@ -26,7 +27,7 @@ const gameContainer = (props) => {
                                                 newGame =  {props.newGame} 
                                                 resizeMatrix = { props.resizeMatrix}
                                                 removeTile = {(i,j) => props.removeTile(i,j)}
-                                                removeModeState = {props.removeModeState}  />
+                                                removeModeState = {props.removeModeState} />
 
                 
                         </div>

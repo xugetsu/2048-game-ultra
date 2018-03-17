@@ -15,8 +15,8 @@ import Help from './ListElements/Help';
 */
 
 const gameMenu = (props) => {
+    
     return (
-   
 <div className={style.GameMenu}>
 
         <ul>
@@ -24,7 +24,9 @@ const gameMenu = (props) => {
                 <NewGame newGame = {props.newGame} />
                 <li onClick = {props.resizeMatrix}>  <Repeat /> </li>
                 <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
-                <RemoveTile removeMode = {props.removeMode} removeModeState = {props.removeModeState} />
+                <RemoveTile removeMode = {props.removeMode} 
+                            removeModeState = {props.removeModeState}
+                            removTilAttmpt = {props.removTilAttmpt} />
                 
 
         </ul>
