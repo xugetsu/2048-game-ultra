@@ -10,7 +10,7 @@
     border-radius: 0 10px 10px 0;
     border-left: none;
     box-shadow: 5px 5px 25px 0 rgba(7, 7, 7, 0.2);
-    background: #202020;
+    background: #20202067;
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s;
@@ -35,6 +35,10 @@
     background: #383838;
     color:rgb(32, 196, 218);
   }
+  .SizeDetails div:active{
+    transform: translateY(4px);
+  }
+
   .SizeDetails div p{  
     color: ghostwhite;
   

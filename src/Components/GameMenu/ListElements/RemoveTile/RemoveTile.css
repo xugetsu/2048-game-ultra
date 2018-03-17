@@ -7,7 +7,9 @@
     visibility: hidden;
     width: 120px;
     padding: 18px;
-    background-color:#202020;
+    border: 1px solid #161616;
+    box-shadow: 5px 5px 25px 0 #0000004b;
+    background: #20202067;
     color:goldenrod;
     text-align: center;
     border-radius: 0 6px 6px 0;
@@ -17,6 +19,10 @@
     left: 100%;
     opacity: 0;
     transition: opacity 0.3s;
+}
+.Clicked svg{
+    stroke:#4fb0ff;
+    fill:#4fb0ff;
 }
 
 .ToolTip:hover .ToolTipText{

@@ -7,7 +7,9 @@
     visibility: hidden;
     width: 120px;
     padding: 18px;
-    background-color:#202020;
+    border: 1px solid #161616;
+    box-shadow: 5px 5px 25px 0 #0000004b;
+    background: #20202067;
     color:goldenrod;
     text-align: center;
     border-radius: 0 6px 6px 0;

@@ -20,12 +20,17 @@
     padding: 0;
     color: beige; stroke:white;
     fill:#ffffff;
+    transition: 0.3s;
  }
- .GameMenu ul li:hover {
-    background-color: rgba(0, 0, 0, 0.363);
+ .GameMenu ul li svg:active {
+    /*background-color: rgba(0, 0, 0, 0.363);*/
+    stroke:#ffffff;
+    fill:#ffffff;
  }
  .GameMenu ul li:hover {
     stroke:#fccd4d;
     fill:#fccd4d;
+    transform: translateY(-4px);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 

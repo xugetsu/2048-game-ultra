@@ -24,7 +24,7 @@ const gameMenu = (props) => {
                 <NewGame newGame = {props.newGame} />
                 <li onClick = {props.resizeMatrix}>  <Repeat /> </li>
                 <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
-                <RemoveTile removeMode = {props.removeMode}/>
+                <RemoveTile removeMode = {props.removeMode} removeModeState = {props.removeModeState} />
                 
 
         </ul>

@@ -15,8 +15,11 @@ const  removeTile = (props) => {
 						+"M237.459,446.299h-17.172L247,419.588v17.17C247,442.019,242.72,446.299,237.459,446.299z M446.299,436.758" 
 						+"c0,5.261-4.279,9.541-9.539,9.541H274.541c-5.261,0-9.541-4.28-9.541-9.541V274.541c0-5.261,4.28-9.541,9.541-9.541H436.76"   
 						+"c5.26,0,9.539,4.28,9.539,9.541V436.758z";
+	const styles = [ props.removeModeState? style.Clicked : '',
+					 style.ToolTip]
+									
 	return  (
-        <li className={style.ToolTip} onClick = {props.removeMode} >
+        <li className={styles.join(' ')} onClick = {props.removeMode} >
             <svg viewBox="-150 -170 800 800"> 
                     <g>	<path d = {pathData}/> </g>
             </svg>

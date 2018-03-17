@@ -64,7 +64,6 @@ class App extends Component{
         }
      }
      removeModeHandler = () => {
-        console.log('remove Mode Activated');
         const data   = $.fetchingData(this.state.matrix,this.state.idStore); // fetching needed data from the oldMatrix
         let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles       
         const clearedMatrix = data.matrix; // oldMatrix cleared from old virtual Tiles & old merged tiles vals has been fixed
