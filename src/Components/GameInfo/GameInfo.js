@@ -9,8 +9,8 @@ const gameInfo = (props) => {
                 <div className = {style.Info_Best}> 
                     {props.score}
                 </div>  
-                <div className = {style.NewGame}> 
-                   New Game
+                <div className = {style.Tips}> 
+                   Tip: 
                 </div> 
             </div>   
     );
