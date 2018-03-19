@@ -21,19 +21,22 @@ class App extends Component{
             matrixSize = this.state.matrixSize;
             matrix = $.initMatrix(matrixSize);
         }
+        const idStore = Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length);
         this.setState({
-            matrix: matrix,
             matrixSize: matrixSize,
+            matrix: matrix,
             virtualTiles: [],
             score: 0,
-            history: [matrix],
+            movesCount:0,
             lastMove: ' start ',
-            idStore: Array.from({length: 15}, (x,i) => i + matrix.length*matrix.length),
+            history: [{matrix: matrix, virtualTiles: [], score: 0, movesCount: 0, lastMove: ' start ', idStore: idStore}],
+            idStore: idStore,
             gameOver: false,
             removeMode: false,
             removTilAttmpt: 3,
             restoreAttmpt: 3,
             disableRestore: true,
+            enableremovTil: false,
         });
      }
     move = (oldMatrix, direction) => { // move and merge tiles 
@@ -46,19 +49,27 @@ class App extends Component{
         const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore); 
         const newMatrix = mergingTiles.matrix;
         const virtualTiles = $.pickVirtualTiles(newMatrix);
-        const newHistory = this.state.history.concat([newMatrix]);
+        
         newScore += mergingTiles.addToScore;
         idStore = [...mergingTiles.newIdStore]; // some ids have been used from idstore when merging tiles
         $.addingNewTile(newMatrix, idStore); 
+        const newHistory = this.state.history.concat([{  matrix: newMatrix, 
+                                                         virtualTiles: virtualTiles, 
+                                                         score: newScore, 
+                                                         movesCount: this.state.movesCount + 1, 
+                                                         lastMove: direction, 
+                                                         idStore: idStore}]);
         this.setState({
                         matrix:newMatrix,
                         virtualTiles:virtualTiles,
                         score : newScore,
+                        movesCount: this.state.movesCount + 1,
                         history: newHistory,
                         idStore: idStore,
                         lastMove:direction,
-                        disableRestore: !this.state.restoreAttmpt || (newHistory.length < 4)? true : false
-                        });            
+                        disableRestore: !this.state.restoreAttmpt || (this.state.movesCount < 4)? true : false,
+                        enableremovTil: this.state.movesCount > 0 ? true : false,
+                    });            
      }
     clickHandler = (direction) => {
         $.print('clickHandler',0);
@@ -92,10 +103,17 @@ class App extends Component{
          });
      }
     restoreHandler = () => {
-        const newHistory =  this.state.history.slice(0,this.state.history.length - 1);
+        const oldHistory = [...this.state.history];
+        const newHistory =  this.state.history.slice(0, oldHistory.length - 1);
+        const newData = newHistory[newHistory.length - 1];
         this.setState({
-            matrix: this.state.history[this.state.history.length - 2],
             history: newHistory,
+            matrix: newData.matrix,
+            virtualTiles: newData.virtualTiles, 
+            score: newData.score, 
+            movesCount: newData.movesCount, 
+            lastMove: newData.lastMove, 
+            idStore: newData.idStore,
             restoreAttmpt: this.state.restoreAttmpt - 1,
             disableRestore: (this.state.restoreAttmpt === 1) ? true : false,
         });
@@ -104,7 +122,9 @@ class App extends Component{
         $.print('componentDidUpdate',0);     
         if($.matrixIsFull(this.state.matrix) && !this.state.gameOver) {
             if ( !$.checkForUpdate(this.state.matrix, 'left') && 
-                 !$.checkForUpdate(this.state.matrix, 'up')){
+                 !$.checkForUpdate(this.state.matrix, 'up')   &&
+                 !this.state.restoreAttmpt &&
+                 !this.state.removTilAttmpt){
                    this.setState({gameOver:true});
             }
         }
@@ -115,18 +135,22 @@ class App extends Component{
         matrixSize: 6,
         virtualTiles: [],
         score: 0,
-        history:[],
-        step:0,
+        movesCount: 0,
+        history: null,
+        step: 0,
         lastMove:'Start',
-        idStore: Array.from({length: 15}, (x,i) => i + 4*4),
+        idStore: Array.from({length: 15}, (x,i) => i + 6*6),
         gameOver:false,
         removeMode:false,
         removTilAttmpt: 3,
         restoreAttmpt: 3,
         disableRestore: true,
+        enableremovTil: false
      }
     componentDidMount(){
-        this.setState({history:[this.state.matrix]})
+        this.setState({history: [{ matrix: this.state.matrix, virtualTiles: [], score: 0, movesCount: 0, 
+                                   lastMove: ' start ', idStore: this.state.idStore}]
+                      })
      }
     render() {
         console.log('disableRestore',this.state.disableRestore);
@@ -150,7 +174,8 @@ class App extends Component{
                     removTilAttmpt = {this.state.removTilAttmpt}
                     restore = {this.restoreHandler} 
                     restoreAttmpt = {this.state.restoreAttmpt}
-                    disableRestore = {this.state.disableRestore} /> 
+                    disableRestore = {this.state.disableRestore}
+                    enableremovTil = {this.state.enableremovTil}/> 
     
                 <ControlKeys 
                       left  = {() => this.clickHandler('left')} 

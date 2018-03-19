@@ -28,7 +28,8 @@ const gameMenu = (props) => {
                          disableRestore = {props.disableRestore}  />
                 <RemoveTile removeMode = {props.removeMode} 
                             removeModeState = {props.removeModeState}
-                            removTilAttmpt = {props.removTilAttmpt} />
+                            removTilAttmpt = {props.removTilAttmpt} 
+                            enableremovTil = {props.enableremovTil}/>
                 
 
         </ul>

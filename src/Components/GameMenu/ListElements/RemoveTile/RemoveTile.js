@@ -17,12 +17,11 @@ const  removeTile = (props) => {
 						+"c5.26,0,9.539,4.28,9.539,9.541V436.758z";
 	const styles = [ props.removeModeState&&props.removTilAttmpt? style.Clicked : '',
 					 style.ToolTip,
-					 style['Attempts_' + props.removTilAttmpt],
-					 
+					 style['Attempts_' + (props.enableremovTil ? props.removTilAttmpt : 4)],
 					];
 								
 	return  (
-        <li className={styles.join(' ')} onClick = {props.removTilAttmpt? () => props.removeMode(): () => null} >
+        <li className={styles.join(' ')} onClick = {props.removTilAttmpt&&props.enableremovTil? () => props.removeMode(): () => null} >
             <svg viewBox="-150 -170 800 800"> 
                     <g>	<path d = {pathData}/> </g>
             </svg>
