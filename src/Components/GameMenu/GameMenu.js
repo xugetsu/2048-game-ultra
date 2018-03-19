@@ -22,9 +22,10 @@ const gameMenu = (props) => {
         <ul>
 
                 <NewGame newGame = {props.newGame} />
-                <Restore restore = {props.restore} 
-                         restoreAttmpt = {props.restoreAttmpt} />
                 <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
+                <Restore restore = {props.restore} 
+                         restoreAttmpt = {props.restoreAttmpt}
+                         disableRestore = {props.disableRestore}  />
                 <RemoveTile removeMode = {props.removeMode} 
                             removeModeState = {props.removeModeState}
                             removTilAttmpt = {props.removTilAttmpt} />

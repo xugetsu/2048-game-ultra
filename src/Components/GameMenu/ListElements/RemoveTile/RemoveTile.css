@@ -19,16 +19,16 @@
 }
 .Attempts_0::after, .Attempts_1::after, .Attempts_2::after, .Attempts_3::after{
     position: absolute;
-    left: 40px;
+    left: 32px;
     color: white;
     font-size: 13px;
     display: block;
-    width: 10px;
+    width: 5px;
     height: 10px;
     top:0;
-    background: #008cff;
-    padding: 2px  2px 6px 6px;
-    border-radius: 10px;
+    background: #008cff98;
+    padding: 2px  6px 6px 6px;
+    border-radius: 0 0 0 10px;
     z-index: 305;
 }
 

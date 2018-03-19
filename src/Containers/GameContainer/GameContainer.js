@@ -21,7 +21,8 @@ const gameContainer = (props) => {
                                         removeModeState = {props.removeModeState} 
                                         removTilAttmpt = {props.removTilAttmpt} 
                                         restore = {props.restore} 
-                                        restoreAttmpt = {props.restoreAttmpt}  /> 
+                                        restoreAttmpt = {props.restoreAttmpt}
+                                        disableRestore = {props.disableRestore}  /> 
                                 <MatrixContainer matrix = {props.matrix} 
                                                 virtualTiles = {props.virtualTiles} 
                                                 gameOver = {props.gameOver} 
