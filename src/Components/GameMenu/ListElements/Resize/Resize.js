@@ -10,9 +10,9 @@ const resize = (props) => {
                 <div onClick = {() => props.resizeMatrix(4)} > <p>4x4</p> </div>
                 <div onClick = {() => props.resizeMatrix(5)} > <p>5x5</p> </div>
                 <div onClick = {() => props.resizeMatrix(6)} > <p>6x6</p> </div>
-                <div onClick = {() => props.resizeMatrix(6)} > <p>7x7</p> </div>
-                <div onClick = {() => props.resizeMatrix(6)} > <p>8x8</p> </div>
-                <div onClick = {() => props.resizeMatrix(6)} > <p>9x9</p> </div>
+                <div onClick = {() => props.resizeMatrix(7)} > <p>7x7</p> </div>
+                <div onClick = {() => props.resizeMatrix(8)} > <p>8x8</p> </div>
+                <div onClick = {() => props.resizeMatrix(9)} > <p>9x9</p> </div>
         </div>
         <svg viewBox="-150 -170 800 800">
                 <path d="M0   32v128h128V32H0zm120 
