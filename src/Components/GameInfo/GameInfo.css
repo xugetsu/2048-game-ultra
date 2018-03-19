@@ -6,7 +6,7 @@
   border: 1px solid #222;
 }
 
-.Info_Score, .Info_Best, .NewGame{
+.Info_Score, .Info_Best, .Tips{
 
  border-radius: 5px;
  /*background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
@@ -23,7 +23,7 @@
   padding: 15px 25px;
   height: 25px;
   display: inline-block;
-  margin: 0 10px 0 0;
+  margin: 0 5px 0 0;
   min-width: 50px;
 }
 
@@ -47,13 +47,19 @@
   content: "Best"; 
 }
 
-.NewGame{
-  float: right;
-  line-height: 25px;
-  font-weight: normal;
-  padding: 10px 25px;
-  margin-top: 5px;
-}
+.Tips{
+  width: 252px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: bold;
+  color: goldenrod;
+  display: block;
+  float: left;
+  padding: 5px;
+  margin: 0 10px 0 5px;
+  height: 45px;
+} 
+
 /*
       @media screen and (max-width: 480px) {
         .AppTitle h1{
