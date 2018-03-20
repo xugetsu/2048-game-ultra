@@ -48,23 +48,24 @@
 }
 
 .Tips{
-  width: 250px;
+  width: 240px;
   text-align: left;
   display: block;
   float: left;
-  padding: 0 0 5px 10px;
+  padding: 0 10px 10px 10px;
   margin: 0 10px 0 5px;
   height: 50px;
 } 
 .Tips p{
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 12px;
+  line-height: 17px;
   color:#eee; 
   font-weight: normal;
+  margin-top: 5px;
 } 
 .Tips p span{
   color: goldenrod;
-  font-size: 13px;
+  font-size: 15px;
 } 
 /*
       @media screen and (max-width: 480px) {
