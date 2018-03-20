@@ -1,7 +1,6 @@
 import React from 'react';
 
 const logo = (props) => {
-    const style1 = {fill:'#333',stroke:'#333',strokeWidth:.5};
     const style2 = {fill:'rgba(41,137,216,1)',stroke:'rgba(41,137,216,1)',strokeWidth:1};
     const style3 = {fill:'white',stroke:'white',strokeWidth:1};
     

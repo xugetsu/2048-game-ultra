@@ -153,7 +153,6 @@ class App extends Component{
                       })
      }
     render() {
-        console.log('disableRestore',this.state.disableRestore);
         $.print('render',0); 
         $.print("*** *** *** ***",0);
         const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
