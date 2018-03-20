@@ -48,18 +48,24 @@
 }
 
 .Tips{
-  width: 252px;
-  line-height: 20px;
+  width: 250px;
   text-align: left;
-  font-weight: bold;
-  color: goldenrod;
   display: block;
   float: left;
-  padding: 5px;
+  padding: 0 0 5px 10px;
   margin: 0 10px 0 5px;
-  height: 45px;
+  height: 50px;
 } 
-
+.Tips p{
+  font-size: 11px;
+  line-height: 13px;
+  color:#eee; 
+  font-weight: normal;
+} 
+.Tips p span{
+  color: goldenrod;
+  font-size: 13px;
+} 
 /*
       @media screen and (max-width: 480px) {
         .AppTitle h1{
