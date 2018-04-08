@@ -4,7 +4,7 @@
     height: 100%;
 }
 .BigWrapper{
-    background-color: rgba(27, 27, 27, 0.897);
+    background: linear-gradient(45deg, rgb(64, 52, 255) 0%,#02f1f1 54%,rgb(205, 255, 0) 100%);
     margin: 0 auto; 
   }
   /*

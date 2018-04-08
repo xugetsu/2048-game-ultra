@@ -12,7 +12,7 @@ const gameContainer = (props) => {
         const sizes = { gridSize:    gridSize[N-4],
                         gridMargins: gridMargins[N-4],
                         fontSizes:   [45,40,35,33,28,25][N-4],
-                        lineHeight:  [85,75,65,60,50,45][N-4],
+                        lineHeight:  [80,70,58,52,50,40][N-4],
                         matrixSize: gridSize[N-4]*N + gridMargins[N-4]*(N + 1) };
         return (
                 <div className = { style.GameWrapper } > 
