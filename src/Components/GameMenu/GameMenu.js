@@ -4,6 +4,7 @@ import Resize from './ListElements/Resize/Resize';
 import Restore from './ListElements/Restore/Restore';
 import NewGame from './ListElements/NewGame/NewGame';
 import RemoveTile from './ListElements/RemoveTile/RemoveTile';
+import Help from './ListElements/Help/Help.js';
 
 const gameMenu = (props) => {
     return (
@@ -20,7 +21,7 @@ const gameMenu = (props) => {
                             removeModeState = {props.removeModeState}
                             removTilAttmpt = {props.removTilAttmpt} 
                             enableremovTil = {props.enableremovTil}/>
-                
+                <Help />
 
         </ul>
 
