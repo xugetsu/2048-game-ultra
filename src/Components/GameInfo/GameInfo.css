@@ -2,23 +2,27 @@
 .Info_wrapper {
   background: #30303000;
   border-radius: 5px 5px 0 5px ;
+ /* border: 1px solid red;*/
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: left;
+ /* flex-direction: row-reverse;*/
+
 }
 
 .Info_Score, .Info_Best, .Tips{
- border-radius: 5px;
- /*background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
- */
- border: 1px solid #222;
- background: #303030;
- box-shadow: 5px 5px 6px rgba(7, 7, 7, 0.658);
- color: #fcfcfc;
+  border-radius: 5px;
+  background: #303030cb;
+  box-shadow: 2px 2px 1px rgba(7, 7, 7, 0.774);
+  color: #fcfcfc;
   font-weight: bold;
   text-align: center; 
   position: relative;
   font-size: 16px;
-  line-height: 47px;
-  padding: 15px 25px;
-  height: 25px;
+  line-height: 80px;
+  padding: 0 25px;
+  height: 60px;
   display: inline-block;
   margin: 0 5px 0 0;
   min-width: 50px;
