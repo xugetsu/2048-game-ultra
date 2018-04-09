@@ -1,4 +1,6 @@
-
+.Size:hover {
+  background: rgba(59, 255, 75, 0.7);
+}
 .SizeDetails{
     position: absolute;
     visibility: hidden;
@@ -46,5 +48,5 @@
   
   .SizeDetails p{
     line-height: 1px;
-    color:rgb(255, 193, 37);
+    color:rgb(255, 209, 93);
   }

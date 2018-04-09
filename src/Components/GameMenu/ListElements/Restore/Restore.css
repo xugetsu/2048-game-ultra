@@ -1,3 +1,6 @@
+.Restore:hover {
+    background: rgb(255, 63, 63);    
+}
 .ToolTip{
     position: relative;
     height: 50px;

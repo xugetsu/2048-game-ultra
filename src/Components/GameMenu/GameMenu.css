@@ -29,8 +29,8 @@
     fill:#ffffff;
  }
  .GameMenu ul li:hover {
-    stroke:#fccd4d;
-    fill:#fccd4d;
+    /*stroke:#fccd4d;
+    fill:#f8f5eb;*/
     transform: translate(-2px,-2px);
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
