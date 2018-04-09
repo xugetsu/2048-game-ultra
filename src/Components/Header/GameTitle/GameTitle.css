@@ -1,0 +1,22 @@
+.LogoTitle{
+    display: inline-block;
+    width:200px;
+    stroke:rgb(165, 165, 165);
+    fill:rgb(255, 255, 255);
+}
+.LogoText1, .LogoText2, .LogoText3{
+    stroke: none;
+    font-family: 'Gugi';
+}
+.LogoText1{
+    fill: rgb(255, 195, 30);
+    font-size: 200px;
+}
+.LogoText2{
+    fill: rgba(165, 165, 165, 0.5);
+    font-size: 350px;
+}
+.LogoText3{
+    fill: rgba(255, 255, 255, 0.705);
+    font-size: 150px;
+}
