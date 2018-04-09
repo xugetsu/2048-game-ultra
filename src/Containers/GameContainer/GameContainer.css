@@ -1,16 +1,6 @@
-.GameWrapper{
-  background-color: rgba(27, 27, 27, 0.897);
-  width: 500px;
-  margin: 15px auto;
-  border-radius: 10px; 
-}
-
 .GameContainer {
-  /*border: 5px solid #02ccba;*/
   cursor: default;
   touch-action: none;
-  background: #222;
-  border-radius: 6px;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -ms-touch-callout: none;
@@ -24,8 +14,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
   position: relative;
-  width:510px;
-  height: 520px;
+  width:  535px;
+  height: 550px;
+  margin: 15px auto;
+  border-radius: 10px; 
+  box-sizing: border-box;
+  /*border: 1px solid #fff;*/
 }
 
 /*
