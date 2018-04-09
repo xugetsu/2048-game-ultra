@@ -15,23 +15,30 @@ const gameTitle = (props) => {
                     +"M237.459,446.299h-17.172L247,419.588v17.17C247,442.019,242.72,446.299,237.459,446.299z M446.299,436.758" 
                     +"c0,5.261-4.279,9.541-9.539,9.541H274.541c-5.261,0-9.541-4.28-9.541-9.541V274.541c0-5.261,4.28-9.541,9.541-9.541H436.76"   
                     +"c5.26,0,9.539,4.28,9.539,9.541V436.758z";
-
+  const x0 = 500;
   return (
-            <div className={styles.LogoTitle}>
-              <svg  viewBox="0 0 1600 500"> 
-                  <title>A 2048 Tile !</title>
-                  <g>	<path d = {pathData}/> </g>
-                  <text className = {styles.LogoText1} x="100" y="230">
-                     2048
-                  </text>
-                  <text className = {styles.LogoText2} x="650" y="470">
-                     Game
-                  </text>
-                  <text className = {styles.LogoText3} x="1150" y="200">
-                     Ultra !
-                  </text>                 
+        <div className={styles.LogoTitle}>
+            <svg  viewBox="0 0 1600 500"> 
+                <title>A 2048 Tile !</title>
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="70%" x2="40%" y2="100%">
+                        <stop offset="0%"   style={{stopColor:"rgb(205, 255, 0)", stopOpacity:"1"}}/>
+                        <stop offset="50%"  style={{stopColor:"rgb(2, 241, 241)", stopOpacity:"1"}} />
+                        <stop offset="100%" style={{stopColor:"rgb(107, 96, 253)", stopOpacity:"0.8"}} />
+                    </linearGradient>
+                </defs>
+                <g fill="url(#grad1)">	<path d = {pathData}/> </g>
+                    <text className = {styles.LogoText1} x={x0 + 250} y="200">
+                       2048
+                    </text>
+                   <text className = {styles.LogoText2} x={x0} y="470">
+                         Game
+                      </text>
+                      <text className = {styles.LogoText3} x={x0 + 620} y="200">
+                        Ultra!
+                      </text>                 
               </svg>
-            </div>
+        </div>
         );
     }
 export default gameTitle;

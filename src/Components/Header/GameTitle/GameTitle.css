@@ -2,7 +2,7 @@
     display: inline-block;
     width:200px;
     stroke:rgb(165, 165, 165);
-    fill:rgb(255, 255, 255);
+    fill: linear-gradient(45deg, rgb(64, 52, 255) 0%,rgb(2, 241, 241) 54%,rgb(205, 255, 0) 100%);
 }
 .LogoText1, .LogoText2, .LogoText3{
     stroke: none;
@@ -10,11 +10,12 @@
 }
 .LogoText1{
     fill: rgb(255, 195, 30);
-    font-size: 200px;
+    font-size: 150px;
 }
 .LogoText2{
     fill: rgba(165, 165, 165, 0.5);
     font-size: 350px;
+    font-stretch: ultra-expanded;
 }
 .LogoText3{
     fill: rgba(255, 255, 255, 0.705);
