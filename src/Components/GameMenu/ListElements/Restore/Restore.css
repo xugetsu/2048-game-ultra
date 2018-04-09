@@ -43,8 +43,8 @@
     padding: 15px;
     border: 1px solid #161616;
     box-shadow: 5px 5px 25px 0 #0000004b;
-    background: #20202067;
-    color:goldenrod;
+    color:rgb(255, 193, 37);
+    background: rgba(32, 32, 32, 0.7);
     text-align: center;
     border-radius: 0 6px 6px 0;
     position: absolute;

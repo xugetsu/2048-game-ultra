@@ -2,9 +2,9 @@
   float: right;
   width: 50px;
   background: #303030;
-  border: 1px solid #222;
+  box-shadow: 5px 5px 6px rgba(7, 7, 7, 0.658);
   border-radius: 5px;
-  margin-top: 2px;
+  margin-top: 10px;
   margin-right: 5px;
 }
 

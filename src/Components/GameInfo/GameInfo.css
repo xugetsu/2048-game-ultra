@@ -2,18 +2,15 @@
 .Info_wrapper {
   background: #30303000;
   border-radius: 5px 5px 0 5px ;
-  padding: 5px 0 5px 5px;
-  border: 1px solid #222;
 }
 
 .Info_Score, .Info_Best, .Tips{
-
  border-radius: 5px;
  /*background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%);
  */
  border: 1px solid #222;
  background: #303030;
- box-shadow: 5px 5px 25px 0 rgba(7, 7, 7, 0.2);
+ box-shadow: 5px 5px 6px  rgba(7, 7, 7, 0.658);
  color: #fcfcfc;
   font-weight: bold;
   text-align: center; 
