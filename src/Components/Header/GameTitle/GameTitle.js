@@ -18,17 +18,17 @@ const gameTitle = (props) => {
 
   return (
             <div className={styles.LogoTitle}>
-              <svg  viewBox="0 0 1500 500"> 
+              <svg  viewBox="0 0 1600 500"> 
                   <title>A 2048 Tile !</title>
                   <g>	<path d = {pathData}/> </g>
                   <text className = {styles.LogoText1} x="100" y="230">
                      2048
                   </text>
-                  <text className = {styles.LogoText2} x="550" y="470">
+                  <text className = {styles.LogoText2} x="650" y="470">
                      Game
                   </text>
-                  <text className = {styles.LogoText3} x="850" y="200">
-                  UltrA!
+                  <text className = {styles.LogoText3} x="1150" y="200">
+                     Ultra !
                   </text>                 
               </svg>
             </div>
