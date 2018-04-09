@@ -36,6 +36,7 @@
   .SizeDetails div:hover{
     background: #383838;
     color:rgb(32, 196, 218);
+    cursor: pointer;
   }
   .SizeDetails div:active{
     transform: translate(1px,1px);

@@ -3,7 +3,7 @@ import style from './Help.css';
 
 const help = (props) => {
 	return(
-            <li className={style.ToolTip} onClick = {props.newGame} >  
+            <li className={style.Help} onClick = {props.newGame} >  
                 <svg x="0px" y="0px" viewBox="-150 -170 800 800" 
                         style={{marginLeft: '5px',marginTop: '7px'}}>
                     <g>

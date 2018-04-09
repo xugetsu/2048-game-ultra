@@ -1,10 +1,13 @@
-.ToolTip{
+.Help{
     position: relative;
-
 }
-.ToolTip:hover{
+.Help:active {
+    transform: translate(1px, 1px) !important;
+}
+.Help:hover{
     background: rgb(33, 66, 255);
 }
+
 .ToolTipText{
     display: inline-block;
     visibility: hidden;
@@ -24,7 +27,7 @@
     transition: opacity 0.3s;
 }
 
-.ToolTip:hover .ToolTipText{
+.Help:hover .ToolTipText{
     visibility: visible;
     opacity: 1;
 }

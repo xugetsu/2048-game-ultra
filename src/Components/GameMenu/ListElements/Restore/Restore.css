@@ -1,33 +1,32 @@
 .Restore:hover {
     background: rgb(255, 63, 63);    
 }
+.Restore:active {
+    transform: translate(1px, 1px) !important;
+}
 .ToolTip{
     position: relative;
     height: 50px;
 }
-.Attempts_1::after{
-    content: '1';
-}
-.Attempts_2::after{
-    content: '2';
-}
-.Attempts_3::after{
-    content: '3';
-}
+
+.Attempts_1::after{content: '1';}
+.Attempts_2::after{content: '2';}
+.Attempts_3::after{content: '3';}
+.Attempts_0::after{content: '0';}
+.Attempts_4::after{content: '3';}
+
 .Attempts_0, .Attempts_4{
     cursor: not-allowed;
     opacity: 0.50;
 }
-.Attempts_0::after{
-    content: '0';
-}
+
+.Attempts_0::after, 
+.Attempts_1::after, 
+.Attempts_2::after, 
+.Attempts_3::after, 
 .Attempts_4::after{
-    content: '3';
-}
-.Attempts_0::after, .Attempts_1::after, .Attempts_2::after, .Attempts_3::after, .Attempts_4::after{
     position: absolute;
     left: 32px;
-
     font-size: 13px;
     display: block;
     width: 5px;
@@ -57,6 +56,7 @@
     opacity: 0;
     transition: opacity 0.3s;
 }
+
 .Clicked svg{
     stroke:#4fb0ff;
     fill:#4fb0ff;
@@ -71,6 +71,7 @@
     transform: translate(-2px,-2px);
     box-shadow: 2px 2px 5px rgb(52, 255, 255) !important;
 }
+
 .ToolTip:hover .ToolTipText{
     visibility: visible;
     opacity: 1;

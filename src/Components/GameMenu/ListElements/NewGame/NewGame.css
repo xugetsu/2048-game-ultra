@@ -1,10 +1,14 @@
-.ToolTip{
-    position: relative;
-
-}
-.ToolTip:hover{
+.NewGame:hover{
+    cursor: pointer;
     background: rgb(255, 159, 33);
 }
+.NewGame:active {
+    transform: translate(1px, 1px) !important;
+}
+.NewGame{
+    position: relative;
+}
+
 .ToolTipText{
     display: inline-block;
     visibility: hidden;
@@ -24,7 +28,8 @@
     transition: opacity 0.3s;
 }
 
-.ToolTip:hover .ToolTipText{
+.NewGame:hover .ToolTipText{
+    cursor: default;
     visibility: visible;
     opacity: 1;
 }

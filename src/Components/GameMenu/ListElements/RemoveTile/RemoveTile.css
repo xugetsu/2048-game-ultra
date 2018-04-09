@@ -1,30 +1,29 @@
+.Remove{
+    cursor: pointer;
+    position: relative;
+}
 .Remove:hover {
     background: rgba(220, 44, 255, 0.7);
 }
-.ToolTip{
-    position: relative;
+.Remove:active {
+    transform: translate(1px, 1px) !important;
 }
-.Attempts_1::after{
-    content: '1';
-}
-.Attempts_2::after{
-    content: '2';
-}
-.Attempts_3::after{
-    content: '3';
-}
+.Attempts_0::after{ content: '0';}
+.Attempts_1::after{ content: '1';}
+.Attempts_2::after{ content: '2';}
+.Attempts_3::after{ content: '3';}
+.Attempts_4::after{ content: '3';}
+
 .Attempts_0, .Attempts_4{
-    cursor: not-allowed;
+    cursor: not-allowed !important;
     opacity: 0.50;
 }
-.Attempts_0::after{
-    content: '0';
-}
 
+.Attempts_0::after, 
+.Attempts_1::after, 
+.Attempts_2::after, 
+.Attempts_3::after, 
 .Attempts_4::after{
-    content: '3';
-}
-.Attempts_0::after, .Attempts_1::after, .Attempts_2::after, .Attempts_3::after, .Attempts_4::after{
     position: absolute;
     left: 32px;
     color: white;
@@ -58,20 +57,17 @@
     transition: opacity 0.3s;
 }
 .Clicked svg{
-    stroke:rgb(255, 52, 69);
-    fill:rgb(255, 52, 69);
+    stroke:rgb(255, 255, 255);
+    fill:rgb(255, 255, 255);
 }
 
 .Clicked {
     transform: translate(-2px,-2px);
-    box-shadow: 2px 2px 5px rgb(255, 52, 69);
+    box-shadow: 2px 2px 5px rgb(248, 59, 255);
 }
 
-.Clicked:hover {
-    transform: translate(-2px,-2px);
-    box-shadow: 2px 2px 5px rgb(255, 79, 79) !important;
-}
-.ToolTip:hover .ToolTipText{
+.Remove:hover .ToolTipText{
+    cursor: default;
     visibility: visible;
     opacity: 1;
 }

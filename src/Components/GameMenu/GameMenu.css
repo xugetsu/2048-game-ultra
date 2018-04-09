@@ -1,8 +1,8 @@
 .GameMenu{  
   float: right;
   width: 50px;
-  background: #303030;
-  box-shadow: 5px 5px 6px rgba(7, 7, 7, 0.658);
+  background: #303030e8;
+  box-shadow: 5px 5px 6px rgba(7, 7, 7, 0.664);
   border-radius: 5px;
   margin-top: 10px;
   margin-right: 5px;
