@@ -38,7 +38,7 @@
     color:rgb(32, 196, 218);
   }
   .SizeDetails div:active{
-    transform: translateY(4px);
+    transform: translate(1px,1px);
   }
 
   .SizeDetails div p{  
