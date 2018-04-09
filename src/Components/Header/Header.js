@@ -7,12 +7,8 @@ const header = (props) => {
         <header>
                 <GameTitle />
                 <div className={style.GameIntro}>
-                    <p>
-                        <b>Play 2048 Game Online</b>
-                        <br />
                         Join the numbers and get to the 
-                        <b> 2048 tile!</b>
-                    </p>
+                        <span> 2048 tile!</span>
                 </div>
          </header>
     );
