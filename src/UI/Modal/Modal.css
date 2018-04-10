@@ -1,6 +1,40 @@
 .Modal{
-    position: absolute;
+    position: fixed;
+    z-index: 1001;
     max-width: 500px;
-    left:0;
-    top:0;
+    top: 50px;
+    left: calc(50% - 250px);
+    background: rgba(36, 36, 36, 0.753);
+    width: 500px;
+    height: 500px;
+    border-radius: 50px 10px 50px 10px; 
+    padding: 30px;
+}
+
+.ExitBtn{
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(173,0,0,1) 0%,rgba(232,69,77,1) 85%);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 20px;
+    border: 0px solid wheat;
+    border-style: groove;
+}
+
+.A, .B{
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 20px;
+    height: 4px;
+    background: white;
+    transform: rotate(50deg);
+}
+.A{
+    transform: rotate(50deg);
+}
+.B{
+    transform: rotate(-50deg);
 }
