@@ -8,6 +8,10 @@ const modal = (props) => {
         <A>
             <Backdrop />
             <div className = {styles.Modal} >
+                <div className = {styles.ExitBtn} >
+                    <div className = {styles.A}></div>
+                    <div className = {styles.B}></div>
+                </div>
                 {props.children}
             </div>
         </A>
