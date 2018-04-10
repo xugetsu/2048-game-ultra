@@ -22,7 +22,11 @@ const help = (props) => {
                             c-104.8,0-190-85.2-190-190s85.2-190,190-190s190,85.2,190,190S323.6,408.8,218.8,408.8z"/>
                     </g>
                 </svg> 
-                <span className={style.ToolTipText}>How to play ?</span>
+                <span className={style.ToolTipText}>
+                    How to play ?
+                    <p> Use your <b>arrow keys</b> to move the tiles. 
+                        When two tiles with the same number touch, they <b>merge into one!</b>
+                    </p></span>
             </li>
           );
 }

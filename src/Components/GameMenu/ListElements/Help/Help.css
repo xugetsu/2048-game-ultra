@@ -26,7 +26,14 @@
     opacity: 0;
     transition: opacity 0.3s;
 }
-
+.ToolTipText p{
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+        /*font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Berkshire Swash', cursive;
+    font-family: 'Righteous', cursive;*/
+}
 .Help:hover .ToolTipText{
     visibility: visible;
     opacity: 1;
