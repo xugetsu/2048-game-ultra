@@ -6,6 +6,7 @@ import * as $ from './Lib/Functions/functions';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Modal from './UI/Modal/Modal';
+import TopPlayers from './Components/GameInfo/TopPlayers/TopPlayers';
 
 class App extends Component{
   newGame = (i, clicked, resizeMatrix) => { 
@@ -166,9 +167,9 @@ class App extends Component{
           <Header />
           
           <Modal>
-            <div>fff</div>
+            <TopPlayers />
           </Modal>
-          
+
           <GameContainer 
             matrix = {matrix} 
             virtualTiles = {virtualTiles} 
