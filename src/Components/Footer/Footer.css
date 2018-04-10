@@ -26,14 +26,18 @@ footer{
   text-align: center;
 }
 
-  .Logos{
-    width:50px;
-    margin: 0 20px;
-  }
-  .MyLogo{
-    width:50px;
-    margin: 0 20px;
-  }
+.Logos{
+  width:50px;
+  margin: 0 20px;
+  transition: all 0.3s ease-out;
+}
+.MyLogo{
+  width:50px;
+  margin: 0 20px;
+}
+.Logos:hover{
+  transform: scale(1.3);
+}
 .FollowMe p{
   margin: 10px;
   padding: 0;
