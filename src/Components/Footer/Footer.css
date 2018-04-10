@@ -1,47 +1,56 @@
 footer{
-    padding: 20px 20px 0 10px;
+    padding: 20px;
     color: white;
     background: rgba(32, 32, 32, 0.8);
-    height: 130px;
   }
-  footer a {
-   text-decoration: none;
-   color:rgba(41,137,216,1);
-   font-weight: bold;
-   font-size: 17px;
-  }
-  footer a:hover {
-    color: rgb(205, 229, 248);
-   }
-  
+
 .LastWords{
   margin-left: 10px;
-  width:280px;
-  clear: both;
+  width:260px;
+  display: inline-block;
+  border-radius: 10px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  background: linear-gradient(45deg, rgba(96, 108, 136, 0.438) 0%,rgba(63, 76, 107, 0.164) 100%); 
+  box-shadow: 1px 1px 10px rgb(20, 20, 20);
 }
+
+.LastWords span {
+   color:gold;
+}
+
 .LastWords p{
   margin: 0;
   line-height: 26px;
+  text-align: center;
 }
 
   .Logos{
-    float: right;
     width:50px;
     margin: 0 20px;
   }
   .MyLogo{
-    float: right;
     width:50px;
     margin: 0 20px;
   }
+.FollowMe p{
+  margin: 10px;
+  padding: 0;
+  font-size: 25px;
+  color: rgba(240, 248, 255, 0.637);
+}
   .FollowMe{
+    /*border: 1px solid red;*/
+    width: 410px;
     float: right;
-    width:140px;
-   /*border: 1px solid aqua;*/
-  }
-  .FollowMe h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
-   margin-top: 15px;
-   color: aliceblue;
+    display: flex;
+    flex-flow: row;
+    flex-direction: row;
+    justify-content: right;
+    justify-content: space-between;
+    font-family: 'Gugi';
+    justify-content: first baseline;
+    margin-top: 70px;
+
   }
