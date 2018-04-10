@@ -1,4 +1,4 @@
-.Top{
+.TopButton{
     width: 62px;
     display: inline-block;
     background: #303030cb;
@@ -6,7 +6,7 @@
     box-shadow: 2px 2px 1px rgba(7, 7, 7, 0.555);
 }
   
-.Top:hover{
+.TopButton:hover{
     -webkit-animation-name: pulse;
     animation-name: pulse;
     -webkit-transform-origin: center bottom;

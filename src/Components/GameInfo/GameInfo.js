@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './GameInfo.css'
-import Top from './Top/Top';
+import TopButton from './TopButton/TopButton';
 
 const gameInfo = (props) => {
     const tips = (   <div className = {style.Tips}> 
@@ -15,7 +15,7 @@ const gameInfo = (props) => {
                 <div className = {style.Info_Best}> 
                     {props.score}
                 </div>  
-                <Top />
+                <TopButton />
 
             </div>   
     );

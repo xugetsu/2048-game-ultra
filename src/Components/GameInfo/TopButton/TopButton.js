@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Top.css';
+import styles from './TopButton.css';
 
 const top = (props) => {
 	return(
-        <div className={styles.Top}>
+        <div className={styles.TopButton}>
             <svg x="0px" y="0px" viewBox="-60 -20 670 600" 
                  style={{marginLeft: '5px',marginTop: '7px'}}>
                 <rect x="344.276" y="335.448" style={{fill:'#FFDC13'}} width="167.724" height="176.552"/>
