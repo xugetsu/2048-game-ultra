@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './GameInfo.css'
-import TopButton from './TopButton/TopButton';
+import TopButton from './TopPlayers/TopButton/TopButton';
 
 const gameInfo = (props) => {
     const tips = (   <div className = {style.Tips}> 
