@@ -38,6 +38,7 @@ class App extends Component{
       restoreAttmpt: 3,
       disableRestore: true,
       enableremovTil: false,
+      showTopPlayersModal:false
     });
   }
   move = (oldMatrix, direction) => { // move and merge tiles 
@@ -146,7 +147,8 @@ class App extends Component{
       removTilAttmpt: 3,
       restoreAttmpt: 3,
       disableRestore: true,
-      enableremovTil: false
+      enableremovTil: false,
+      showTopPlayersModal:false
   }
   componentDidMount(){
       this.setState({ history: [{ matrix: this.state.matrix, 
@@ -157,6 +159,12 @@ class App extends Component{
                                   idStore: this.state.idStore }]
                     });
     }
+  hideTopPlayersModalHandler  = () => {
+    this.setState({showTopPlayersModal:false});
+  }
+  showTopPlayersModalHandler = () => {
+    this.setState({showTopPlayersModal:true});
+  }
   render() {
     $.print('render',0); 
     $.print("*** *** *** ***",0);
@@ -166,7 +174,7 @@ class App extends Component{
 
           <Header />
           
-          <Modal>
+          <Modal show = {this.state.showTopPlayersModal} exit = {this.hideTopPlayersModalHandler}>
             <TopPlayers />
           </Modal>
 
@@ -185,7 +193,8 @@ class App extends Component{
             restore = {this.restoreHandler} 
             restoreAttmpt = {this.state.restoreAttmpt}
             disableRestore = {this.state.disableRestore}
-            enableremovTil = {this.state.enableremovTil}/> 
+            enableremovTil = {this.state.enableremovTil}
+            showTopPlayersModal= {this.showTopPlayersModalHandler}/> 
 
           <ControlKeys 
             left  = {() => this.clickHandler('left')} 

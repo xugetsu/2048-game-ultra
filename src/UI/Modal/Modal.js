@@ -4,16 +4,20 @@ import Backdrop from '../Backdrop/Backdrop';
 import A from '../../hoc/A/A';
 
 class Modal extends React.Component{
-    state = {
-        
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.showModal !== nextProps.showModal || 
+               this.props.children !== nextProps.children
     }
-
     render(){
         return (
             <A>
-                <Backdrop/>
-                <div className = {styles.Modal}>
-                    <div className = {styles.ExitBtn} >
+                <Backdrop show = {this.props.show} clicked = {this.props.exit}/>
+                <div className = {styles.Modal}
+                    style = {{
+                        transform: this.props.show ? 'translateY(0)': 'translateY(-100vh)' ,
+                        opacity: this.props.show ?  '1':'0' 
+                    }}> 
+                    <div className = {styles.ExitBtn}  onClick = {this.props.exit}>
                         <div className = {styles.A}></div>
                         <div className = {styles.B}></div>
                     </div>

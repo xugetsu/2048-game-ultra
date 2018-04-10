@@ -9,6 +9,7 @@
     height: 500px;
     border-radius: 50px 10px 50px 10px; 
     padding: 30px;
+    transition: all 0.3s ease-out;
 }
 
 .ExitBtn{
@@ -21,8 +22,13 @@
     border-radius: 20px;
     border: 0px solid wheat;
     border-style: groove;
+    transition: all 0.3s ease-out;
 }
-
+.ExitBtn:hover{
+    transform: scale(1.1);
+    background: linear-gradient(45deg, rgb(223, 0, 0) 0%,rgb(255, 89, 97) 85%);
+    cursor: pointer;
+}
 .A, .B{
     position: absolute;
     top: 18px;

@@ -17,7 +17,8 @@ const gameContainer = (props) => {
     return (
         <div className={style.GameContainer}>
             <GameInfo 
-                score = {props.score}/>
+                score = {props.score}
+                showTopPlayersModal = {props.showTopPlayersModal}/>
             <GameMenu 
                 resizeMatrix = {(i) => props.resizeMatrix(i)} 
                 menuHeight = {433}
