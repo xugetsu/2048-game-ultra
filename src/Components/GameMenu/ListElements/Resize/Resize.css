@@ -41,12 +41,24 @@
   .SizeDetails div:active{
     transform: translate(1px,1px);
   }
-
+  .SizeDetails div p{  
+    line-height: 0;
+    margin-top: 9px; 
+  }
   .SizeDetails div p{  
     color: ghostwhite;
-  
+    font-family: 'Gugi';
   }
   
+  .SizeDetails div p span{  
+    color: rgb(61, 249, 255);
+    font-family: 'East Sea Dokdo'/*'Shrikhand'*/, cursive;
+    font-size: 30px;
+    /*font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Berkshire Swash', cursive;
+    font-family: 'Righteous', cursive;*/
+  
+  }
   .SizeDetails p{
     line-height: 1px;
     color:rgb(255, 209, 93);
