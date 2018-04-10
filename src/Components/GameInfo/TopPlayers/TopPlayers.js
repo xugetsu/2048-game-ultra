@@ -7,8 +7,6 @@ const topPlayers = (props) => {
             <div className = {styles.TopPlayers} >
                 <div className={styles.TopSVG}><TopSVG /></div>
             </div>
-
-
     );
 };
 
