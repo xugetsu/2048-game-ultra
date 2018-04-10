@@ -3,21 +3,27 @@ import styles from './Modal.css';
 import Backdrop from '../Backdrop/Backdrop';
 import A from '../../hoc/A/A';
 
-const modal = (props) => {
-    return (
-        <A>
-            <Backdrop />
-            <div className = {styles.Modal} >
-                <div className = {styles.ExitBtn} >
-                    <div className = {styles.A}></div>
-                    <div className = {styles.B}></div>
+class Modal extends React.Component{
+    state = {
+        
+    }
+
+    render(){
+        return (
+            <A>
+                <Backdrop/>
+                <div className = {styles.Modal}>
+                    <div className = {styles.ExitBtn} >
+                        <div className = {styles.A}></div>
+                        <div className = {styles.B}></div>
+                    </div>
+                    {this.props.children}
                 </div>
-                {props.children}
-            </div>
-        </A>
+            </A>
+    
+        );        
+    }
+}
 
-    );
-};
-
-export default modal;
+export default Modal;
 
