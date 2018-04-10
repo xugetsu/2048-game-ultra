@@ -5,6 +5,7 @@ import GameContainer from './Containers/GameContainer/GameContainer';
 import * as $ from './Lib/Functions/functions';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import Modal from './UI/Modal/Modal';
 
 class App extends Component{
   newGame = (i, clicked, resizeMatrix) => { 
@@ -124,7 +125,7 @@ class App extends Component{
               !$.checkForUpdate(this.state.matrix, 'up')   &&
               !this.state.restoreAttmpt &&
               !this.state.removTilAttmpt){
-                this.setState({gameOver:true});
+              this.setState({gameOver:true});
         }
     }
   }
@@ -161,7 +162,12 @@ class App extends Component{
     const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
     return (
         <div className = {style.BigWrapper}>
+
           <Header />
+          
+          <Modal>
+            <div>fff</div>
+          </Modal>
           
           <GameContainer 
             matrix = {matrix} 
@@ -181,10 +187,10 @@ class App extends Component{
             enableremovTil = {this.state.enableremovTil}/> 
 
           <ControlKeys 
-                left  = {() => this.clickHandler('left')} 
-                right = {() => this.clickHandler('right')}
-                up    = {() => this.clickHandler('up')}   
-                down  = {() => this.clickHandler('down')} />
+            left  = {() => this.clickHandler('left')} 
+            right = {() => this.clickHandler('right')}
+            up    = {() => this.clickHandler('up')}   
+            down  = {() => this.clickHandler('down')} />
 
           <Footer />
             
