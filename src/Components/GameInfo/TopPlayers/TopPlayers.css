@@ -1,6 +1,13 @@
-.TopPlayers{
+.UnderConstruction{
+    width: 200px;
+    margin: 80px auto;
 }
-
+.TopPlayers{
+    font-family: 'Gugi';
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: 100;
+}
 .TopSVG{
     width: 150px;
     margin: 0 auto
