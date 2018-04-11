@@ -13,7 +13,7 @@ const gameInfo = (props) => {
                     {props.score}
                 </div>
                 <div className = {style.Info_Best}> 
-                    {props.score}
+                    {props.bestScore}
                 </div>  
                 <TopButton showTopPlayersModal = {props.showTopPlayersModal}/>
 

@@ -5,16 +5,19 @@ import GameMenu from '../../Components/GameMenu/GameMenu';
 import GameInfo from '../../Components/GameInfo/GameInfo';
 import MatrixContainer from '../../Containers/MatrixContainer/MatrixContainer';
 import ControlKeys from '../../Components/ControlKeys/ControlKeys';
+import axios from '../../axios';
 class GameContainer extends Component{
+
   newGame = (i, clicked, resizeMatrix) => { 
     $.print('newGame',0);
     let matrix, matrixSize;
     if(!clicked){
-      matrix = $.initMatrix(6);
+      matrix = $.initMatrix(4);
       return matrix;
     }else if(clicked && resizeMatrix) {
       matrixSize = i;
       matrix = $.initMatrix(matrixSize);
+      this.bestScore(matrixSize);
     }else{
       matrixSize = this.state.matrixSize;
       matrix = $.initMatrix(matrixSize);
@@ -129,23 +132,32 @@ class GameContainer extends Component{
   }
 
   state = {
-    matrix:  (this.newGame(6,false,false)),
-    matrixSize: 6,
+    matrix:  (this.newGame(4,false,false)),
+    matrixSize: 4,
     virtualTiles: [],
     score: 0,
     movesCount: 0,
     history: null,
     step: 0,
     lastMove:'Start',
-    idStore: Array.from({length: 15}, (x,i) => i + 6*6),
+    idStore: Array.from({length: 15}, (x,i) => i + 4*4),
     gameOver:false,
     removeMode:false,
     removTilAttmpt: 3,
     restoreAttmpt: 3,
     disableRestore: true,
     enableremovTil: false,
+    bestScore: 0,
+  }
+  bestScore = (size) => {
+    axios.get('https://my-2048-game-with-react.firebaseio.com/bestScore/m'+size+'x'+size+'.json')
+    .then( response =>
+      this.setState({ bestScore: response.data})
+    )
+    .catch( err => err );
   }
   componentDidMount(){
+      this.bestScore(4);
       this.setState({ history: [{ matrix: this.state.matrix, 
                                   virtualTiles: [],
                                   score: 0, 
@@ -171,6 +183,7 @@ class GameContainer extends Component{
       <div className={style.GameContainer}>
         <GameInfo 
           score = {this.state.score}
+          bestScore = {this.state.bestScore}
           showTopPlayersModal = {this.props.showTopPlayersModal}/>
         <GameMenu 
           resizeMatrix = {(i) => this.newGame(i,true, true) } 
