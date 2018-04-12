@@ -1,112 +1,69 @@
-.Tile {
-    position: absolute;
-    -webkit-transition: 100ms ease-in-out;
-    -o-transition: 100ms ease-in-out;
-    transition: 100ms ease-in-out;
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    -o-transition-property: transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform;
 
-  }
-  .TileInner {
-    box-sizing: border-box;
-    border-bottom:3px solid #0000009d;
-    border-right:3px solid #0000003f;
-  }
 .Tile, .TileInner {
+    box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
-    font-weight: bold;
-    font-family: sans-serif /*'Segoe UI', Tahoma, Geneva, Verdana, sans-serif /*'Times New Roman', Times, serif/* 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif/* -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif/* Arial, Helvetica, sans-serif /*Cambria, Cochin, Georgia, Times, 'Times New Roman', serif/* cursive*/;
+    font-weight: 600;
+    font-family: sans-serif;
     z-index: 10;
     color: rgba(0, 0, 0, 0.726); 
 }
-    /*
-    @media screen and (max-width: 521px) {
-        .Tile, .TileInner {
-            width: 98px;
-            height: 98px;
-            line-height: 98px;
-            font-size: 45px;  } } 
-    @media screen and (max-width: 481px) {
-        .Tile, .TileInner {
-            width: 58px;
-            height: 58px;
-            line-height: 67.5px;
-            font-size: 35px;}   }*/
 
-
-.TileNew .TileInner{
-    -webkit-animation: appear 200ms ease 100ms;
-    animation: appear 200ms ease 100ms;
-    -webkit-animation-fill-mode: backwards;
-    animation-fill-mode: backwards;
-    -webkit-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none; }
-    
-    @-webkit-keyframes appear {
-            0% {
-              opacity: 0;
-              -webkit-transform: scale(0);
-              transform: scale(0); }
-          
-            100% {
-              opacity: 1;
-              -webkit-transform: scale(1);
-              transform: scale(1); } }
-          
-    @keyframes appear {
-            0% {
-              opacity: 0;
-              -webkit-transform: scale(0);
-              transform: scale(0); }
-          
-            100% {
-              opacity: 1;
-              -webkit-transform: scale(1);
-              transform: scale(1); } }
-
-.Tile_4  .TileInner{background:#ff7e28/* rgb(158, 221, 32) /*-webkit-linear-gradient(315deg, #68cce8 0%,#2ea6c1 100%);background:-o-linear-gradient(315deg, #68cce8 0%,#2ea6c1 100%);background:linear-gradient(135deg, #68cce8 0%,#2ea6c1 100%);*/}
-.Tile_32 .TileInner{background:#ff01b3/* rgb(212, 186, 33) /*-webkit-linear-gradient(315deg, #00b7ea 0%,#009ec3 100%);background:-o-linear-gradient(315deg, #00b7ea 0%,#009ec3 100%);background:linear-gradient(135deg, #00b7ea 0%,#009ec3 100%);*/}
-.Tile_16 .TileInner{background:#aa5aff/* rgb(33, 137, 223) /*-webkit-linear-gradient(315deg, #cedce7 0%,#596a72 100%);background:-o-linear-gradient(315deg, #cedce7 0%,#596a72 100%);background:linear-gradient(135deg, #cedce7 0%,#596a72 100%);*/} 
-.Tile_2  .TileInner{background:#02f1f1/*rgb(206, 30, 177)  /*-webkit-linear-gradient(315deg, #ff3019 0%,#cf0404 100%);background: -o-linear-gradient(315deg, #ff3019 0%,#cf0404 100%);background: linear-gradient(135deg, #ff3019 0%,#cf0404 100%);*/}
-.Tile_8  .TileInner{background:#cdff00/* rgb(192, 122, 29) /*-webkit-linear-gradient(315deg, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);background: -o-linear-gradient(315deg, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);background: linear-gradient(135deg, #febbbb 0%,#fe9090 45%,#ff5c5c 100%);*/}
-.Tile_64 .TileInner{background:#ffcc01/*rgb(194, 206, 30) /*-webkit-linear-gradient(315deg, #f2825b 0%,#e55b2b 50%,#f07146 100%);background: -o-linear-gradient(315deg, #f2825b 0%,#e55b2b 50%,#f07146 100%);background: linear-gradient(135deg, #f2825b 0%,#e55b2b 50%,#f07146 100%);*/}
-
-.Tile_128 .TileInner{
-    background: -webkit-linear-gradient(315deg, #f6e6b4 0%,#ed9017 100%);
-    background:      -o-linear-gradient(315deg, #f6e6b4 0%,#ed9017 100%);
-    background:         linear-gradient(135deg, #f6e6b4 0%,#ed9017 100%);
-    -webkit-box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381),inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
-    box-shadow:         0 0 30px 10px rgba(243, 215, 116, 0.2381),inset 0 0 0 1px rgba(255, 255, 255, 0.14286); 
+.Tile {
+  position: absolute;
+  transition: transform 100ms ease-in-out;
 }
 
-.Tile_256 .TileInner{ background: -webkit-linear-gradient(315deg, #ffd65e 0%,#febf04 100%); background: -o-linear-gradient(315deg, #ffd65e 0%,#febf04 100%); background: linear-gradient(135deg, #ffd65e 0%,#febf04 100%); 
-            -webkit-box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.19048); 
-                    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.19048);}
-.Tile_512 .TileInner{ background: -webkit-linear-gradient(315deg, #febf01 0%,#febf01 100%); background: -o-linear-gradient(315deg, #febf01 0%,#febf01 100%); background: linear-gradient(135deg, #febf01 0%,#febf01 100%);
-            -webkit-box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), 
-            inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
-                    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), 
-            inset 0 0 0 1px rgba(255, 255, 255, 0.2381); }
-.Tile_1024 .TileInner{background: -webkit-linear-gradient(315deg, #febf01 0%,#febf01 100%);background: -o-linear-gradient(315deg, #febf01 0%,#febf01 100%);background: linear-gradient(135deg, #febf01 0%,#febf01 100%);
-             -webkit-box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
-                     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
-                  font-size: 40px;}
-.Tile_2048 .TileInner{ background: -webkit-linear-gradient(315deg, #ffff88 0%,#ffff88 100%); background: -o-linear-gradient(315deg, #ffff88 0%,#ffff88 100%); background: linear-gradient(135deg, #ffff88 0%,#ffff88 100%); 
-             -webkit-box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.33333); 
-                     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), 
-                  inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
-                font-stretch: extra-condensed;
-            font-size: 40px;}
+.TileInner {
+  border-bottom:3px solid #0000009d;
+  border-right: 3px solid #0000003f;
+}
+
+.TileNew .TileInner{
+    animation: appear 200ms ease 100ms;
+    animation-fill-mode: backwards;
+    transition-property: none;
+}
+    
+@-webkit-keyframes appear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0);
+          transform: scale(0); }
+      
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1); } }
+      
+@keyframes appear {
+        0% {
+          opacity: 0;
+          -webkit-transform: scale(0);
+          transform: scale(0); }
+      
+        100% {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1); } }
+
+        
+
+.Tile_4  .TileInner{background:#ff7e28;}
+.Tile_32 .TileInner{background:#ff01b3;}
+.Tile_16 .TileInner{background:#aa5aff;} 
+.Tile_2  .TileInner{background:#02f1f1;}
+.Tile_8  .TileInner{background:#cdff00;}
+.Tile_64 .TileInner{background:#19ff53;}
+.Tile_128 .TileInner{background: linear-gradient(135deg, #00b7ff 0%, #29b8e5 53%, #1a8ad4 54%, #00bbff 100%);}
+.Tile_256 .TileInner{background: linear-gradient(135deg, #f3e2c8 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%);}
+.Tile_512 .TileInner{background: linear-gradient(135deg, #ff9717 0%, #d24b5a 49%, #ba2737 51%, #ff9717 100%);}
+.Tile_1024 .TileInner{
+  background: linear-gradient(135deg, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+  box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);}
+.Tile_2048 .TileInner{
+  box-shadow:0px 0px 20px 5px rgb(255, 236, 129);
+  background: linear-gradient(135deg, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);}
 
 .Tile_super .TileInner{ background-color: #3c3a32; }
 /*

@@ -5,7 +5,7 @@ const tile = (props) => {
     return (
         <div onClick = {props.removeTile} className={props.styles.join(' ')} style={{...props.tile_innerTile_styling,...props.transform_styling}} >
             <div className={style.TileInner}  style ={props.tile_innerTile_styling} >
-                {props.val? props.val : ''}
+                <span>{props.val? props.val : ''}</span>
             </div>
         </div>
     );
