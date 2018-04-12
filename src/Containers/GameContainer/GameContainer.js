@@ -8,6 +8,21 @@ import ControlKeys from '../../Components/ControlKeys/ControlKeys';
 import axios from '../../axios';
 class GameContainer extends Component{
 
+  setLocalStorageData  = () => {
+    const statef = {...this.state};
+    localStorage.setItem("2048GameState", JSON.stringify(statef));
+  }
+  getLocalStorageData = () => {
+      return localStorage.getItem("2048GameState") === null ? 
+                { matrix: (this.newGame(4,false,false)), 
+                  matrixSize: 4, virtualTiles: [], gameOver:false, lastMove:'Start',
+                  score: localStorage.getItem("score") === null ? 0 : Number(localStorage.getItem("score")) ,
+                  movesCount: 0, history: null, bestScore: 0, step: 0,
+                  idStore: Array.from({length: 15}, (x,i) => i + 4*4),
+                  removeMode:false, removTilAttmpt: 4, restoreAttmpt: 4,
+                  disableRestore: true, enableremovTil: false }
+                : JSON.parse(localStorage.getItem("2048GameState"));
+  }
   newGame = (i, clicked, resizeMatrix) => { 
     $.print('newGame',0);
     let matrix, matrixSize;
@@ -70,7 +85,7 @@ class GameContainer extends Component{
                     lastMove:direction,
                     disableRestore: !this.state.restoreAttmpt || (this.state.movesCount < 4)? true : false,
                     enableremovTil: this.state.movesCount > 0 ? true : false,
-                });            
+                  });  
   }
   clickHandler = (direction) => {
     $.print('clickHandler',0);
@@ -130,25 +145,6 @@ class GameContainer extends Component{
         }
     }
   }
-
-  state = {
-    matrix:  (this.newGame(4,false,false)),
-    matrixSize: 4,
-    virtualTiles: [],
-    score: 0,
-    movesCount: 0,
-    history: null,
-    step: 0,
-    lastMove:'Start',
-    idStore: Array.from({length: 15}, (x,i) => i + 4*4),
-    gameOver:false,
-    removeMode:false,
-    removTilAttmpt: 3,
-    restoreAttmpt: 3,
-    disableRestore: true,
-    enableremovTil: false,
-    bestScore: 0,
-  }
   bestScore = (size) => {
     axios.get('https://my-2048-game-with-react.firebaseio.com/bestScore/m'+size+'x'+size+'.json')
     .then( response =>
@@ -156,15 +152,23 @@ class GameContainer extends Component{
     )
     .catch( err => err );
   }
+  state = {
+            ...this.getLocalStorageData()
+          }
   componentDidMount(){
-      this.bestScore(4);
+      window.addEventListener('beforeunload', this.setLocalStorageData);
+      this.bestScore(this.state.matrixSize);
       this.setState({ history: [{ matrix: this.state.matrix, 
                                   virtualTiles: [],
                                   score: 0, 
                                   movesCount: 0, 
                                   lastMove: ' start ', 
-                                  idStore: this.state.idStore }]
+                                  idStore: this.state.idStore }]  
                     });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.setLocalStorageData);
   }
 
   render(){
