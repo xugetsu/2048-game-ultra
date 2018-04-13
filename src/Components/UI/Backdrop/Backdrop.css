@@ -71,11 +71,12 @@
 .Backdrop h3{
   /*border: 1px solid gold;*/
   margin-top: 0;
-  padding: 0 80px;
+  padding: 0 50px;
   margin-bottom: 20px;
   font-size: 30px;
-  font-family: 'Gugi';
-  color: #daf8ff;
+  font-family: 'IBM Plex Sans';
+  color: #ffffff;
+  font-weight: 500;
 }
 .Backdrop h3 span{
    color: wheat;

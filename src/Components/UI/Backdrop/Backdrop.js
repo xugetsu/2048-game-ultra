@@ -11,7 +11,7 @@ const backdrop = (props) => {
 
         <div className={styles.join(' ')}>
              {props.gamePaused ? null : <h1>{'Game Over'}</h1>}
-             <h3> {props.gamePaused?'Continue where you left off ?':'Your Score '}</h3>
+             <h3> {props.gamePaused?'Do you want to continue where you left off ?':'Your Score '}</h3>
              {props.gamePaused ? null : <h3><span>{props.score}</span></h3>}
              {Continue}
              <button className={style.NewGame} onClick = {props.newGame}>New Game</button>
