@@ -30,12 +30,10 @@
     padding: 5px;
     border-radius: 2px;
     line-height: 1px;
-    background: #2e2e2e;
-  }
-  
-  .SizeDetails div:hover{
     background: #383838;
-    color:rgb(32, 196, 218);
+}
+  .SizeDetails div:hover{
+    background: #056de4;
     cursor: pointer;
   }
   .SizeDetails div:active{
@@ -49,9 +47,13 @@
     color: ghostwhite;
     font-family: 'Gugi';
   }
-  
+  .SizeDetails div.Current, .SizeDetails div.Current:hover, .SizeDetails div.Current:active {
+    background:#056de4;
+    cursor: default;
+    transform: translate(0,0);
+}  
   .SizeDetails div p span{  
-    color: rgb(61, 249, 255);
+    color: rgb(255, 236, 61);
     font-family: 'East Sea Dokdo'/*'Shrikhand'*/, cursive;
     font-size: 30px;
     /*font-family: 'East Sea Dokdo', cursive;

@@ -11,7 +11,9 @@ const gameMenu = (props) => {
             <div className={style.GameMenu}>
                 <ul>
                     <NewGame newGame = {props.newGame} />
-                    <Resize resizeMatrix = {(i) => props.resizeMatrix(i)} />
+                    <Resize 
+                        matrixSize = {props.matrixSize} 
+                        resizeMatrix = {(i) => props.resizeMatrix(i)} />
                     <Restore 
                         restore = {props.restore} 
                         restoreAttmpt = {props.restoreAttmpt}
