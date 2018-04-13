@@ -6,10 +6,13 @@ import Backdrop from '../../Components/UI/Backdrop/Backdrop';
 
 const matrixContainer = (props) => {
     const N = props.matrix.length;
-    const backdrop = props.gameOver ? <Backdrop  newGame = {props.newGame} 
-                                                 score   = {props.score}
-                                                 matrixSize =  {props.sizes.matrixSize}  /> 
-                                    :  null;
+    const backdrop = props.gameOver || props.gamePaused ? 
+                          <Backdrop newGame    = {props.newGame} 
+                                    continue   = {props.continue}
+                                    score      = {props.score}
+                                    gameOver   = {props.gameOver}
+                                    gamePaused = {props.gamePaused}  /> 
+                          :  null;
     return (
         <div className = {style.MatrixContainer} > 
 

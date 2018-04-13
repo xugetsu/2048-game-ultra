@@ -9,13 +9,13 @@ import axios from '../../axios';
 class GameContainer extends Component{
 ////////////////////CUSTOME METHODES//////////////CUSTOME METHODES///////////////////CUSTOME METHODES///////////////////////////////////////////////
   newGame = (matrixSize, resizeMatrix, returnData) => { 
-    if(returnData){
-      return this.initState(matrixSize); // requier best score !!
+    if(returnData){  // new game is invoked from state / newGame from backdrop 
+      return this.initState(matrixSize); 
     }
-    if(resizeMatrix) {
+    if(resizeMatrix) { // new game is invoked from game Menu - Resize
       this.setState(this.initState(matrixSize));
       this.bestScore(matrixSize);
-    }else{
+    }else{ // new game is invoked from game Menu - Restart
       this.removeLocalStorageData(matrixSize);
       this.setState(this.initState(this.state.matrixSize));
     }
@@ -33,6 +33,7 @@ class GameContainer extends Component{
                     history: [{matrix: matrix, virtualTiles: [], score: 0, movesCount: 0, lastMove: ' start ', idStore: idStore}],
                     idStore: idStore,
                     gameOver: false,
+                    gamePaused : false,
                     removeMode: false,
                     removTilAttmpt: 3,
                     restoreAttmpt: 3,
@@ -40,6 +41,9 @@ class GameContainer extends Component{
                     enableremovTil: false,}
       return state;
    }
+  continue = () => {
+    this.setState({gamePaused:false});
+  }
   move = (oldMatrix, direction) => { // move and merge tiles 
     $.print('move',0);
     let newScore = this.state.score;
@@ -122,14 +126,15 @@ class GameContainer extends Component{
 
 ////////////////////STORAGE METHODES//////////////STORAGE METHODES///////////////////STORAGE METHODES///////////////////////////////////////////////
   setLocalStorageData  = () => {
-    const statef = {...this.state};
-    const matrixSize = statef.matrixSize;
-    localStorage.setItem("2048GameState" + matrixSize, JSON.stringify(statef));
+    const matrixSize = this.state.matrixSize;
+    localStorage.setItem("2048GameState" + matrixSize, JSON.stringify(this.state));
     localStorage.setItem("lastMatrixSize", JSON.stringify(matrixSize));
    }
   getLastMatrixSize = () =>{
-    const  lastMatrixSize =!(localStorage.getItem("lastMatrixSize") in ['4','5','6','7','8','9']) ? 4: 
+    console.log('localStorage.getItem("lastMatrixSize") = ', localStorage.getItem("lastMatrixSize") );
+    const  lastMatrixSize = !(localStorage.getItem("lastMatrixSize") in {4:4,5:5,6:6,7:7,8:8,9:9}) ? 4: 
                             Number(localStorage.getItem("lastMatrixSize"));
+    console.log('lastMatrixSize', lastMatrixSize);
     return lastMatrixSize;
    }
 
@@ -138,12 +143,17 @@ class GameContainer extends Component{
       if(matrixData === null){
         return this.newGame(matrixSize, true, true);
       }else{
-        return JSON.parse(localStorage.getItem("2048GameState" + matrixSize))
+        const data = JSON.parse(localStorage.getItem("2048GameState" + matrixSize));
+        if(data.lastMove === ' start ')
+            return {...data, gamePaused: false}
+        else{
+            return {...data, gamePaused: true}
+        }
       }  }
 
   switchMatrixDataWithReqSize(matrixSize) {
     this.setLocalStorageData(); // Save previous Data before switching to a new matrix size 
-    this.setState({...this.getMatrixData(matrixSize)});
+    this.setState({ ...this.getMatrixData(matrixSize)});
     this.bestScore(matrixSize);  }
 
   bestScore = (size) => {
@@ -175,8 +185,8 @@ class GameContainer extends Component{
 ////////////////////STATE//////////////STATE///////////////STATE/////////////STATE///////////////STATE//////////////////////
   constructor(props) {
     super(props);
-    const  LastMatrixSize = this.getLastMatrixSize();
-    this.state =  this.getMatrixData(LastMatrixSize);
+    const LastMatrixSize = this.getLastMatrixSize();
+    this.state = this.getMatrixData(LastMatrixSize);
     this.bestScore(LastMatrixSize);
   } 
 ////////////////////RENDER METHODE//////////////RENDER METHODE/////////////////RENDER METHODE/////////////////////////////////////////////////
@@ -192,6 +202,13 @@ class GameContainer extends Component{
                     fontSizes:   [45,40,35,33,28,25][N-4],
                     lineHeight:  [80,70,58,52,50,40][N-4],
                     matrixSize: gridSize[N-4]*N + gridMargins[N-4]*(N + 1) };
+
+    const controlKeys = this.state.gamePaused || this.state.gameOver ?      
+                          null : (<ControlKeys                     
+                                        up    = {() => this.clickHandler('up')} 
+                                        left  = {() => this.clickHandler('left')} 
+                                        down  = {() => this.clickHandler('down')} 
+                                        right = {() => this.clickHandler('right')}/>);
     return (
       <div className={style.GameContainer}>
         <GameInfo 
@@ -199,31 +216,31 @@ class GameContainer extends Component{
           bestScore = {this.state.bestScore}
           showTopPlayersModal = {this.props.showTopPlayersModal}/>
         <GameMenu 
-          resizeMatrix = {(i) => this.switchMatrixDataWithReqSize(i)} 
-          menuHeight = {433}
-          newGame = {() => this.newGame(this.state.matrixSize, false, false)} 
-          removeMode = {this.removeModeHandler}
+          menuHeight      = {433}
+          restore         = {this.restoreHandler} 
+          matrixSize      = {this.state.matrixSize}    
           removeModeState = {this.state.removeMode}
-          removTilAttmpt = {this.state.removTilAttmpt}
-          restore = {this.restoreHandler} 
-          restoreAttmpt = {this.state.restoreAttmpt}
-          disableRestore =  {this.state.disableRestore}
-          enableremovTil = {this.state.enableremovTil}/> 
+          removeMode      = {this.removeModeHandler}
+          restoreAttmpt   = {this.state.restoreAttmpt}
+          removTilAttmpt  = {this.state.removTilAttmpt}
+          disableRestore  = {this.state.disableRestore}
+          enableremovTil  = {this.state.enableremovTil}
+          resizeMatrix    = {(i) => this.switchMatrixDataWithReqSize(i)} 
+          newGame         = {() => this.newGame(this.state.matrixSize, false, false)} /> 
         <MatrixContainer 
-          matrix = {matrix} 
-          virtualTiles = {virtualTiles} 
-          gameOver = {this.state.gameOver} 
-          score    = {this.state.score}
-          newGame =  {() => this.newGame(this.state.matrixSize,false, false)} 
-          removeTile =  {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j)
-                                               : (i,j) => null}
+          sizes      = {sizes}
+          matrix     = {matrix}
+          score      = {this.state.score}
+          gamePaused = {this.state.gamePaused}
+          continue   = {this.continue}
+          gameOver   = {this.state.gameOver}
+          newGame    = {() => this.newGame(this.state.matrixSize,false, false)}
+          removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
-          sizes = {sizes}/>
-        <ControlKeys 
-            left  = {() => this.clickHandler('left')} 
-            right = {() => this.clickHandler('right')}
-            up    = {() => this.clickHandler('up')}   
-            down  = {() => this.clickHandler('down')} />
+          virtualTiles    = {virtualTiles}/>
+
+        {controlKeys}
+
       </div>
     );
    }

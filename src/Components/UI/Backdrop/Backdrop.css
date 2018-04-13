@@ -1,7 +1,12 @@
 .Backdrop{
     position: absolute;
     z-index: 100;
-    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     color: #eee;
     display: flex;
@@ -9,7 +14,7 @@
     justify-content: center;
     align-items: center;
 }
-.Backdrop{
+.Appear{
     -webkit-animation: appear 200ms ease 100ms;
     -moz-animation: appear 200ms ease 100ms;
     animation: appear 200ms ease 100ms;
@@ -56,33 +61,95 @@
               -moz-transform: scale(1);
               transform: scale(1); } }
 .Backdrop h1{
+  margin-top: 0;
+  margin-bottom: 10px;
     font-size: 50px;
-    line-height: 0;
+    color: #ffbe46;
+  /* border: 1px solid red;*/
+    
 }
 .Backdrop h3{
-    font-size: 30px;
+  /*border: 1px solid gold;*/
+  margin-top: 0;
+  padding: 0 80px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: 'Gugi';
+  color: #daf8ff;
 }
+.Backdrop h3 span{
+   color: wheat;
+   font-weight: 300;
+}
+.btn button{
+   border-style: none;
+   padding:10px;
+   margin: 20px 10px 0 10px;
+   font-family: sans-serif;
+   font-size: 28px;
+   font-weight: 500;
+   border-radius: 10px;
+   border-bottom:2px solid #0000009d;
+   border-right: 2px solid #0000003f;
+   border-top: 2px solid #0000000c;
+   border-left: 2px solid #0000003f;
+   outline: none;
+}
+.btn button:hover {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  cursor: pointer;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+ }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .NewGame {
-    background:linear-gradient(135deg, #68cce8 0%,#2ea6c1 100%);
-    cursor: pointer;
-    border-radius: 5px;
-    width: 200px;
-    height: 50px;
-    margin: 0 auto;
-    padding: 10px;
-    color: #111;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 0;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
     
+    background:linear-gradient(135deg, #68cce8 0%,#2ea6c1 100%);    
   }
-  .NewGame:hover {
-    background: #ccc;
-  }
+.Continue {
+  background:linear-gradient(135deg, #ffbe46 0%,#ffa633 100%);    
+}
 /*
 @media screen and (max-width: 481px) {
     .Backdrop h1{
