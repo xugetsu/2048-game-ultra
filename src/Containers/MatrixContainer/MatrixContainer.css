@@ -1,4 +1,5 @@
 .MatrixContainer{
+    position: relative;
     margin-right: 40px;
     margin-top: 10px;
     height: 434px;
