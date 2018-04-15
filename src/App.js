@@ -27,7 +27,7 @@ class App extends Component{
           </Modal>
           
           <GameContainer 
-            showTopPlayersModal= {this.showTopPlayersModalHandler}/> 
+              showTopPlayersModal= {this.showTopPlayersModalHandler}/> 
 
           <Footer />
             
