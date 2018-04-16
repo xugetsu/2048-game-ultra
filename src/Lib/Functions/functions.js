@@ -11,7 +11,7 @@ import MoveTiles        from './MoveTiles';
 import MergedtileObject from './MergedtileObject';
 import NormaltileObject from './NormaltileObject';
 import PickVirtualTiles from './PickVirtualTiles';
-
+import PickRandomItems  from './pickRandomItems';
 
 export const print            = Print;
 export const moveTiles        = MoveTiles;
@@ -25,6 +25,7 @@ export const checkForUpdate   = CheckForUpdate;
 export const mergedtileObject = MergedtileObject;
 export const normaltileObject = NormaltileObject;
 export const pickVirtualTiles = PickVirtualTiles;
+export const pickRandomItems  = PickRandomItems;
 
 
   
