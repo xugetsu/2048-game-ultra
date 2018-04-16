@@ -14,11 +14,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
   position: relative;
-  width:  535px;
+  width:  565px;
   height: 550px;
   margin: 15px auto;
   border-radius: 10px; 
   box-sizing: border-box;
+  padding-left: 30px;
   /*border: 1px solid #fff;*/
 }
 
