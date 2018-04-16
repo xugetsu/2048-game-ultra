@@ -96,13 +96,13 @@
    border-left: 2px solid #0000003f;
    outline: none;
 }
-.btn button:hover {
+.btn button {
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   -webkit-animation-fill-mode: both;
@@ -117,8 +117,8 @@
   }
 
   50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
   }
 
   to {
@@ -134,8 +134,8 @@
   }
 
   50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
   }
 
   to {
