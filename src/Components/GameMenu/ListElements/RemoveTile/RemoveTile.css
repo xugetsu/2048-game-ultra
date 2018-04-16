@@ -3,7 +3,7 @@
     position: relative;
 }
 .Remove:hover {
-    background: rgb(220, 44, 255);
+    background: rgb(159, 0, 190);
 }
 .Remove:active {
     transform: translate(1px, 1px) !important;

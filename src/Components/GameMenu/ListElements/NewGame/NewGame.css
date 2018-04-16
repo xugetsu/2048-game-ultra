@@ -1,6 +1,6 @@
 .NewGame:hover{
     cursor: pointer;
-    background: rgb(255, 159, 33);
+    background: rgb(255, 166, 0);
 }
 .NewGame:active {
     transform: translate(1px, 1px) !important;
