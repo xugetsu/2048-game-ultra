@@ -16,9 +16,11 @@ const gameMenu = (props) => {
                         resizeMatrix = {(i) => props.resizeMatrix(i)} />
                     <Restore 
                         restore = {props.restore} 
+                        remind = {props.remind}
                         restoreAttmpt = {props.restoreAttmpt}
                         disableRestore = {props.disableRestore}  />
                     <RemoveTile 
+                        remind = {props.remind}
                         removeMode = {props.removeMode} 
                         removeModeState = {props.removeModeState}
                         removTilAttmpt = {props.removTilAttmpt} 

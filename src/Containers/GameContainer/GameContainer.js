@@ -38,7 +38,8 @@ class GameContainer extends Component{
                     removTilAttmpt: 3,
                     restoreAttmpt: 3,
                     disableRestore: true,
-                    enableremovTil: false,}
+                    enableremovTil: false,
+                    remind: false}
       return state;
    }
   continue = () => {
@@ -101,6 +102,7 @@ class GameContainer extends Component{
     while (val >= 4) { discount += val; val /= 2; }
     
     this.setState({
+        remind: false,
         removeMode: false,
         matrix: matrix,
         score: this.state.score - discount,
@@ -112,6 +114,7 @@ class GameContainer extends Component{
     const newHistory =  this.state.history.slice(0, oldHistory.length - 1);
     const newData = newHistory[newHistory.length - 1];
     this.setState({
+                    remind: false,
                     history: newHistory,
                     matrix: newData.matrix,
                     virtualTiles: newData.virtualTiles, 
@@ -131,10 +134,10 @@ class GameContainer extends Component{
     localStorage.setItem("lastMatrixSize", JSON.stringify(matrixSize));
    }
   getLastMatrixSize = () =>{
-    console.log('localStorage.getItem("lastMatrixSize") = ', localStorage.getItem("lastMatrixSize") );
+    //console.log('localStorage.getItem("lastMatrixSize") = ', localStorage.getItem("lastMatrixSize") );
     const  lastMatrixSize = !(localStorage.getItem("lastMatrixSize") in {4:4,5:5,6:6,7:7,8:8,9:9}) ? 4: 
                             Number(localStorage.getItem("lastMatrixSize"));
-    console.log('lastMatrixSize', lastMatrixSize);
+    //console.log('lastMatrixSize', lastMatrixSize);
     return lastMatrixSize;
    }
 
@@ -174,14 +177,20 @@ class GameContainer extends Component{
   componentDidUpdate (prevProps, prevState) {
       $.print('componentDidUpdate',0);     
       if($.matrixIsFull(this.state.matrix) && !this.state.gameOver) {
-          if (  !$.checkForUpdate(this.state.matrix, 'left') && 
-                !$.checkForUpdate(this.state.matrix, 'up')   &&
-                !this.state.restoreAttmpt &&
-                !this.state.removTilAttmpt){
+       //   console.log('matrixIsFull');
+          if (  !$.checkForUpdate(this.state.matrix, 'left') && !$.checkForUpdate(this.state.matrix, 'up') &&
+                !this.state.restoreAttmpt && !this.state.removTilAttmpt){
                 this.setState({gameOver:true});
+          }else if ( !$.checkForUpdate(this.state.matrix, 'left') && !$.checkForUpdate(this.state.matrix, 'up')){
+              // this case has been added to remind the player of the available tools that can be used in the game menu
+           //   console.log('Attempts Available');
+          //    console.log('and this.state.remind is',this.state.remind);
+              if (!this.state.remind) {
+            //    console.log('remind false becomes true');
+                this.setState({remind: true}); }
           }
       }
-    }
+  }
 ////////////////////STATE//////////////STATE///////////////STATE/////////////STATE///////////////STATE//////////////////////
   constructor(props) {
     super(props);
@@ -217,6 +226,7 @@ class GameContainer extends Component{
           showTopPlayersModal = {this.props.showTopPlayersModal}/>
         <GameMenu 
           menuHeight      = {433}
+          remind          = {this.state.remind}
           restore         = {this.restoreHandler} 
           matrixSize      = {this.state.matrixSize}    
           removeModeState = {this.state.removeMode}

@@ -17,6 +17,7 @@ const  removeTile = (props) => {
                     +"c5.26,0,9.539,4.28,9.539,9.541V436.758z";
 
   const styles = [style.Remove,
+                  props.remind&&props.removTilAttmpt ? style.Remind : '',
                   props.removeModeState && props.removTilAttmpt ? style.Clicked : '',
                   style['Attempts_' + (props.enableremovTil ? props.removTilAttmpt : 4)]];
   return  (
