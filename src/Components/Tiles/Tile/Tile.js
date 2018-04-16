@@ -6,8 +6,7 @@ const tile = (props) => {
     const x = [18,13,13,13,10,10];
     switch (props.val) {
         case 2048: case 1024: tile_innerTile_styling.fontSize -= x[props.matrixSize - 4]; break;
-        case 512: tile_innerTile_styling.fontSize -= 8; break; // 4x4 5x5 6x6 7x7 8x8 9x9   
-        case 256: tile_innerTile_styling.fontSize -= 8; break; // 4x4 5x5 6x6 7x7 8x8 9x9
+        case 512: case 256: case 128: tile_innerTile_styling.fontSize -= 8; break; // 4x4 5x5 6x6 7x7 8x8 9x9   
         default: break;}
     return (
         <div onClick = {props.removeTile} className={props.styles.join(' ')} style={{...props.tile_innerTile_styling,...props.transform_styling}} >
