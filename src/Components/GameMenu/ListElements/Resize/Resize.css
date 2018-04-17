@@ -1,4 +1,4 @@
-.Size:hover {
+.Size{
   background: rgb(0, 188, 194);
 }
 .SizeDetails{
@@ -6,10 +6,10 @@
     visibility: hidden;
     width: 140px;
     height: 120px;
-    right: -159px;
+    right: -165px;
     padding: 10px;
     border: 1px solid #161616;
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px;
     border-left: none;
     box-shadow: 5px 5px 25px 0 rgba(7, 7, 7, 0.2);
     background: rgba(32, 32, 32, 0.7);

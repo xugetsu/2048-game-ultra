@@ -1,8 +1,8 @@
 .GameMenu{  
   float: right;
   width: 50px;
-  background: #303030dc;
-  box-shadow: 2px 2px 1px rgba(7, 7, 7, 0.555);
+  background: #30303000;
+  /*box-shadow: 2px 2px 1px rgba(7, 7, 7, 0.555);*/
   border-radius: 5px;
   margin-top: 10px;
   margin-right: 5px;
@@ -23,6 +23,13 @@
     stroke:none;
     fill:#ffffff;
     transition: 0.3s;
+    border-bottom:3px solid #0000007a;
+    border-right: 3px solid #0000007a;
+    border-top:3px solid #0000003f;
+    border-left: 3px solid #0000003f;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
  }
  .GameMenu ul li svg:active {
     stroke:none;
@@ -31,5 +38,6 @@
  .GameMenu ul li:hover {
     transform: translate(-2px,-2px);
     box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.507);
 }
 

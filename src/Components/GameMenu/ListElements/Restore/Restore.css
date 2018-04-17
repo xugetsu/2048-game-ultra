@@ -1,5 +1,6 @@
-.Restore:hover {
-    background: rgb(226, 16, 16);    
+.Restore{
+    background: rgb(226, 16, 16);  
+    cursor: pointer;  
 }
 .Restore:active {
     transform: translate(1px, 1px) !important;
@@ -26,15 +27,15 @@
 .Attempts_3::after, 
 .Attempts_4::after{
     position: absolute;
-    left: 32px;
+    left: 27px;
     font-size: 13px;
     display: block;
     width: 5px;
     height: 10px;
     top:0;
-    background: #008cff98;
-    padding: 2px  6px 6px 6px;
-    border-radius: 0 0 0 10px;
+    background: #016fc9;
+    padding: 2px  8px 6px 6px;
+    border-radius: 10px;
     z-index: 305;
 }
 
@@ -42,17 +43,17 @@
     display: inline-block;
     visibility: hidden;
     width: 120px;
-    padding: 15px;
+    padding: 14px;
     border: 1px solid #161616;
     box-shadow: 5px 5px 25px 0 #0000004b;
     color:rgb(255, 193, 37);
     background: rgba(32, 32, 32, 0.7);
     text-align: center;
-    border-radius: 0 6px 6px 0;
+    border-radius: 10px;
     position: absolute;
     z-index: 300;
     top: 0%;
-    left: 100%;
+    left: 120%;
     opacity: 0;
     transition: opacity 0.3s;
 }
