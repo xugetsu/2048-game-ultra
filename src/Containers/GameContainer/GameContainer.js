@@ -58,7 +58,11 @@ class GameContainer extends Component{
       
     newScore += mergingTiles.addToScore;
     idStore = [...mergingTiles.newIdStore]; // some ids have been used from idstore when merging tiles
-    $.addingNewTile(newMatrix, idStore); // -1- blocker tile is added
+    
+    // addBlocker logic need to be added here :
+    const addBlocker = this.state.movesCount % 10 === 1 ? true : false;
+    $.addingNewTile(newMatrix, idStore, addBlocker); // -1- blocker tile is added
+
     const newHistory = $.addToHistory(this.state.history , newMatrix, virtualTiles, newScore, 
                                       this.state.movesCount, direction, idStore);
     this.setState({
