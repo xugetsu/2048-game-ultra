@@ -44,27 +44,23 @@ class GameContainer extends Component{
    }
   continue = () => {
     this.setState({gamePaused:false});
-  }
-  move = (oldMatrix, direction) => { // move and merge tiles 
+   }
+   move = (oldMatrix, direction) => { // move and merge tiles 
     $.print('move',0);
     let newScore = this.state.score;
     const data   = $.fetchingData(oldMatrix,this.state.idStore); // fetching needed data from the oldMatrix
-    let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles       
+    let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles    
     const clearedMatrix = data.matrix; // oldMatrix cleared from old virtual Tiles & old merged tiles vals has been fixed
     const matrixAfterMovingTiles  = $.moveTiles(clearedMatrix,direction);
     const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore); 
     const newMatrix = mergingTiles.matrix;
     const virtualTiles = $.pickVirtualTiles(newMatrix);
-        
+      
     newScore += mergingTiles.addToScore;
     idStore = [...mergingTiles.newIdStore]; // some ids have been used from idstore when merging tiles
-    $.addingNewTile(newMatrix, idStore); 
-    const newHistory = this.state.history.concat([{ matrix: newMatrix, 
-                                                    virtualTiles: virtualTiles, 
-                                                    score: newScore, 
-                                                    movesCount: this.state.movesCount + 1, 
-                                                    lastMove: direction, 
-                                                    idStore: idStore}]);
+    $.addingNewTile(newMatrix, idStore); // -1- blocker tile is added
+    const newHistory = $.addToHistory(this.state.history , newMatrix, virtualTiles, newScore, 
+                                      this.state.movesCount, direction, idStore);
     this.setState({
                     matrix:newMatrix,
                     virtualTiles:virtualTiles,
@@ -167,7 +163,7 @@ class GameContainer extends Component{
   removeLocalStorageData(matrixSize){  
     localStorage.removeItem("2048GameState" + matrixSize);  
    }
-////////////////////REACT LIFECYCLE METHODES//////////////REACT LIFECYCLE METHODES//////////////////////////////////////////////////////////////////
+////////////////////REACT LIFECYCLE METHODES//////////////REACT LIFECYCLE METHODES//////////////////////////////////////////////////////////////////   
   componentDidMount(){
       window.addEventListener('beforeunload', this.setLocalStorageData);  }
 
