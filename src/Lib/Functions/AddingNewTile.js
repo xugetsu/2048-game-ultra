@@ -12,8 +12,8 @@ const addingNewTile = (matrix, idStore, addBlocker) => {
     const rand = pickRandomItems(emptytiles, addBlocker ? 2 : 1); // pick two if we need to add a blocker Tile
     const row0 = rand[0][0], col0 = rand[0][1];
     if (addBlocker && emptytiles.length > 1) { // 1 place for the new tile and 1 place for the blocker
-        matrix[rand[1][0]][rand[1][1]].normal.val = 0;
-        matrix[rand[1][0]][rand[1][1]].normal.blocker = 1;}
+        matrix[rand[1][0]][rand[1][1]].normal.val = 1;
+    }
     matrix[row0][col0].normal.val = 2;
     matrix[row0][col0].normal.newTile = 1;
     // add the tile id to idStore and take a new one // why?? 
