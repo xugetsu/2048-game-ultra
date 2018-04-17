@@ -32,16 +32,16 @@ const tiles = (props) => {
                     const x = (distance * tile.normal.col) + 0.5 * props.gridMargin + 'px';
                     const y = (distance * tile.normal.row) + 0.5 * props.gridMargin + 'px';
                     const transform_styling = {transform: 'translate('+ [x, y] +')'}; 
-                    let tileStyles = [tileStyle.Tile,  
+                    let tileStyles = [tileStyle.Tile,
                                       tileStyle['Tile_' + (tile.merged ? tile.normal.val*2:tile.normal.val)],
                                       tile.merged ? tileStyle.TileMerged : '',
                                       !tile.merged && tile.normal.newTile ? tileStyle.TileNew : '',
                                       !tile.merged && props.removeModeState? tileStyle.RemoveTile : ''];
-
+                                      
                     return (
-                        <Tile   key={tile.normal.id.toString()} 
+                        <Tile   key={tile.normal.id.toString()}
                                 matrixSize = {matrixSize}
-                                val={tile.merged ? tile.normal.val*2 : tile.normal.val} 
+                                val={tile.merged ? tile.normal.val*2 : tile.normal.val}
                                 styles={tileStyles}
                                 transform_styling={transform_styling}
                                 tile_innerTile_styling = {tile_innerTile_styling}

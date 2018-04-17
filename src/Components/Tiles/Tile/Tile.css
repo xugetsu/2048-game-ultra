@@ -48,7 +48,6 @@
           transform: scale(1); } }
 
         
-
 .Tile_4  .TileInner{background:#ff7e28;}
 .Tile_32 .TileInner{background:#ff01b3;}
 .Tile_16 .TileInner{background:#aa5aff;} 
@@ -64,6 +63,21 @@
 .Tile_2048 .TileInner{
   box-shadow:0px 0px 20px 5px rgb(255, 236, 129);
   background: linear-gradient(135deg, #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%);}
+
+.Tile_1  .TileInner{  
+  background: linear-gradient(135deg, #606c88 0%,#3f4c6b 100%);
+    border-bottom:10px solid #0000007a;
+  border-right: 10px solid #0000007a;
+  border-top:10px solid #0000003f;
+  border-left: 10px solid #0000003f;
+  box-sizing: border-box;
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
 
 .Tile_super .TileInner{ background-color: #3c3a32; }
 /*
@@ -84,7 +98,6 @@
 @media screen and (max-width: 521px)  {}
 @media screen and (max-width: 481px) {}
      
-
 .TileMerged .TileInner {
     z-index: 20;
     -webkit-animation: pop 200ms ease 100ms;
@@ -198,5 +211,57 @@
     animation-duration: 2s;
     -webkit-animation-name: hinge;
     animation-name: hinge;
+  }
+  
+  @-webkit-keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      -webkit-transform: scale(0.1) rotate(30deg);
+      transform: scale(0.1) rotate(30deg);
+      -webkit-transform-origin: center bottom;
+      transform-origin: center bottom;
+    }
+  
+    50% {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  
+    70% {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      -webkit-transform: scale(0.1) rotate(30deg);
+      transform: scale(0.1) rotate(30deg);
+      -webkit-transform-origin: center bottom;
+      transform-origin: center bottom;
+    }
+  
+    50% {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  
+    70% {
+      -webkit-transform: rotate(3deg);
+      transform: rotate(3deg);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
   }
   
