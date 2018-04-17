@@ -45,7 +45,7 @@ class GameContainer extends Component{
   continue = () => {
     this.setState({gamePaused:false});
    }
-   move = (oldMatrix, direction) => { // move and merge tiles 
+  move = (oldMatrix, direction) => { // move and merge tiles 
     $.print('move',0);
     let newScore = this.state.score;
     const data   = $.fetchingData(oldMatrix,this.state.idStore); // fetching needed data from the oldMatrix
@@ -186,7 +186,7 @@ class GameContainer extends Component{
                 this.setState({remind: true}); }
           }
       }
-  }
+   }
 ////////////////////STATE//////////////STATE///////////////STATE/////////////STATE///////////////STATE//////////////////////
   constructor(props) {
     super(props);
@@ -198,16 +198,6 @@ class GameContainer extends Component{
   render(){
     $.print('render',0); 
     $.print("*** *** *** ***",0);
-    const matrix = this.state.matrix, virtualTiles = this.state.virtualTiles;
-    const N = matrix.length;
-    const gridSize = [80,72,60,53,48,43]; 
-    const gridMargins = [13,12,10,7.5,5.5,5]; 
-    const sizes = { gridSize:    gridSize[N-4],
-                    gridMargins: gridMargins[N-4],
-                    fontSizes:   [45,40,35,33,28,25][N-4],
-                    lineHeight:  [80,70,58,52,50,40][N-4],
-                    matrixSize: gridSize[N-4]*N + gridMargins[N-4]*(N + 1) };
-
     const controlKeys = this.state.gamePaused || this.state.gameOver ?      
                           null : (<ControlKeys                     
                                         up    = {() => this.clickHandler('up')} 
@@ -234,8 +224,7 @@ class GameContainer extends Component{
           resizeMatrix    = {(i) => this.switchMatrixDataWithReqSize(i)} 
           newGame         = {() => this.newGame(this.state.matrixSize, false, false)} /> 
         <MatrixContainer 
-          sizes      = {sizes}
-          matrix     = {matrix}
+          matrix     = {this.state.matrix}
           score      = {this.state.score}
           gamePaused = {this.state.gamePaused}
           continue   = {this.continue}
@@ -243,7 +232,7 @@ class GameContainer extends Component{
           newGame    = {() => this.newGame(this.state.matrixSize,false, false)}
           removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
-          virtualTiles    = {virtualTiles}/>
+          virtualTiles    = {this.state.virtualTiles}/>
 
         {controlKeys}
 
