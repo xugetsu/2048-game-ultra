@@ -1,0 +1,1 @@
+export default (h,m,v,s,c,l,i) => h.concat([{matrix:m, virtualTiles:v, score:s, movesCount:c+1 ,lastMove:l, idStore:i}]);
