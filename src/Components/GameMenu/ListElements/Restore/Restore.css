@@ -2,14 +2,20 @@
     background: rgb(226, 16, 16);  
     cursor: pointer;  
 }
+
+.Restore:hover{
+    fill:  rgb(255, 43, 43);  
+}
+
 .Restore:active {
     transform: translate(1px, 1px) !important;
 }
+
 .ToolTip{
     position: relative;
     height: 50px;
 }
-
+/* 
 .Attempts_1::after{content: '1';}
 .Attempts_2::after{content: '2';}
 .Attempts_3::after{content: '3';}
@@ -37,8 +43,21 @@
     padding: 2px  8px 6px 6px;
     border-radius: 10px;
     z-index: 305;
+} */
+.Attempts{
+    position: absolute;
+    left: 27px;
+    color: white;
+    font-size: 13px;
+    display: block;
+    width: 5px;
+    height: 10px;
+    top:0;
+    background: #016fc9;
+    padding: 2px  8px 6px 6px;
+    border-radius: 10px;
+    z-index: 305;
 }
-
 .ToolTipText{
     display: inline-block;
     visibility: hidden;

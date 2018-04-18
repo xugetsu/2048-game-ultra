@@ -1,11 +1,17 @@
+.NewGame{
+    background: rgb(255, 166, 0);
+    /* position: relative; */
+    cursor: pointer;
+}
+
+.NewGame:hover{
+    fill:#ffc400;
+}
+
 .NewGame:active {
     transform: translate(1px, 1px) !important;
 }
-.NewGame{
-    position: relative;
-    background: rgb(255, 166, 0);
-    cursor: pointer;
-}
+
 
 .ToolTipText{
     display: inline-block;

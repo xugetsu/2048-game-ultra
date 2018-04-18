@@ -6,18 +6,17 @@ const  restore = (props) => {
 
     const styles = [ style.Restore,
                      props.remind&&props.restoreAttmpt ? style.Remind : '',
-					 style.ToolTip,
-					 style['Attempts_' + ( props.disableRestore&&props.restoreAttmpt ? 4 : props.restoreAttmpt)],
-					];
-		//<path d = {pathData2}/> 						
+					 style.ToolTip
+                    ];
+        //<path d = {pathData2}/> 
+    const restoreAttmpt = props.restoreAttmpt;						
 	return  (
-        <li className={styles.join(' ')} onClick = { props.disableRestore?  () => null : () => props.restore()} >
-            <svg viewBox=" -10 -10 70 70"> 
-                    <g>	
-                        <path d = {pathData1}/>
-                    </g>
-            </svg>
+        <li className={styles.join(' ')} 
+            style={( props.disableRestore ? { cursor:'not-allowed', opacity: 0.50} : {})}
+            onClick = { props.disableRestore ?  () => null : () => props.restore()} >
+            <svg viewBox=" -10 -15 70 70"> <g> <path d = {pathData1}/> </g>  </svg>
             <span className={style.ToolTipText}>Undo last move</span>
+            <span className={style.Attempts}>{restoreAttmpt}</span> 
         </li>
             );
 

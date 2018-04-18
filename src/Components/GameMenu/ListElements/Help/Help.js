@@ -4,7 +4,7 @@ import style from './Help.css';
 const help = (props) => {
 	return(
             <li className={style.Help} onClick = {props.newGame} >  
-                <svg x="0px" y="0px" viewBox="-150 -170 800 800" 
+                <svg x="0px" y="0px" viewBox="-130 -150 800 800" 
                         style={{marginLeft: '5px',marginTop: '7px'}}>
                     <g>
                         <path d="M194,142.8c0.8,1.6,1.6,3.2,2.4,4.4c0.8,1.2,2,2.4,2.8,3.6c1.2,1.2,2.4,2.4,4,3.6c1.2,0.8,2.8,2,4.8,2.4

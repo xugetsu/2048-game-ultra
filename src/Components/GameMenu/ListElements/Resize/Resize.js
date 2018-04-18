@@ -21,7 +21,7 @@ const resize = (props) => {
                 <div className = {(matrixSize === 9 ? style.Current : '')}
                      onClick = {() => props.resizeMatrix(9)} > <p>9<span>x</span>9</p> </div>   
         </div>
-        <svg viewBox="-150 -170 800 800">
+        <svg viewBox="-175 -185 800 800">
                 <path d="M0   32v128h128V32H0zm120 
                                 120H8V40h112v112zm40-120v128h128V32H160zm120 
                                 120H168V40h112v112zm40-120v128h128V32H320zm120 

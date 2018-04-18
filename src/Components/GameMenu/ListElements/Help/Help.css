@@ -1,12 +1,10 @@
 .Help{
-    position: relative;
-    background: rgb(33, 66, 255);
+    background: rgb(27, 161, 0);
+    /* position: relative; */
 }
-.Help:active {
-    transform: translate(1px, 1px) !important;
-}
+
 .Help:hover{
-    background: #303030dc;
+    fill:rgb(36, 218, 0);
 }
 
 .ToolTipText{

@@ -18,18 +18,15 @@ const  removeTile = (props) => {
 
   const styles = [style.Remove,
                   props.remind&&props.removTilAttmpt ? style.Remind : '',
-                  props.removeModeState && props.removTilAttmpt ? style.Clicked : '',
-                  style['Attempts_' + (props.enableremovTil ? props.removTilAttmpt : 4)]];
+                  props.removeModeState && props.removTilAttmpt ? style.Clicked : ''];
+ const removTilAttmpt = props.removTilAttmpt;
   return  (
       <li className={styles.join(' ')} 
-          onClick = {props.removTilAttmpt && props.enableremovTil ? () => props.removeMode()
-                                                                  : () => null} >
-          <svg viewBox = "-150 -170 800 800"> 
-              <g>	
-                 <path d = {pathData}/> 
-              </g>
-          </svg>
+          style={( props.enableremovTil ?  {} : { cursor:'not-allowed', opacity: 0.50})}
+          onClick = {props.removTilAttmpt && props.enableremovTil ? () => props.removeMode() : () => null} >
+          <svg viewBox = "-150 -170 800 800"> <g> <path d = {pathData}/>  </g>  </svg>
           <span className={style.ToolTipText}>Remove a tile</span>
+          <span className={style.Attempts}>{removTilAttmpt}</span> 
       </li>
       );
   }

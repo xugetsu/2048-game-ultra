@@ -1,9 +1,6 @@
 .GameMenu{  
   float: right;
   width: 50px;
-  background: #30303000;
-  /*box-shadow: 2px 2px 1px rgba(7, 7, 7, 0.555);*/
-  border-radius: 5px;
   margin-top: 10px;
   margin-right: 5px;
 }
@@ -14,12 +11,12 @@
 }
 
 .GameMenu ul li {
-    display: block;
-    clear: both;
+    /*display: block;*/
+   /* clear: both;*/
     list-style: none;
-    margin: 0;
-    padding: 0;
-    color: rgb(253, 253, 253); 
+    /* margin: 0;
+    padding: 0; */
+    color: #ffffff; 
     stroke:none;
     fill:#ffffff;
     transition: 0.3s;
@@ -28,16 +25,20 @@
     border-top:3px solid #0000003f;
     border-left: 3px solid #0000003f;
     border-radius: 15px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     margin-bottom: 5px;
+    height: 48px;
  }
- .GameMenu ul li svg:active {
+
+.GameMenu ul li:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  background: rgba(46, 46, 46, 0.87);
+}
+
+.GameMenu ul li svg:active {
     stroke:none;
     fill:#ffffff;
- }
- .GameMenu ul li:hover {
-    transform: translate(-2px,-2px);
-    box-shadow: 2px 2px 5px rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.507);
 }
+
 
