@@ -76,7 +76,7 @@ class GameContainer extends Component{
                     idStore: idStore,
                     lastMove:direction,
                     disableRestore: !this.state.restoreAttmpt || (this.state.movesCount < 4)? true : false,
-                    enableremovTil: this.state.movesCount > 0 ? true : false,
+                    enableremovTil: this.state.movesCount > 0 &&  this.state.removTilAttmpt? true : false,
                   });  
    }
   clickHandler = (direction) => {
@@ -108,7 +108,8 @@ class GameContainer extends Component{
         removeMode: false,
         matrix: matrix,
         score: this.state.score - discount,
-        removTilAttmpt: this.state.removTilAttmpt - 1
+        removTilAttmpt: this.state.removTilAttmpt - 1,
+        enableremovTil: (this.state.removTilAttmpt === 1) ? false : true,
       });
    }
   restoreHandler = () => {
