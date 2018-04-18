@@ -2,7 +2,7 @@ import print from './Print';
 import cloneMatrix from './CloneMatrix';
 import moveTiles from './MoveTiles';
 
-const mergeAndShift = (matrix, d, idstore) => { 
+const mergeAndShift = (matrix, d, idstore, blockerList) => { 
     print('mergeAndShift',3);
     const N = matrix.length;
     let idStore = [...idstore];
@@ -67,7 +67,7 @@ const mergeAndShift = (matrix, d, idstore) => {
         default:
             break;
      }
-    return { matrix : moveTiles(M,d) , newIdStore:idStore, addToScore: addToScore} ;
+    return { matrix : moveTiles(M,d,blockerList) , newIdStore:idStore, addToScore: addToScore} ;
  };
 
  export default mergeAndShift;

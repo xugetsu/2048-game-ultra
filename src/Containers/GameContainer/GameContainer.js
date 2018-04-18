@@ -47,20 +47,22 @@ class GameContainer extends Component{
    }
   move = (oldMatrix, direction) => { // move and merge tiles 
     $.print('move',0);
+    // addBlocker logic :
+    const movesCount = this.state.movesCount;
+    const addBlocker = ( movesCount % 30 === 0 && movesCount > 29 &&
+                         oldMatrix.length > 4) ? true : false;
     let newScore = this.state.score;
     const data   = $.fetchingData(oldMatrix,this.state.idStore); // fetching needed data from the oldMatrix
     let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles    
+    const blockerList = {...data.blockerList}; // prepare blockers list for moveTiles function
     const clearedMatrix = data.matrix; // oldMatrix cleared from old virtual Tiles & old merged tiles vals has been fixed
-    const matrixAfterMovingTiles  = $.moveTiles(clearedMatrix,direction);
-    const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore); 
+    const matrixAfterMovingTiles  = $.moveTiles(clearedMatrix,direction,blockerList);
+    const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore,blockerList); 
     const newMatrix = mergingTiles.matrix;
     const virtualTiles = $.pickVirtualTiles(newMatrix);
-      
     newScore += mergingTiles.addToScore;
     idStore = [...mergingTiles.newIdStore]; // some ids have been used from idstore when merging tiles
-    
-    // addBlocker logic need to be added here :
-    const addBlocker = this.state.movesCount % 10 === 1 ? true : false;
+
     $.addingNewTile(newMatrix, idStore, addBlocker); // -1- blocker tile is added
 
     const newHistory = $.addToHistory(this.state.history , newMatrix, virtualTiles, newScore, 

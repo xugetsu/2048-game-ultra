@@ -19,7 +19,7 @@ const fetchingData = (matrix, oldIdStore) => {
             // pick available ids from old virtual tiles from the merge object
             if (tm) {  idStore.splice(0, 0, tm.id);  } // add ids to idStore       
             // put blocker Tiles Positions in blockerListRow / blockerListCol
-            if (tn.val === 1) { blockerListC[r].push(tn.col);  
+            if (tn.val < 1 && tn.val > 0) { blockerListC[r].push(tn.col);  
                                 blockerListR[c].push(tn.row); }
             if( r === N-1 && blockerListR[c].length === 0){  blockerListR[c] = 0}                    
             // this will delete the tile's merge object and returning a normal tile

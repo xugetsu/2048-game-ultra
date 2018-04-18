@@ -33,7 +33,7 @@ const tiles = (props) => {
                     const y = (distance * tile.normal.row) + 0.5 * props.gridMargin + 'px';
                     const transform_styling = {transform: 'translate('+ [x, y] +')'}; 
                     let tileStyles = [tileStyle.Tile,
-                                      tileStyle['Tile_' + (tile.merged ? tile.normal.val*2:tile.normal.val)],
+                                      tileStyle['Tile_' + (tile.merged ? tile.normal.val*2: tile.normal.val > 1? tile.normal.val: 1)],
                                       tile.merged ? tileStyle.TileMerged : '',
                                       !tile.merged && tile.normal.newTile ? tileStyle.TileNew : '',
                                       !tile.merged && props.removeModeState? tileStyle.RemoveTile : ''];
