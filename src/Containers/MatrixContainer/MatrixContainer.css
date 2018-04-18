@@ -1,7 +1,5 @@
 .MatrixContainer{
     position: relative;
-    margin-right: 40px;
-    margin-top: 10px;
     height: 434px;
     width: 450px;
     padding: 10px;
@@ -10,4 +8,6 @@
     justify-content: center;
     border-radius: 10px;
     background-color: rgba(27, 27, 27, 0.377);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
   }

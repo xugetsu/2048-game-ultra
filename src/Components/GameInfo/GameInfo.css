@@ -2,13 +2,14 @@
 .Info_wrapper {
   background: #30303000;
   border-radius: 5px 5px 0 5px ;
- /* border: 1px solid red;*/
+  /* border: 1px solid red;*/
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: left;
- /* flex-direction: row-reverse;*/
-
+  /* flex-direction: row-reverse;*/
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
 }
 
 .Info_Score, .Info_Best, .Tips{

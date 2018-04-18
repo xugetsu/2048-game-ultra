@@ -1,21 +1,19 @@
 .GameMenu{  
-  float: right;
   width: 50px;
-  margin-top: 10px;
   margin-right: 5px;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
 }
 
 .GameMenu ul {
    margin: 0;
    padding: 0;
 }
-
+.GameMenu ul:first-child{
+  margin-top: 0;
+}
 .GameMenu ul li {
-    /*display: block;*/
-   /* clear: both;*/
     list-style: none;
-    /* margin: 0;
-    padding: 0; */
     color: #ffffff; 
     stroke:none;
     fill:#ffffff;
@@ -25,7 +23,6 @@
     border-top:3px solid #0000003f;
     border-left: 3px solid #0000003f;
     border-radius: 15px;
-    /* box-sizing: border-box; */
     margin-bottom: 5px;
     height: 48px;
  }
