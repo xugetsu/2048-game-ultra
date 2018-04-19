@@ -20,7 +20,7 @@
   border-radius: 10px; 
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 80px 470px 50px;
+  grid-template-columns: 85px 470px 50px;
   grid-template-rows: 60px auto;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
