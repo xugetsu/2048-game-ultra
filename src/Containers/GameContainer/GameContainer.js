@@ -50,7 +50,8 @@ class GameContainer extends Component{
     $.print('move',0);
     // addBlocker logic :
     const movesCount = this.state.movesCount;
-    const addBlocker = ( movesCount % 30*(10-this.state.matrixSize) === 0 && movesCount > 30*(10-this.state.matrixSize)-1  &&
+    const addBlocker = ( movesCount % (30*(10-this.state.matrixSize)) === 0 && 
+                         movesCount > 30*(10-this.state.matrixSize) - 1  &&
                          oldMatrix.length > 4) ? true : false;
     let newScore = this.state.score;
     let removTilAttmpts = this.state.removTilAttmpt;
@@ -245,7 +246,7 @@ class GameContainer extends Component{
           removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
           virtualTiles    = {this.state.virtualTiles}/>
-        <BlockerInfo  timer  = {(30*(10-this.state.matrixSize)) -this.state.movesCount%(30*(10-this.state.matrixSize)+1) }     />
+        <BlockerInfo  timer  = {(30*(10-this.state.matrixSize)) - this.state.movesCount % (30*(10-this.state.matrixSize) + 1) }     />
         {controlKeys}
 
       </div>
