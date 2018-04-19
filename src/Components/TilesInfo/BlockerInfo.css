@@ -1,0 +1,33 @@
+.BlockerInfo{
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: sans-serif;
+    color: rgba(0, 0, 0, 0.726); 
+    background: linear-gradient(135deg, #606c88 0%,#3f4c6b 100%);
+    border-bottom:10px solid #0000007a;
+    border-right: 10px solid #0000007a;
+    border-top:10px solid #0000003f;
+    border-left: 10px solid #0000003f;
+    box-sizing: border-box;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    color: rgb(255, 241, 211);
+    font-size: 20px;
+    font-family: 'Gugi';
+    justify-self: end;
+}
+
+/* .BlockerInfo p {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+} */
+
