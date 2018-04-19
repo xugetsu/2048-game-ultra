@@ -246,7 +246,9 @@ class GameContainer extends Component{
           removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
           virtualTiles    = {this.state.virtualTiles}/>
-        <BlockerInfo  timer  = {(30*(10-this.state.matrixSize)) - this.state.movesCount % (30*(10-this.state.matrixSize) + 1) }     />
+        <BlockerInfo 
+            matrixSize = {this.state.matrixSize} 
+            timer  = {(30*(10-this.state.matrixSize)) - this.state.movesCount % (30*(10-this.state.matrixSize) + 1) }     />
         {controlKeys}
 
       </div>
