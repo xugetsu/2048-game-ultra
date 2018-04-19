@@ -3,9 +3,9 @@ import style from './GameInfo.css'
 import TopButton from './TopPlayers/TopButton/TopButton';
 
 const gameInfo = (props) => {
-    const tips = (   <div className = {style.Tips}> 
-                        <p><span>Info:</span> Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!</p>
-                    </div> );
+    // const tips = (   <div className = {style.Tips}> 
+    //                     <p><span>Info:</span> Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!</p>
+    //                 </div> );
     return (
             <div className = {style.Info_wrapper}>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './TopPlayers.css';
-import TopSVG from './TopSVG/TopSVG';
+//import TopSVG from './TopSVG/TopSVG';
 import UnderConstruction from '../../../Assets/PNGs/under-construction.png';
 //<div className={styles.TopSVG}><TopSVG /></div>
 const topPlayers = (props) => {

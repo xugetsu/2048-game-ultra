@@ -11,14 +11,14 @@ const logo = (props) => {
     const thikness = height/5;
     const width = h/2.825*1.2;
     const x0 = 0, y0 = 0; 
-    const x1 = x0, y1 = y0 + height*1.11765, y11 = y0 + height*1.11765 - h/500*130;
+    const x1 = x0/*, y1 = y0 + height*1.11765*/, y11 = y0 + height*1.11765 - h/500*130;
     const y12 = y0 + thikness/2; 
-    const x3 = x0, y3 = y0 + height*2.825 ;
+    //const x3 = x0, y3 = y0 + height*2.825 ;
 
-    const poly1 = [[x1, y1], 
-                   [x1, y1 + thikness*0.8 ], 
-                   [x1 + width, y1 + height*7/17 + thikness*0.8], 
-                   [x1 + width, y1 + height*7/17  ]]; // < "/" >
+    // const poly1 = [[x1, y1], 
+    //                [x1, y1 + thikness*0.8 ], 
+    //                [x1 + width, y1 + height*7/17 + thikness*0.8], 
+    //                [x1 + width, y1 + height*7/17  ]]; // < "/" >
     const poly11 = [[x1 + h/25, y11], 
                    [x1, y11 + thikness*0.8 ], 
                    [x1 + width + h/25, y11 + height*4/17 + thikness*0.8], 
@@ -38,12 +38,12 @@ const logo = (props) => {
                     [x0 + width, y12 + height - thikness/2.2], 
                     [x0 + width, y12 + height]]; // "<<" / >
 
-    const poly3 =  [[x3 + width/2, - thikness + y3], 
-                    [x3, y3 - height], 
-                    [x3, y3 - height + thikness],
-                    [x3 + width/2, y3], 
-                    [x3 + width, y3 - height + thikness], 
-                    [x3 + width, y3 - height]]; // < / ">"                    
+    // const poly3 =  [[x3 + width/2, - thikness + y3], 
+    //                 [x3, y3 - height], 
+    //                 [x3, y3 - height + thikness],
+    //                 [x3 + width/2, y3], 
+    //                 [x3 + width, y3 - height + thikness], 
+    //                 [x3 + width, y3 - height]]; // < / ">"                    
 
     return (
     <svg height={height+5} width={width+h/25} >

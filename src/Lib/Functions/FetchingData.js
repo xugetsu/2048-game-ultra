@@ -1,6 +1,5 @@
 import print from './Print';
 import normaltileObject from './NormaltileObject';
-import block from '../../Components/GameMenu/ListElements/Block';
 
 const OLD = 0;
  // fetching needed data from the matrix, add ids to idStore

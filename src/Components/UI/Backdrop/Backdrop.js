@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './Backdrop.css';
-import A from '../../../hoc/A/A';
 
 const backdrop = (props) => {
     const styles =  [style.btn, !props.gamePaused ? style.Appear :'' ];
