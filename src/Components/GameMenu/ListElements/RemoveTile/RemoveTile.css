@@ -12,36 +12,6 @@
     transform: translate(1px, 1px) !important;
 }
 
-
-/* .Attempts_0::after{ content: '0';}
-.Attempts_1::after{ content: '1';}
-.Attempts_2::after{ content: '2';}
-.Attempts_3::after{ content: '3';}
-.Attempts_4::after{ content: '3';} */
-
-/* .Attempts_0, .Attempts_4{
-    cursor: not-allowed !important;
-    opacity: 0.50;
-} */
-
-/* .Attempts_0::after, 
-.Attempts_1::after, 
-.Attempts_2::after, 
-.Attempts_3::after, 
-.Attempts_4::after{
-    position: absolute;
-    left: 27px;
-    color: white;
-    font-size: 13px;
-    display: block;
-    width: 5px;
-    height: 10px;
-    top:0;
-    background: #016fc9;
-    padding: 2px  8px 6px 6px;
-    border-radius: 10px;
-    z-index: 305;
-} */
 .Attempts{
     position: absolute;
     left: 27px;
@@ -83,7 +53,11 @@
     transform: translate(-2px,-2px);
     box-shadow: 2px 2px 5px rgb(248, 59, 255);
 }
-
+.ToolTipText p {
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+}
 .Remove:hover .ToolTipText{
     cursor: default;
     visibility: visible;

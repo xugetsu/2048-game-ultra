@@ -23,11 +23,13 @@ const  removeTile = (props) => {
             +"c-4.167,4.167-4.167,10.917,0,15.083l15.083,15.083c2.083,2.083,4.813,3.125,7.542,3.125s5.458-1.042,7.542-3.125l30.698-30.698"
             +"l30.677,30.677c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125l15.083-15.083"
             +"c4.167-4.167,4.167-10.917,0-15.083l-30.677-30.677l30.698-30.698C427.823,327.802,427.823,321.052,423.656,316.885z"
-
+  const removTilAttmpt = ~~props.removTilAttmpt;
+  const cnd = [[256,3],[256,2],[64,3],[64,2],[32,3],[32,2]];
+  const N = props.matrixSize;
   const styles = [style.Remove,
-                  props.remind&&props.removTilAttmpt ? style.Remind : '',
-                  props.removeModeState && props.removTilAttmpt ? style.Clicked : ''];
- const removTilAttmpt = props.removTilAttmpt;
+                  props.remind&&removTilAttmpt ? style.Remind : '',
+                  props.removeModeState && removTilAttmpt ? style.Clicked : ''];
+ 
  const disabled = props.disableRemovTil || props.gamePaused;
   return  (
       <li className={styles.join(' ')} 
@@ -36,7 +38,10 @@ const  removeTile = (props) => {
           <svg viewBox = "-170 -210 800 800"> 
                 <g> <path d = {d1}/>  <path d = {d2}/>   <path d = {d3}/>   <path d = {d4}/>  </g>  
           </svg>
-          <span className={style.ToolTipText}>Remove a tile</span>
+          <span className={style.ToolTipText}>
+                Tile Remover
+                <p>{'One Remover is added after each appearance of '+cnd[N-4][1]+' Tiles of N° '+cnd[N-4][0]}</p>
+          </span>
           <span className={style.Attempts}>{removTilAttmpt}</span> 
       </li>
       );

@@ -2,11 +2,13 @@ import print from './Print';
 import cloneMatrix from './CloneMatrix';
 import moveTiles from './MoveTiles';
 
-const mergeAndShift = (matrix, d, idstore, blockerList) => { 
+const mergeAndShift = (matrix, d, idstore, blockerList, removTilAttmptCnt_) => { 
     print('mergeAndShift',3);
     const N = matrix.length;
     let idStore = [...idstore];
     let addToScore = 0;
+    const cnd = [[256,3],[256,2],[64,3],[64,2],[32,3],[32,2]];
+    let removTilAttmptCnt = removTilAttmptCnt_;
     const M = cloneMatrix(matrix);
     const mergeTiles = (tile, nextTile) => {
         const virtualTile = nextTile, mergedTile = tile;
@@ -18,6 +20,7 @@ const mergeAndShift = (matrix, d, idstore, blockerList) => {
         virtualTile.normal.id = idStore[0]; // the vanished tile picks a new id from the idStore
         idStore = idStore.slice(1); // update the idStore
         addToScore += mergedTile.normal.val *2;
+        if ( mergedTile.normal.val *cnd[N-4][1] === cnd[N-4][0] ){ removTilAttmptCnt = removTilAttmptCnt + 0.5}
      }
     switch (d) {
         case 'left':
@@ -67,7 +70,7 @@ const mergeAndShift = (matrix, d, idstore, blockerList) => {
         default:
             break;
      }
-    return { matrix : moveTiles(M,d,blockerList) , newIdStore:idStore, addToScore: addToScore} ;
+    return { matrix : moveTiles(M,d,blockerList) , newIdStore:idStore, addToScore: addToScore, removTilAttmptCnt:removTilAttmptCnt} ;
  };
 
  export default mergeAndShift;

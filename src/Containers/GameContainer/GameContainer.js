@@ -50,16 +50,18 @@ class GameContainer extends Component{
     $.print('move',0);
     // addBlocker logic :
     const movesCount = this.state.movesCount;
-    const addBlocker = ( movesCount % 30 === 0 && movesCount > 29 &&
+    const addBlocker = ( movesCount % 30*(10-this.state.matrixSize) === 0 && movesCount > 30*(10-this.state.matrixSize)-1  &&
                          oldMatrix.length > 4) ? true : false;
     let newScore = this.state.score;
+    let removTilAttmpts = this.state.removTilAttmpt;
     const data   = $.fetchingData(oldMatrix,this.state.idStore); // fetching needed data from the oldMatrix
     let idStore  = [...data.updatedIdStore];  // oldIdStore + available Ids from oldMatrix's old virtual Tiles    
     const blockerList = {...data.blockerList}; // prepare blockers list for moveTiles function
     const clearedMatrix = data.matrix; // oldMatrix cleared from old virtual Tiles & old merged tiles vals has been fixed
     const matrixAfterMovingTiles  = $.moveTiles(clearedMatrix,direction,blockerList);
-    const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore,blockerList); 
+    const mergingTiles = $.mergeAndShift(matrixAfterMovingTiles,direction,idStore,blockerList,removTilAttmpts); 
     const newMatrix = mergingTiles.matrix;
+    removTilAttmpts = mergingTiles.removTilAttmptCnt;
     const virtualTiles = $.pickVirtualTiles(newMatrix);
     newScore += mergingTiles.addToScore;
     idStore = [...mergingTiles.newIdStore]; // some ids have been used from idstore when merging tiles
@@ -76,8 +78,9 @@ class GameContainer extends Component{
                     history: newHistory,
                     idStore: idStore,
                     lastMove:direction,
+                    removTilAttmpt: removTilAttmpts,
                     disableRestore:  !this.state.restoreAttmpt  || (this.state.movesCount < 4) ? true : false,
-                    disableRemovTil: !this.state.removTilAttmpt || (this.state.movesCount < 4) ? true : false,
+                    disableRemovTil: !~~removTilAttmpts || (this.state.movesCount < 4) ? true : false,
                   });  
    }
   clickHandler = (direction) => {
@@ -242,7 +245,7 @@ class GameContainer extends Component{
           removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
           virtualTiles    = {this.state.virtualTiles}/>
-        <BlockerInfo  timer  = {(30-this.state.movesCount%31) }     />
+        <BlockerInfo  timer  = {(30*(10-this.state.matrixSize)) -this.state.movesCount%(30*(10-this.state.matrixSize)+1) }     />
         {controlKeys}
 
       </div>
