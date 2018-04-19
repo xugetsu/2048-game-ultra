@@ -9,11 +9,12 @@ const  restore = (props) => {
 					 style.ToolTip
                     ];
         //<path d = {pathData2}/> 
-    const restoreAttmpt = props.restoreAttmpt;						
+    const restoreAttmpt = props.restoreAttmpt;		
+    const disabled = props.disableRestore || props.gamePaused;				
 	return  (
         <li className={styles.join(' ')} 
-            style={( props.disableRestore ? { cursor:'not-allowed', opacity: 0.50} : {})}
-            onClick = { props.disableRestore ?  () => null : () => props.restore()} >
+            style={( disabled? { cursor:'not-allowed', opacity: 0.50} : {})}
+            onClick = { disabled?  () => null : () => props.restore()} >
             <svg viewBox=" -10 -15 70 70"> <g> <path d = {pathData1}/> </g>  </svg>
             <span className={style.ToolTipText}>Undo last move</span>
             <span className={style.Attempts}>{restoreAttmpt}</span> 

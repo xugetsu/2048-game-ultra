@@ -6,6 +6,7 @@ import GameInfo from '../../Components/GameInfo/GameInfo';
 import MatrixContainer from '../../Containers/MatrixContainer/MatrixContainer';
 import ControlKeys from '../../Components/ControlKeys/ControlKeys';
 import axios from '../../axios';
+import BlockerInfo from '../../Components/TilesInfo/BlockerInfo';
 class GameContainer extends Component{
 ////////////////////CUSTOME METHODES//////////////CUSTOME METHODES///////////////////CUSTOME METHODES///////////////////////////////////////////////
   newGame = (matrixSize, resizeMatrix, returnData) => { 
@@ -38,7 +39,7 @@ class GameContainer extends Component{
                     removTilAttmpt: 3,
                     restoreAttmpt: 3,
                     disableRestore: true,
-                    enableremovTil: false,
+                    disableRemovTil: true,
                     remind: false}
       return state;
    }
@@ -75,8 +76,8 @@ class GameContainer extends Component{
                     history: newHistory,
                     idStore: idStore,
                     lastMove:direction,
-                    disableRestore: !this.state.restoreAttmpt || (this.state.movesCount < 4)? true : false,
-                    enableremovTil: this.state.movesCount > 0 &&  this.state.removTilAttmpt? true : false,
+                    disableRestore:  !this.state.restoreAttmpt  || (this.state.movesCount < 4) ? true : false,
+                    disableRemovTil: !this.state.removTilAttmpt || (this.state.movesCount < 4) ? true : false,
                   });  
    }
   clickHandler = (direction) => {
@@ -109,7 +110,7 @@ class GameContainer extends Component{
         matrix: matrix,
         score: this.state.score - discount,
         removTilAttmpt: this.state.removTilAttmpt - 1,
-        enableremovTil: (this.state.removTilAttmpt === 1) ? false : true,
+        disableRemovTil: (this.state.removTilAttmpt === 1) ? true : false,
       });
    }
   restoreHandler = () => {
@@ -223,11 +224,12 @@ class GameContainer extends Component{
           restore         = {this.restoreHandler} 
           matrixSize      = {this.state.matrixSize}    
           removeModeState = {this.state.removeMode}
+          gamePaused      = {this.state.gamePaused}
           removeMode      = {this.removeModeHandler}
           restoreAttmpt   = {this.state.restoreAttmpt}
           removTilAttmpt  = {this.state.removTilAttmpt}
           disableRestore  = {this.state.disableRestore}
-          enableremovTil  = {this.state.enableremovTil}
+          disableRemovTil  = {this.state.disableRemovTil}
           resizeMatrix    = {(i) => this.switchMatrixDataWithReqSize(i)} 
           newGame         = {() => this.newGame(this.state.matrixSize, false, false)} /> 
         <MatrixContainer 
@@ -240,7 +242,7 @@ class GameContainer extends Component{
           removeTile = {this.state.removeMode ? (i,j) => this.removeTileHandler(i,j) : (i,j) => null}
           removeModeState = {this.state.removeMode}
           virtualTiles    = {this.state.virtualTiles}/>
-
+        <BlockerInfo  timer  = {(30-this.state.movesCount%31) }     />
         {controlKeys}
 
       </div>

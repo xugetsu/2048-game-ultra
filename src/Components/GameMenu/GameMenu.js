@@ -17,14 +17,16 @@ const gameMenu = (props) => {
                     <Restore 
                         restore = {props.restore} 
                         remind = {props.remind}
+                        gamePaused  = {props.gamePaused}
                         restoreAttmpt = {props.restoreAttmpt}
                         disableRestore = {props.disableRestore}  />
                     <RemoveTile 
                         remind = {props.remind}
                         removeMode = {props.removeMode} 
+                        gamePaused  = {props.gamePaused}
                         removeModeState = {props.removeModeState}
                         removTilAttmpt = {props.removTilAttmpt} 
-                        enableremovTil = {props.enableremovTil}/>
+                        disableRemovTil = {props.disableRemovTil}/>
                     <Help />
                 </ul>
             </div>
