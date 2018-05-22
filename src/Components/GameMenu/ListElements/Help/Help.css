@@ -1,6 +1,6 @@
 .Help{
     background: rgb(27, 161, 0);
-    /* position: relative; */
+    position: relative;
 }
 
 .Help:hover{

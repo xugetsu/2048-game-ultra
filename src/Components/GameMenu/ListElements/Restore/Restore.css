@@ -1,6 +1,7 @@
 .Restore{
     background: rgb(226, 16, 16);  
     cursor: pointer;  
+    position: relative;
 }
 
 .Restore:hover{

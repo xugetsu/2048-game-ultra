@@ -1,6 +1,6 @@
 .NewGame{
     background: rgb(255, 166, 0);
-    /* position: relative; */
+    position: relative;
     cursor: pointer;
 }
 
