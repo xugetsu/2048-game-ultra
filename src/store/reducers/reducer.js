@@ -20,13 +20,14 @@ export const reducer = (state = generateState(), action) => {
             }
             return state;
         case actionTypes.MOVE:  // move and merge tiles 
-            const oldMatrix = state.matrix;
             // addBlocker logic :
-            const movesCount = state.movesCount;
+            const movesCount = state.movesCount + 1;
+            const total = 30 * (10 - state.matrixSize ); 
+            const blockerTimer = total - movesCount % (total + 1);
+            const addBlocker = ( blockerTimer === 0) ? true : false;
+            // move and merge tiles 
+            const oldMatrix = state.matrix;
             const direction = action.key;
-            const addBlocker = ( movesCount % ( 30 * (10 - state.matrixSize ) ) === 0 && 
-                                 movesCount > 30 * ( 10 - state.matrixSize ) - 1  &&
-                                 oldMatrix.length > 4) ? true : false;
             let newScore = state.score;
             let removTilAttmpts = state.removTilAttmpt;
             data   = $.fetchingData(oldMatrix,state.idStore); // fetching needed data from the oldMatrix
@@ -49,7 +50,8 @@ export const reducer = (state = generateState(), action) => {
                     matrix: newMatrix,
                     virtualTiles: virtualTiles,
                     score : newScore,
-                    movesCount: state.movesCount + 1,
+                    blockerTimer:blockerTimer,
+                    movesCount: movesCount,
                     history: newHistory,
                     idStore: idStore,
                     lastMove: direction,

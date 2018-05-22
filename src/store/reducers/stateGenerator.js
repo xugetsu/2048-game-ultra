@@ -1,6 +1,7 @@
 import {initMatrix} from '../../Lib/Functions/functions';
 import * as localStorage from '../localStorage';
 
+
 export const initState = (matrixSize = 4) => {
     const matrix = initMatrix(matrixSize);
     const idStore = Array.from({
@@ -12,6 +13,7 @@ export const initState = (matrixSize = 4) => {
         virtualTiles: [],
         score: 0,
         movesCount: 0,
+        blockerTimer: 30*(10 - matrixSize),
         lastMove: ' start ',
         history: [{
             matrix: matrix,
