@@ -17,7 +17,7 @@
     visibility: hidden;
     width: 140px;
     height: 120px;
-    right: -165px;
+    left: 120%;
     padding: 10px;
     border: 1px solid #161616;
     border-radius: 10px;
@@ -75,4 +75,13 @@
   .SizeDetails p{
     line-height: 1px;
     color:rgb(255, 209, 93);
+  }
+
+  .SizeDetails::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -5px;
+    width: 10px;
+    height: 100px;
   }
