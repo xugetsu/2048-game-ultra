@@ -36,7 +36,7 @@ const tiles = (props) => {
                                       tileStyle['Tile_' + (tile.merged ? tile.normal.val*2: tile.normal.val > 1? tile.normal.val: 1)],
                                       tile.merged ? tileStyle.TileMerged : '',
                                       !tile.merged && tile.normal.newTile ? tileStyle.TileNew : '',
-                                      !tile.merged && props.removeModeState? tileStyle.RemoveTile : ''];
+                                      !tile.merged && props.removeMode? tileStyle.RemoveTile : ''];
                                       
                     return (
                         <Tile   key={tile.normal.id.toString()}

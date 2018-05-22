@@ -1,0 +1,13 @@
+export const CONTINUE = 'CONTINUE';
+export const RESTART = 'RESTART';
+export const REMOVETILE = 'REMOVETILE';
+export const ENABLE_RMOVE_MODE = 'ENABLE_RMOVE_MODE';
+export const RESIZEMATRIX = 'RESIZEMATRIX';
+export const RESTORE = 'RESTORE';
+export const KEYDOWN = 'KEYDOWN';
+export const MOVE = 'MOVE';
+export const CHECKFORUPDATE = 'CHECKFORUPDATE';
+export const FETCH_BESTSCORE = 'FETCH_BESTSCORE';
+export const SET_BESTSCORE = 'SET_BESTSCORE';
+export const FETCH_BESTSCORE_FAILED = 'FETCH_BESTSCORE_FAILED';
+export const STOREDATA = 'STOREDATA';
