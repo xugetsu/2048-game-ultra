@@ -4,7 +4,7 @@ import print from './Print';
 // to generalize the use of checkForUpdate function for any matrix size. 
 
 
-const checkForUpdate = (matrix, direction) => {
+const checkIfCanMerge = (matrix, direction) => {
     print('checkForUpdate',3); 
 //// 0) preparing variable for check proccess :
     // Size of 'matrix':
@@ -65,4 +65,4 @@ const checkForUpdate = (matrix, direction) => {
     return false; 
  };
 
-export default checkForUpdate;
+export default checkIfCanMerge;

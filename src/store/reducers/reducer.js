@@ -14,11 +14,11 @@ export const reducer = (state = generateState(), action) => {
         case actionTypes.SET_BESTSCORE: return {...state, bestScore: action.score}
         case actionTypes.FETCH_BESTSCORE_FAILED: return {...state, fetchBestScoreFail: true}
         case actionTypes.CHECKFORUPDATE: 
-            if(!state.gameOver && $.matrixIsFull(state.matrix) && !$.checkForUpdate(state.matrix, 'left') && !$.checkForUpdate(state.matrix, 'up')){
+            if(!state.gameOver && $.matrixIsFull(state.matrix) && !$.checkIfCanMerge(state.matrix, 'left') && !$.checkIfCanMerge(state.matrix, 'up')){
                 if (!state.restoreAttmpt && !state.removTilAttmpt){ return {...state, gameOver:true};}
                 else if (!state.remind){ return {...state, remind: true}; } // this case has been added to remind the player of the available tools that can be used in the game menu
             }
-            break;
+            return state;
         case actionTypes.MOVE:  // move and merge tiles 
             const oldMatrix = state.matrix;
             // addBlocker logic :

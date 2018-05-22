@@ -12,11 +12,11 @@ class MatrixContainer extends Component {
     state = {
         lastMove: ' start '
     }
-    componentDidUpdate(){
-        // if (this.props.lastMove !== this.state.lastMove){
-        //     this.props.onCheckForUpdate();
-        // }
-    }
+    // componentDidUpdate(){
+    //     if (this.props.lastMove !== this.state.lastMove){
+    //         this.props.onCheckForUpdate();
+    //     }
+    // }
     render(){
         const N = this.props.matrix.length;
         const sizes = sizes_(N);

@@ -16,10 +16,10 @@ export const _setBestScore_ = (score) => {
 export const _fetchBestScoreFailed_ = (score) => {
     return { type : actionTypes.FETCH_BESTSCORE_FAILED };
 };
+
 export const _setMatrix_ = (size) => {
     return { type : actionTypes.RESIZEMATRIX, size: size };
 };
-
 
 export const _resizeMatrix_ = (size) => {
     return (dispatch, getState) => {
