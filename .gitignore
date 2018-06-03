@@ -1,3 +1,9 @@
-logo.svg
+.vscode
+build
+config
 node_modules
-xugetsu.txt
+scripts
+.firebaserc
+2048.ico
+desktop.ini
+firebase.json
